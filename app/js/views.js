@@ -32,18 +32,22 @@ async function renderDashboard(content) {
   const marketCard = card('Market Overview · 市场概览', 
     '<div class="market-tiles">' + tiles + '</div>' +
     '<h3 style="margin-top:16px">Major Events · 重要事件</h3>' + events);
-  // 组合概览（真实数据）
+  // 组合概览（真实数据 + 自动计算指标）
   const kpis = [
     { l: '总资产', v: fmtMoney(pf.total) },
     { l: '持仓数量', v: String(pf.count) + ' 只' },
+    { l: '科技暴露', v: pf.techExposure + '%' },
+    { l: '新兴市场', v: pf.emergingExposure + '%' },
+    { l: '风险评分', v: String(pf.riskScore) + ' · ' + pf.riskLabel, cls: pf.riskCls },
+    { l: '最大回撤', v: pf.maxDrawdown },
     { l: '今日变化', v: pf.today },
-    { l: '收益率', v: pf.return },
-    { l: '风险评分', v: String(pf.riskScore) },
-    { l: '最大回撤', v: pf.maxDrawdown }
+    { l: '收益率', v: pf.return }
   ].map(function (k) {
-    return '<div class="kpi"><div class="label">' + k.l + '</div><div class="value">' + esc(k.v) + '</div></div>';
+    return '<div class="kpi"><div class="label">' + k.l + '</div><div class="value' + (k.cls ? ' ' + k.cls : '') + '">' + esc(k.v) + '</div></div>';
   }).join('');
-  const portfolioCard = card('Portfolio Overview · 组合概览', '<div class="kpis">' + kpis + '</div>');
+  const portfolioCard = card('Portfolio Overview · 组合概览',
+    '<div class="kpis">' + kpis + '</div>' +
+    '<p class="score-meta" style="margin-top:10px">风险评分基于 v2.3 规则：集中度 / 科技暴露 / 地域集中 / 防御缓冲 / 分散度；今日变化与收益率待行情接入。</p>');
   // 投资者画像
   const profileItems = [
     { l: '投资目标', v: profile.goal },

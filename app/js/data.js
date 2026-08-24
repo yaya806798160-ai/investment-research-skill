@@ -1,6 +1,7 @@
 /**
  * Investment OS — Data Layer
  * - 组合数据：从 portfolio-data.json 读取（file:// 模式下用内置兜底副本）
+ * - 自动计算：总资产、类别占比、科技暴露、新兴市场比例、风险评分（v2.3 规则）
  * - 市场/机会/观察池/研究：当前为演示数据
  * - 接入真实行情/财务 API 时：实现 DataSource 的 getXxx() 为 fetch 即可，视图层无需改动
  */
@@ -11,14 +12,14 @@ const DEFAULT_PORTFOLIO = {
   updatedAt: '2026-08-24',
   currency: 'CNY',
   holdings: [
-    { name: '建信新兴市场QDII', amount: 90000, category: 'QDII全球' },
-    { name: '财通成长C', amount: 18000, category: '成长' },
-    { name: '华夏国证半导体', amount: 11000, category: '科技/AI' },
-    { name: '东方人工智能', amount: 11000, category: '科技/AI' },
-    { name: '浦银智能科技', amount: 10000, category: '科技/AI' },
-    { name: '永赢数字经济', amount: 4000, category: '科技/AI' },
-    { name: '纳斯达克基金', amount: 7000, category: 'QDII全球' },
-    { name: '南方红利低波', amount: 2000, category: '红利' }
+    { name: '建信新兴市场QDII', amount: 90000, category: 'QDII全球', region: '新兴市场' },
+    { name: '财通成长C', amount: 18000, category: '成长', region: 'A股' },
+    { name: '华夏国证半导体', amount: 11000, category: '科技/AI', region: 'A股' },
+    { name: '东方人工智能', amount: 11000, category: '科技/AI', region: 'A股' },
+    { name: '浦银智能科技', amount: 10000, category: '科技/AI', region: 'A股' },
+    { name: '永赢数字经济', amount: 4000, category: '科技/AI', region: 'A股' },
+    { name: '纳斯达克基金', amount: 7000, category: 'QDII全球', region: '美国' },
+    { name: '南方红利低波', amount: 2000, category: '红利', region: 'A股' }
   ],
   profile: {
     goal: '10年以上资产增长',
@@ -59,6 +60,53 @@ async function loadPortfolio() {
   } catch (e) { /* fall through */ }
   _portfolioCache = DEFAULT_PORTFOLIO;
   return _portfolioCache;
+}
+
+function sumHoldings(holdings) {
+  return holdings.reduce(function (s, h) { return s + Number(h.amount); }, 0);
+}
+function pct(part, total) {
+  return Math.round((part / total) * 1000) / 10;
+}
+
+/**
+ * 风险评分（0-100）——基于 v2.3 risk-framework / risk-budgeting：
+ * Portfolio Risk：Concentration（集中度）/ Correlation（地域相关性）/ Position Size（单仓）
+ * + 高波动资产风险限制（科技暴露）+ 防御缓冲（红利/现金）+ 分散度
+ *  1) 集中度（最大单仓权重）：>50% +25 | 30–50% +15 | <30% +5
+ *  2) 科技/AI 暴露：>30% +20 | 15–30% +12 | <15% +5
+ *  3) 地域集中（最大地区权重）：>50% +15 | 30–50% +8 | <30% +3
+ *  4) 防御缓冲（红利+现金占比）：<10% +15 | 10–20% +8 | >20% +3
+ *  5) 分散度（持仓数量）：≤5 +10 | 6–10 +4 | >10 +2
+ * 分级：≥80 高 | 61–79 偏高 | 31–60 中 | ≤30 低
+ */
+function computeRiskScore(holdings, total) {
+  const maxHold = Math.max.apply(null, holdings.map(function (h) { return Number(h.amount); }));
+  const maxHoldPct = pct(maxHold, total);
+  const catMap = {}, regionMap = {};
+  let tech = 0, defensive = 0;
+  holdings.forEach(function (h) {
+    const amt = Number(h.amount);
+    catMap[h.category] = (catMap[h.category] || 0) + amt;
+    regionMap[h.region] = (regionMap[h.region] || 0) + amt;
+    if (h.category === '科技/AI') tech += amt;
+    if (h.category === '红利' || h.category === '现金') defensive += amt;
+  });
+  const techPct = pct(tech, total);
+  const maxRegionPct = pct(Math.max.apply(null, Object.keys(regionMap).map(function (k) { return regionMap[k]; })), total);
+  const defPct = pct(defensive, total);
+  const count = holdings.length;
+
+  let score = 0;
+  score += maxHoldPct > 50 ? 25 : maxHoldPct >= 30 ? 15 : 5;
+  score += techPct > 30 ? 20 : techPct >= 15 ? 12 : 5;
+  score += maxRegionPct > 50 ? 15 : maxRegionPct >= 30 ? 8 : 3;
+  score += defPct < 10 ? 15 : defPct <= 20 ? 8 : 3;
+  score += count <= 5 ? 10 : count <= 10 ? 4 : 2;
+
+  const label = score >= 80 ? '高' : score >= 61 ? '偏高' : score >= 31 ? '中' : '低';
+  const cls = score >= 80 ? 'risk-high' : score >= 61 ? 'risk-mid' : 'risk-low';
+  return { score: score, label: label, cls: cls, techPct: techPct, emergingPct: pct(regionMap['新兴市场'] || 0, total) };
 }
 
 /* 其余演示数据 */
@@ -141,21 +189,26 @@ const DataSource = {
   async getMarket() { return MockDB.market; },
   async getPortfolio() {
     const d = await loadPortfolio();
-    const total = d.holdings.reduce((s, h) => s + Number(h.amount), 0);
+    const total = sumHoldings(d.holdings);
+    const risk = computeRiskScore(d.holdings, total);
     return {
       total: total,
       count: d.holdings.length,
+      techExposure: risk.techPct,
+      emergingExposure: risk.emergingPct,
+      riskScore: risk.score,
+      riskLabel: risk.label,
+      riskCls: risk.cls,
+      maxDrawdown: '目标 ' + d.profile.maxDrawdown,
       today: '待行情接入',
-      return: '待行情接入',
-      riskScore: '—',
-      maxDrawdown: '目标 ' + d.profile.maxDrawdown
+      return: '待行情接入'
     };
   },
   async getProfile() { return (await loadPortfolio()).profile; },
   async getActionCenter() { return (await loadPortfolio()).actionCenter; },
   async getAllocation() {
     const d = await loadPortfolio();
-    const total = d.holdings.reduce((s, h) => s + Number(h.amount), 0);
+    const total = sumHoldings(d.holdings);
     const map = {};
     d.holdings.forEach(function (h) {
       map[h.category] = (map[h.category] || 0) + Number(h.amount);
@@ -165,7 +218,7 @@ const DataSource = {
     return names.map(function (n, i) {
       return {
         name: n,
-        value: Math.round((map[n] / total) * 1000) / 10,
+        value: pct(map[n], total),
         amount: map[n],
         color: CATEGORY_COLORS[n] || colors[i % colors.length]
       };
@@ -176,13 +229,14 @@ const DataSource = {
   async getResearch() { return MockDB.research; },
   async getHoldings() {
     const d = await loadPortfolio();
-    const total = d.holdings.reduce((s, h) => s + Number(h.amount), 0);
+    const total = sumHoldings(d.holdings);
     return d.holdings.map(function (h) {
       return {
         asset: h.name,
         amount: h.amount,
         cat: h.category,
-        pct: Math.round((Number(h.amount) / total) * 1000) / 10,
+        region: h.region || '—',
+        pct: pct(Number(h.amount), total),
         risk: h.category === '科技/AI' ? '高' : h.category === 'QDII全球' ? '中' : '低',
         advice: CATEGORY_ADVICE[h.category] || '维持'
       };

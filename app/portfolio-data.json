@@ -2,14 +2,14 @@
   "updatedAt": "2026-08-24",
   "currency": "CNY",
   "holdings": [
-    { "name": "建信新兴市场QDII", "amount": 90000, "category": "QDII全球" },
-    { "name": "财通成长C", "amount": 18000, "category": "成长" },
-    { "name": "华夏国证半导体", "amount": 11000, "category": "科技/AI" },
-    { "name": "东方人工智能", "amount": 11000, "category": "科技/AI" },
-    { "name": "浦银智能科技", "amount": 10000, "category": "科技/AI" },
-    { "name": "永赢数字经济", "amount": 4000, "category": "科技/AI" },
-    { "name": "纳斯达克基金", "amount": 7000, "category": "QDII全球" },
-    { "name": "南方红利低波", "amount": 2000, "category": "红利" }
+    { "name": "建信新兴市场QDII", "amount": 90000, "category": "QDII全球", "region": "新兴市场" },
+    { "name": "财通成长C", "amount": 18000, "category": "成长", "region": "A股" },
+    { "name": "华夏国证半导体", "amount": 11000, "category": "科技/AI", "region": "A股" },
+    { "name": "东方人工智能", "amount": 11000, "category": "科技/AI", "region": "A股" },
+    { "name": "浦银智能科技", "amount": 10000, "category": "科技/AI", "region": "A股" },
+    { "name": "永赢数字经济", "amount": 4000, "category": "科技/AI", "region": "A股" },
+    { "name": "纳斯达克基金", "amount": 7000, "category": "QDII全球", "region": "美国" },
+    { "name": "南方红利低波", "amount": 2000, "category": "红利", "region": "A股" }
   ],
   "profile": {
     "goal": "10年以上资产增长",
