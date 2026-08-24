@@ -134,19 +134,29 @@ function renderDecision(content) {
     const name = document.getElementById('assetInput').value.trim();
     const resEl = document.getElementById('decisionResult');
     if (!name) { resEl.innerHTML = '<p style="color:var(--text-dim)">请输入标的名称。</p>'; return; }
-    const r = await DataSource.analyzeAsset(name);
-    const riskList = r.risks.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
+    const r = await analyzeWithEngine(name);
+    const stList = r.strengths.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
+    const rkList = r.risks.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
     resEl.innerHTML =
       '<div class="grid cols-2" style="margin-top:6px">' +
-      '<div class="card"><h3>投资评分 · Investment Score</h3>' +
+      '<div class="card"><h3>1 · 投资评分 · Investment Grade</h3>' +
       '<div class="score-ring"><span class="score-big">' + r.score + '</span>' +
-      '<span class="badge ' + gradeClass(r.grade) + '">' + esc(r.rating) + '</span></div>' +
-      '<div class="score-meta">等级：' + esc(r.grade) + ' · ' + esc(r.rating) + '</div></div>' +
-      '<div class="card"><h3>行动建议 · Recommendation</h3>' +
-      '<p style="font-size:16px;font-weight:700;color:var(--accent)">' + esc(r.action) + '</p>' +
-      '<p class="score-meta" style="margin-top:8px">' + esc(r.change) + '</p></div>' +
+      '<span class="badge ' + gradeClass(r.grade) + '">' + esc(r.grade) + '</span></div>' +
+      '<div class="score-meta">' + esc(r.grade) + ' · ' + esc(r.gradeLabel) + '</div></div>' +
+      '<div class="card"><h3>6 · 建议 · Recommendation</h3>' +
+      '<p style="font-size:16px;font-weight:700;color:var(--accent)">' + esc(r.recommendation) + '</p>' +
+      '<p class="score-meta" style="margin-top:8px">' + esc(r.reason) + '</p></div>' +
       '</div>' +
-      '<div class="card" style="margin-top:14px"><h3>风险提示 · Risk Alerts</h3><ul style="padding-left:18px;line-height:1.9">' + riskList + '</ul></div>';
+      '<div class="grid cols-2" style="gap:14px;margin-top:14px">' +
+      '<div class="card"><h3>2 · 投资论点 · Investment Thesis</h3><p style="line-height:1.8">' + esc(r.thesis) + '</p></div>' +
+      '<div class="card"><h3>5 · 组合影响 · Portfolio Impact</h3><p style="line-height:1.8">' + esc(r.portfolioImpact) + '</p></div>' +
+      '</div>' +
+      '<div class="grid cols-2" style="gap:14px;margin-top:14px">' +
+      '<div class="card"><h3>3 · 优势 · Strengths</h3><ul style="padding-left:18px;line-height:1.9">' + stList + '</ul></div>' +
+      '<div class="card"><h3>4 · 风险 · Risks</h3><ul style="padding-left:18px;line-height:1.9">' + rkList + '</ul></div>' +
+      '</div>' +
+      '<div class="card" style="margin-top:14px"><h3>7 · 理由 · Reason</h3><p style="line-height:1.8">' + esc(r.reason) + '</p></div>' +
+      '<div class="card" style="margin-top:14px"><h3>8 · 什么会改变决策 · What Would Change Decision</h3><p style="line-height:1.8">' + esc(r.whatWouldChangeDecision) + '</p></div>';
   };
   document.getElementById('analyzeBtn').addEventListener('click', run);
   document.getElementById('assetInput').addEventListener('keydown', function (e) {
