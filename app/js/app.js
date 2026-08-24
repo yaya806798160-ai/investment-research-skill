@@ -5,6 +5,7 @@
 const VIEWS = {
   dashboard: { title: '仪表盘', render: renderDashboard },
   decision: { title: '决策中心', render: renderDecision },
+  action: { title: '行动中心', render: renderAction },
   portfolio: { title: '组合', render: renderPortfolio },
   research: { title: '研究报告', render: renderResearch },
   journal: { title: '投资日志', render: renderJournal }

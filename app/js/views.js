@@ -58,12 +58,22 @@ async function renderDashboard(content) {
     return '<div class="list-item"><div class="title">' + p.l + '</div><div class="right">' + esc(p.v) + '</div></div>';
   }).join('');
   const profileCard = card('Investor Profile · 投资者画像', profileItems);
-  // 行动中心
-  const actionItems =
-    '<div class="list-item"><div class="title">当前建议</div><div class="right" style="text-align:left;max-width:75%">' + esc(action.currentAdvice) + '</div></div>' +
-    '<div class="list-item"><div class="title" style="color:var(--warn)">风险提醒</div><div class="right" style="text-align:left;max-width:75%">' + esc(action.riskAlert) + '</div></div>' +
-    '<div class="list-item"><div class="title" style="color:var(--accent)">下一步动作</div><div class="right" style="text-align:left;max-width:75%">' + esc(action.nextAction) + '</div></div>';
-  const actionCard = card('Action Center · 行动中心', actionItems);
+  // 行动中心（精简卡片）
+  const suggRows = action.suggestions.slice(0, 2).map(function (s) {
+    return '<div class="list-item"><div><div class="title">' + esc(s.action) + '</div>' +
+      '<div class="desc">' + esc(s.reason) + '</div></div>' +
+      '<div class="right" style="max-width:50%;text-align:left">' + esc(s.trigger) + '</div></div>';
+  }).join('');
+  const alertItems = action.alerts.map(function (a) {
+    const lv = a.level === '高' ? 'risk-high' : 'risk-mid';
+    return '<div class="list-item"><div class="title">' + esc(a.text) + '</div>' +
+      '<div class="right"><span class="' + lv + '">' + esc(a.level) + '</span></div></div>';
+  }).join('');
+  const actionCard = card('Action Center · 行动中心',
+    '<div class="list-item"><div class="title">当前状态</div>' +
+    '<div class="right" style="text-align:left;max-width:70%">' + esc(action.status) + '</div></div>' +
+    '<h3 style="margin-top:12px">操作建议 · Suggestions</h3>' + suggRows +
+    '<h3 style="margin-top:12px">风险提醒 · Alerts</h3>' + alertItems);
   // 资产配置（真实数据）
   const legend = alloc.map(function (a) {
     return '<div class="legend-item"><span class="swatch" style="background:' + a.color + '"></span>' +
@@ -234,4 +244,45 @@ function renderJournal(content) {
     document.getElementById('jReason').value = '';
     render();
   });
+}
+/* ---------- Action Center + Risk Dashboard ---------- */
+async function renderAction(content) {
+  const [action, risk] = await Promise.all([DataSource.getActionCenter(), DataSource.getRiskDashboard()]);
+  // 行动中心
+  const suggRows = action.suggestions.map(function (s, i) {
+    return '<tr><td><strong>' + (i + 1) + '. ' + esc(s.action) + '</strong></td>' +
+      '<td>' + esc(s.reason) + '</td>' +
+      '<td>' + esc(s.trigger) + '</td></tr>';
+  }).join('');
+  const alertItems = action.alerts.map(function (a) {
+    const lv = a.level === '高' ? 'risk-high' : 'risk-mid';
+    return '<div class="list-item"><div class="title">' + esc(a.text) + '</div>' +
+      '<div class="right"><span class="' + lv + '">' + esc(a.level) + '</span></div></div>';
+  }).join('');
+  const actionCard = card('Action Center · 行动中心',
+    '<div class="list-item"><div class="title">当前投资状态</div>' +
+    '<div class="right" style="text-align:left;max-width:70%">' + esc(action.status) + '</div></div>' +
+    '<table style="margin-top:10px"><thead><tr><th>操作建议</th><th>建议原因</th><th>触发条件</th></tr></thead>' +
+    '<tbody>' + suggRows + '</tbody></table>' +
+    '<h3 style="margin-top:16px">风险提醒 · Risk Alerts</h3>' + alertItems);
+  // 风险面板
+  const regionBars = risk.regions.map(function (r) {
+    return '<div class="list-item"><div class="title">' + esc(r.name) + '</div>' +
+      '<div class="right">' + r.pct + '%</div></div>';
+  }).join('');
+  const kpis = [
+    { l: '科技暴露', v: risk.techPct + '%' },
+    { l: '最大持仓', v: risk.maxHoldPct + '% · ' + esc(risk.maxHoldName) },
+    { l: '集中度评分', v: String(risk.concentration) + ' · ' + risk.concentrationLabel, cls: risk.concentration >= 70 ? 'risk-high' : risk.concentration >= 40 ? 'risk-mid' : 'risk-low' },
+    { l: '风险等级', v: String(risk.riskScore) + ' · ' + risk.riskLabel, cls: risk.riskCls }
+  ].map(function (k) {
+    return '<div class="kpi"><div class="label">' + k.l + '</div><div class="value' + (k.cls ? ' ' + k.cls : '') + '">' + esc(k.v) + '</div></div>';
+  }).join('');
+  const riskCard = card('Risk Dashboard · 风险面板',
+    '<div class="kpis">' + kpis + '</div>' +
+    '<h3 style="margin-top:16px">地区暴露 · Region Exposure</h3>' + regionBars +
+    '<p class="score-meta" style="margin-top:10px">基于 v2.3 Risk Management Layer：集中度 / 科技暴露 / 地域集中 / 防御缓冲 / 分散度；数据来自 portfolio-data.json，未接行情。</p>');
+  content.innerHTML =
+    '<div class="grid" style="gap:14px">' + actionCard + '</div>' +
+    '<div class="grid" style="gap:14px;margin-top:14px">' + riskCard + '</div>';
 }

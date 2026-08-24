@@ -28,9 +28,17 @@ const DEFAULT_PORTFOLIO = {
     strategy: '全球成长 + 科技 + 现金流'
   },
   actionCenter: {
-    currentAdvice: '科技/AI 与 QDII 占比偏高（合计约 87%），建议分批止盈部分高波动仓位，回补红利/现金流仓位',
-    riskAlert: 'QDII 占比约 63%，关注汇率与海外市场波动；最大回撤目标 25%-30%，单只高波动基金需设减仓纪律',
-    nextAction: '在决策中心逐只分析持仓；加仓/减仓前记录理由到投资日志；每月复查再平衡'
+    status: '组合偏集中：建信新兴市场QDII 单仓 58.8%，科技/AI 暴露 23.5%，红利仅 1.3%，防御缓冲不足',
+    suggestions: [
+      { action: '降低单仓集中度', reason: '最大单仓占比 58.8%，超过 v2.3 集中度上限（40%）', trigger: '单仓占比 > 40% 触发；回落至 30% 以下后停止' },
+      { action: '回补红利/现金流仓位', reason: '红利+现金仅 1.3%，防御缓冲不足（<10%）', trigger: '红利+现金占比 < 10% 触发；> 20% 后停止' },
+      { action: '科技/AI 逢高减仓', reason: '科技/AI 暴露 23.5%，接近 30% 上限', trigger: '科技暴露 > 30% 触发减仓；回落至 20% 以下后停止' }
+    ],
+    alerts: [
+      { level: '高', text: '单一新兴市场 QDII 占比 58.8%，地域集中风险高' },
+      { level: '中', text: '汇率风险：QDII 全球类合计约 63%，关注人民币汇率波动' },
+      { level: '中', text: '防御缓冲不足：红利+现金仅 1.3%，回撤保护弱' }
+    ]
   }
 };
 
@@ -106,7 +114,28 @@ function computeRiskScore(holdings, total) {
 
   const label = score >= 80 ? '高' : score >= 61 ? '偏高' : score >= 31 ? '中' : '低';
   const cls = score >= 80 ? 'risk-high' : score >= 61 ? 'risk-mid' : 'risk-low';
-  return { score: score, label: label, cls: cls, techPct: techPct, emergingPct: pct(regionMap['新兴市场'] || 0, total) };
+  const maxName = holdings.reduce(function (a, b) { return Number(a.amount) > Number(b.amount) ? a : b; }).name;
+  const regions = Object.keys(regionMap).map(function (k) {
+    return { name: k, pct: pct(regionMap[k], total), amount: regionMap[k] };
+  }).sort(function (a, b) { return b.pct - a.pct; });
+  return {
+    score: score, label: label, cls: cls,
+    techPct: techPct, emergingPct: pct(regionMap['新兴市场'] || 0, total),
+    maxHoldPct: maxHoldPct, maxHoldName: maxName, regions: regions
+  };
+}
+
+/**
+ * 集中度评分（0-100）——基于 v2.3 Portfolio Risk（Concentration / Position Size）：
+ * 最大持仓占比 ≥50% → 90 | 40–50% → 70 | 30–40% → 50 | 20–30% → 30 | <20% → 10
+ */
+function computeConcentrationScore(maxHoldPct) {
+  let s = 10;
+  if (maxHoldPct >= 50) s = 90;
+  else if (maxHoldPct >= 40) s = 70;
+  else if (maxHoldPct >= 30) s = 50;
+  else if (maxHoldPct >= 20) s = 30;
+  return { score: s, label: s >= 70 ? '高' : s >= 40 ? '中' : '低' };
 }
 
 /* 其余演示数据 */
@@ -206,6 +235,23 @@ const DataSource = {
   },
   async getProfile() { return (await loadPortfolio()).profile; },
   async getActionCenter() { return (await loadPortfolio()).actionCenter; },
+  async getRiskDashboard() {
+    const d = await loadPortfolio();
+    const total = sumHoldings(d.holdings);
+    const risk = computeRiskScore(d.holdings, total);
+    const conc = computeConcentrationScore(risk.maxHoldPct);
+    return {
+      techPct: risk.techPct,
+      regions: risk.regions,
+      maxHoldPct: risk.maxHoldPct,
+      maxHoldName: risk.maxHoldName,
+      concentration: conc.score,
+      concentrationLabel: conc.label,
+      riskScore: risk.score,
+      riskLabel: risk.label,
+      riskCls: risk.cls
+    };
+  },
   async getAllocation() {
     const d = await loadPortfolio();
     const total = sumHoldings(d.holdings);
