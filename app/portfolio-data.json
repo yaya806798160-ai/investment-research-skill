@@ -1,0 +1,25 @@
+{
+  "updatedAt": "2026-08-24",
+  "currency": "CNY",
+  "holdings": [
+    { "name": "建信新兴市场QDII", "amount": 90000, "category": "QDII全球" },
+    { "name": "财通成长C", "amount": 18000, "category": "成长" },
+    { "name": "华夏国证半导体", "amount": 11000, "category": "科技/AI" },
+    { "name": "东方人工智能", "amount": 11000, "category": "科技/AI" },
+    { "name": "浦银智能科技", "amount": 10000, "category": "科技/AI" },
+    { "name": "永赢数字经济", "amount": 4000, "category": "科技/AI" },
+    { "name": "纳斯达克基金", "amount": 7000, "category": "QDII全球" },
+    { "name": "南方红利低波", "amount": 2000, "category": "红利" }
+  ],
+  "profile": {
+    "goal": "10年以上资产增长",
+    "riskTolerance": "中等偏高",
+    "maxDrawdown": "25%-30%",
+    "strategy": "全球成长 + 科技 + 现金流"
+  },
+  "actionCenter": {
+    "currentAdvice": "科技/AI 与 QDII 占比偏高（合计约 87%），建议分批止盈部分高波动仓位，回补红利/现金流仓位",
+    "riskAlert": "QDII 占比约 63%，关注汇率与海外市场波动；最大回撤目标 25%-30%，单只高波动基金需设减仓纪律",
+    "nextAction": "在决策中心逐只分析持仓；加仓/减仓前记录理由到投资日志；每月复查再平衡"
+  }
+}

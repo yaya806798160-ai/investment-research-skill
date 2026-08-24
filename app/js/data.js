@@ -1,11 +1,67 @@
 /**
  * Investment OS — Data Layer
- * 当前为 Mock 数据（demo 用）。接入真实数据时：
- * 实现 DataSource 接口（见文件底部 TODO），把 getXxx() 替换为 fetch 调用即可，
- * 视图层无需改动。数据结构已在各返回对象中固定。
+ * - 组合数据：从 portfolio-data.json 读取（file:// 模式下用内置兜底副本）
+ * - 市场/机会/观察池/研究：当前为演示数据
+ * - 接入真实行情/财务 API 时：实现 DataSource 的 getXxx() 为 fetch 即可，视图层无需改动
  */
 'use strict';
 
+/* portfolio-data.json 的内置兜底副本（file:// 无法 fetch 时使用） */
+const DEFAULT_PORTFOLIO = {
+  updatedAt: '2026-08-24',
+  currency: 'CNY',
+  holdings: [
+    { name: '建信新兴市场QDII', amount: 90000, category: 'QDII全球' },
+    { name: '财通成长C', amount: 18000, category: '成长' },
+    { name: '华夏国证半导体', amount: 11000, category: '科技/AI' },
+    { name: '东方人工智能', amount: 11000, category: '科技/AI' },
+    { name: '浦银智能科技', amount: 10000, category: '科技/AI' },
+    { name: '永赢数字经济', amount: 4000, category: '科技/AI' },
+    { name: '纳斯达克基金', amount: 7000, category: 'QDII全球' },
+    { name: '南方红利低波', amount: 2000, category: '红利' }
+  ],
+  profile: {
+    goal: '10年以上资产增长',
+    riskTolerance: '中等偏高',
+    maxDrawdown: '25%-30%',
+    strategy: '全球成长 + 科技 + 现金流'
+  },
+  actionCenter: {
+    currentAdvice: '科技/AI 与 QDII 占比偏高（合计约 87%），建议分批止盈部分高波动仓位，回补红利/现金流仓位',
+    riskAlert: 'QDII 占比约 63%，关注汇率与海外市场波动；最大回撤目标 25%-30%，单只高波动基金需设减仓纪律',
+    nextAction: '在决策中心逐只分析持仓；加仓/减仓前记录理由到投资日志；每月复查再平衡'
+  }
+};
+
+const CATEGORY_COLORS = {
+  'QDII全球': '#3b82f6',
+  '科技/AI': '#35c48d',
+  '成长': '#eab308',
+  '红利': '#a78bfa',
+  '现金': '#64748b'
+};
+const CATEGORY_ADVICE = {
+  'QDII全球': '维持（注意汇率）',
+  '科技/AI': '关注集中度，逢高减',
+  '成长': '维持',
+  '红利': '可逐步增配'
+};
+
+let _portfolioCache = null;
+async function loadPortfolio() {
+  if (_portfolioCache) return _portfolioCache;
+  try {
+    const r = await fetch('portfolio-data.json');
+    if (r.ok) {
+      const d = await r.json();
+      if (d && d.holdings && d.holdings.length) { _portfolioCache = d; return d; }
+    }
+  } catch (e) { /* fall through */ }
+  _portfolioCache = DEFAULT_PORTFOLIO;
+  return _portfolioCache;
+}
+
+/* 其余演示数据 */
 const MockDB = {
   market: {
     global: { trend: '偏强', regime: '震荡上行', riskLevel: '中', riskColor: 'risk-mid' },
@@ -22,20 +78,6 @@ const MockDB = {
       { t: '中国 7 月社融数据超预期', tag: '数据' }
     ]
   },
-  portfolio: {
-    total: 1286500,
-    today: '+0.82%',
-    return: '+12.4%',
-    riskScore: 62,
-    maxDrawdown: '-8.3%'
-  },
-  allocation: [
-    { name: '全球核心', value: 35, color: '#3b82f6' },
-    { name: 'AI科技', value: 25, color: '#35c48d' },
-    { name: '新兴市场', value: 15, color: '#eab308' },
-    { name: '红利', value: 15, color: '#a78bfa' },
-    { name: '现金', value: 10, color: '#64748b' }
-  ],
   opportunities: [
     { asset: 'NVDA', score: 88, grade: 'A', reason: 'AI算力需求强劲，CoWoS 产能瓶颈支撑定价权', risk: '估值高、客户资本开支周期' },
     { asset: '台积电 (TSM)', score: 85, grade: 'A', reason: '先进制程代工龙头，受益 AI 芯片放量', risk: '地缘风险、资本开支强度' },
@@ -64,15 +106,6 @@ const MockDB = {
       { title: '半导体周期位置与设备国产化', date: '2026-08-05', type: '行业研究' }
     ]
   },
-  holdings: [
-    { asset: '沪深300ETF', pos: '20%', cat: '核心仓', risk: '低', advice: '加仓' },
-    { asset: '红利低波ETF', pos: '15%', cat: '核心仓', risk: '低', advice: '维持' },
-    { asset: 'NVDA', pos: '12%', cat: '主题仓', risk: '高', advice: '减仓' },
-    { asset: 'AI算力ETF', pos: '13%', cat: '主题仓', risk: '高', advice: '减仓' },
-    { asset: '腾讯控股', pos: '10%', cat: '卫星仓', risk: '中', advice: '维持' },
-    { asset: '新兴市场ETF', pos: '5%', cat: '卫星仓', risk: '中', advice: '观察' },
-    { asset: '现金', pos: '25%', cat: '现金仓', risk: '低', advice: '维持' }
-  ],
   analysisLib: {
     'nvda': { score: 88, grade: 'A', action: '持有 / 回调分批加仓', rating: '强关注',
       risks: ['估值处于历史高分位', '客户资本开支波动', '出口管制风险'],
@@ -93,29 +126,68 @@ const MockDB = {
   ]
 };
 
-/** 简易格式化 */
 function fmtMoney(n) {
-  return '¥' + n.toLocaleString('zh-CN');
+  return '¥' + Number(n).toLocaleString('zh-CN');
 }
 function gradeClass(g) {
   return 'badge ' + String(g).toLowerCase();
 }
 
 /**
- * DataSource 接口占位 —— 接入真实数据时在此实现：
- *   1. 用 fetch 调用后端/API（可参考 v1.6 api/data-interface.md 的 JSON 契约）
- *   2. 保持下方方法签名与返回结构不变
- * 例如：
- *   async getMarket() { const r = await fetch('/api/market'); return r.json(); }
+ * DataSource 接口 —— 接入真实数据时在此实现（返回结构保持不变）：
+ * 例如：async getMarket() { const r = await fetch('/api/market'); return r.json(); }
  */
 const DataSource = {
   async getMarket() { return MockDB.market; },
-  async getPortfolio() { return MockDB.portfolio; },
-  async getAllocation() { return MockDB.allocation; },
+  async getPortfolio() {
+    const d = await loadPortfolio();
+    const total = d.holdings.reduce((s, h) => s + Number(h.amount), 0);
+    return {
+      total: total,
+      count: d.holdings.length,
+      today: '待行情接入',
+      return: '待行情接入',
+      riskScore: '—',
+      maxDrawdown: '目标 ' + d.profile.maxDrawdown
+    };
+  },
+  async getProfile() { return (await loadPortfolio()).profile; },
+  async getActionCenter() { return (await loadPortfolio()).actionCenter; },
+  async getAllocation() {
+    const d = await loadPortfolio();
+    const total = d.holdings.reduce((s, h) => s + Number(h.amount), 0);
+    const map = {};
+    d.holdings.forEach(function (h) {
+      map[h.category] = (map[h.category] || 0) + Number(h.amount);
+    });
+    const colors = ['#3b82f6', '#35c48d', '#eab308', '#a78bfa', '#64748b'];
+    const names = Object.keys(map);
+    return names.map(function (n, i) {
+      return {
+        name: n,
+        value: Math.round((map[n] / total) * 1000) / 10,
+        amount: map[n],
+        color: CATEGORY_COLORS[n] || colors[i % colors.length]
+      };
+    });
+  },
   async getOpportunities() { return MockDB.opportunities; },
   async getWatchlist() { return MockDB.watchlist; },
   async getResearch() { return MockDB.research; },
-  async getHoldings() { return MockDB.holdings; },
+  async getHoldings() {
+    const d = await loadPortfolio();
+    const total = d.holdings.reduce((s, h) => s + Number(h.amount), 0);
+    return d.holdings.map(function (h) {
+      return {
+        asset: h.name,
+        amount: h.amount,
+        cat: h.category,
+        pct: Math.round((Number(h.amount) / total) * 1000) / 10,
+        risk: h.category === '科技/AI' ? '高' : h.category === 'QDII全球' ? '中' : '低',
+        advice: CATEGORY_ADVICE[h.category] || '维持'
+      };
+    });
+  },
   async analyzeAsset(name) {
     const key = String(name || '').trim().toLowerCase();
     if (MockDB.analysisLib[key]) return MockDB.analysisLib[key];
@@ -123,7 +195,6 @@ const DataSource = {
     if (key.includes('沪深300')) return MockDB.analysisLib['沪深300'];
     if (key.includes('nvidia') || key.includes('英伟达')) return MockDB.analysisLib['nvda'];
     if (key.includes('台积电') || key.includes('tsm')) return MockDB.analysisLib['台积电'];
-    // 未知标的：返回中性结果（真实系统应调用后端分析）
     return {
       score: 60, grade: 'C', action: '等待更多数据 / 观察', rating: '观察',
       risks: ['数据不足，需补充基本面与估值', '未在观察池中', '需人工复核'],

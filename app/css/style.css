@@ -91,7 +91,7 @@ body {
 .mkt .sub { font-size: 12px; margin-top: 2px; }
 .up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--text-dim); }
 /* KPIs */
-.kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 .kpi { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
 .kpi .label { font-size: 12px; color: var(--text-dim); }
 .kpi .value { font-size: 18px; font-weight: 700; margin-top: 4px; font-variant-numeric: tabular-nums; }
