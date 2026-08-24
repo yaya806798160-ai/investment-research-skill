@@ -198,8 +198,15 @@ const MockDB = {
       change: '盈利预期持续下修时需重新评估' }
   },
   journalDefaults: [
-    { date: '2026-08-12', type: '买入', asset: 'AI算力ETF', reason: 'AI 资本开支上修，主题景气度确认，分批建仓' },
-    { date: '2026-08-05', type: '复盘', asset: '组合', reason: '7 月回撤 -3.2%，主因主题仓集中度过高，执行再平衡' }
+    { id: 'jd1', date: '2026-08-12', action: 'Buy', asset: 'AI算力ETF', amount: 10000,
+      thesis: 'AI 资本开支上修，主题景气度确认', reason: '分批建仓，控制初始仓位',
+      expectedOutcome: '中期受益 AI 算力需求，预期 12 个月 +15%~30%',
+      risk: '主题高波动、估值高', invalidationCondition: 'AI 资本开支下修或主题退潮',
+      holdingPeriod: '12个月', reviewStatus: 'Partially Correct' },
+    { id: 'jd2', date: '2026-08-05', action: 'Review', asset: '组合', amount: 0,
+      thesis: '组合集中度复盘', reason: '7 月回撤 -3.2%，主因主题仓集中度过高，执行再平衡',
+      expectedOutcome: '降低集中度后回撤受控', risk: '再平衡择时', invalidationCondition: '—',
+      holdingPeriod: '—', reviewStatus: 'Correct' }
   ]
 };
 
