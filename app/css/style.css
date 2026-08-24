@@ -180,3 +180,8 @@ tbody tr:hover { background: rgba(59,130,246,.05); }
 .learn-kpi .value { font-size: 18px; font-weight: 700; margin-top: 4px; }
 .learn-kpi ul { padding-left: 16px; font-size: 12px; color: var(--text-dim); margin-top: 4px; line-height: 1.7; }
 @media (max-width: 720px) { .entry-grid { grid-template-columns: 1fr; } }
+/* Sell fields */
+.sell-fields { border: 1px dashed var(--warn); border-radius: 8px; padding: 12px; margin-top: 12px; background: rgba(234,179,8,.04); }
+.sell-fields .journal-form { grid-template-columns: repeat(3, 1fr); }
+.sell-fields h3 { font-size: 12px; color: var(--warn); text-transform: uppercase; letter-spacing: .4px; }
+@media (max-width: 720px) { .sell-fields .journal-form { grid-template-columns: 1fr; } }

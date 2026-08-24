@@ -198,15 +198,19 @@ const MockDB = {
       change: '盈利预期持续下修时需重新评估' }
   },
   journalDefaults: [
-    { id: 'jd1', date: '2026-08-12', action: 'Buy', asset: 'AI算力ETF', amount: 10000,
-      thesis: 'AI 资本开支上修，主题景气度确认', reason: '分批建仓，控制初始仓位',
-      expectedOutcome: '中期受益 AI 算力需求，预期 12 个月 +15%~30%',
-      risk: '主题高波动、估值高', invalidationCondition: 'AI 资本开支下修或主题退潮',
-      holdingPeriod: '12个月', reviewStatus: 'Partially Correct' },
-    { id: 'jd2', date: '2026-08-05', action: 'Review', asset: '组合', amount: 0,
-      thesis: '组合集中度复盘', reason: '7 月回撤 -3.2%，主因主题仓集中度过高，执行再平衡',
-      expectedOutcome: '降低集中度后回撤受控', risk: '再平衡择时', invalidationCondition: '—',
-      holdingPeriod: '—', reviewStatus: 'Correct' }
+    { id: 'jd1', date: '2026-07-01', action: 'Buy', asset: '建信新兴市场QDII', amount: 30000, quantity: 20000, price: 1.5,
+      thesis: '新兴市场权益，跨境分散+成长修复', reason: '分批建仓，控制初始仓位',
+      expectedOutcome: '12 个月 +10%~20%', risk: '新兴市场波动、汇率', invalidationCondition: '资金持续外流或汇率大幅波动',
+      holdingPeriod: '—', sellReason: '', postSell: { keptRising: 'unknown', judgment: 'unknown', lesson: '' }, reviewStatus: 'Pending Review' },
+    { id: 'jd2', date: '2026-07-20', action: 'Add', asset: '建信新兴市场QDII', amount: 10000, quantity: 6250, price: 1.6,
+      thesis: '趋势确认，分批加仓', reason: '回调后加仓，摊薄成本',
+      expectedOutcome: '摊薄成本至 1.53 附近', risk: '仓位集中度上升', invalidationCondition: '突破买入逻辑',
+      holdingPeriod: '—', sellReason: '', postSell: { keptRising: 'unknown', judgment: 'unknown', lesson: '' }, reviewStatus: 'Pending Review' },
+    { id: 'jd3', date: '2026-08-15', action: 'Sell', asset: '建信新兴市场QDII', amount: 5000, quantity: 2777.78, price: 1.8,
+      thesis: '目标价触及，分批止盈', reason: '达到目标收益率，落袋部分利润',
+      expectedOutcome: '实现部分盈利并降低集中度', risk: '卖出后继续上涨', invalidationCondition: '—',
+      holdingPeriod: '1.5个月', sellReason: 'Target Reached',
+      postSell: { keptRising: 'yes', judgment: 'partly', lesson: '卖出后继续上涨，可分批止盈更佳' }, reviewStatus: 'Pending Review' }
   ]
 };
 
