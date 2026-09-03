@@ -13,11 +13,12 @@ function card(title, inner) {
 
 /* ---------- Dashboard ---------- */
 async function renderDashboard(content) {
-  const [mkt, pf, profile, action, alloc, opps, wl, research] = await Promise.all([
+  const [mkt, pf, profile, action, alloc, radar, wl, research] = await Promise.all([
     DataSource.getMarket(), DataSource.getPortfolio(), DataSource.getProfile(),
     DataSource.getActionCenter(), DataSource.getAllocation(), DataSource.getOpportunities(),
     DataSource.getWatchlist(), DataSource.getResearch()
   ]);
+  const opps = radar && radar.rows ? radar.rows : [];
   // 市场状态
   const tiles = mkt.items.map(function (it) {
     const cls = it.dir === 'up' ? 'up' : it.dir === 'down' ? 'down' : 'flat';
@@ -84,13 +85,22 @@ async function renderDashboard(content) {
     '<div class="allocation-wrap"><div id="donut"></div><div class="legend">' + legend + '</div></div>');
   // 机会排名（演示数据）
   const oppRows = opps.map(function (o) {
-    return '<tr><td><strong>' + esc(o.asset) + '</strong></td>' +
-      '<td class="num"><span class="' + gradeClass(o.grade) + '">' + esc(o.grade) + '</span> ' + o.score + '</td>' +
-      '<td>' + esc(o.reason) + '</td>' +
-      '<td><span class="risk-mid">' + esc(o.risk) + '</span></td></tr>';
+    const ex = (o.exposure && o.exposure !== '—')
+      ? '<span class="risk-high">' + esc(o.exposure) + '</span>'
+      : '<span class="risk-low">—</span>';
+    const sc = o.score == null ? '—' : '<span class="' + gradeClass(o.grade) + '">' + esc(o.grade) + '</span> ' + o.score;
+    return '<tr><td><strong>' + esc(o.asset) + '</strong>' +
+      '<div class="label" style="font-size:11px;color:var(--text-dim)">' + esc(o.type || '') + '</div></td>' +
+      '<td class="num">' + sc + '</td>' +
+      '<td>' + esc(o.action || '—') + '</td>' +
+      '<td>' + ex + '</td>' +
+      '<td style="max-width:240px">' + esc(o.logic || '') + '<div class="label" style="font-size:11px;color:var(--text-dim)">位置：' + esc(o.position || '—') + '</div></td>' +
+      '<td style="max-width:170px"><span class="risk-mid">' + esc(o.risk || '') + '</span></td></tr>';
   }).join('');
-  const oppCard = card('Opportunity Ranking · 机会排名',
-    '<table><thead><tr><th>Asset</th><th>Score</th><th>Reason · 理由</th><th>Risk · 风险</th></tr></thead><tbody>' + oppRows + '</tbody></table>');
+  const oppCard = card('Opportunity Radar · 机会雷达',
+    '<p class="score-meta" style="margin-bottom:8px">已结合当前持仓暴露（>25% 只做小仓/回避）；行情维度=' + esc((radar && radar.source) || '—') +
+    ' · 数据日期 ' + esc((radar && radar.date) || '—') + '；估值/盈利/催化剂为规则假设，非实时数据。</p>' +
+    '<table><thead><tr><th>标的</th><th>评分</th><th>建议</th><th>暴露</th><th>逻辑 / 位置</th><th>风险</th></tr></thead><tbody>' + oppRows + '</tbody></table>');
   // 观察池（演示数据）
   const wlItems = wl.map(function (w) {
     return '<div class="list-item"><div><div class="title">' + esc(w.asset) + '</div>' +

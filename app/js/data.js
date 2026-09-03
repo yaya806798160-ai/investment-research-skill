@@ -184,7 +184,7 @@ async function apiJson(path) {
 
 /* 文本类接口（如腾讯行情） */
 async function apiText(path) {
-  const map = { '/qq/': 'https://qt.gtimg.cn', '/em/': 'https://api.fund.eastmoney.com', '/emq/': 'https://push2.eastmoney.com', '/mt/': 'https://market.ft.tech/gateway', '/ai/': 'https://ftai.chat' };
+  const map = { '/qz/': 'https://web.ifzq.gtimg.cn', '/qq/': 'https://qt.gtimg.cn', '/em/': 'https://api.fund.eastmoney.com', '/emq/': 'https://push2.eastmoney.com', '/mt/': 'https://market.ft.tech/gateway', '/ai/': 'https://ftai.chat' };
   let upstream = null;
   Object.keys(map).forEach(function (k) { if (path.indexOf(k) === 0) upstream = map[k] + path.slice(k.length); });
   if (!upstream) return null;
@@ -295,6 +295,129 @@ async function fetchHoldingNav(holding) {
   const nav = await fetchFundNav(holding.fundCode);
   if (!nav) return null;
   return { holding: holding, chg: nav.grwPct, unitNav: nav.unitNav, navDate: nav.navDate, source: nav.source };
+}
+/* ===== Opportunity Radar（Phase 3）=====
+ * 扫描维度：趋势 / 动量 / 资金(量能) / 波动率 / 拥挤度（真实日K计算）
+ *          + 估值 / 盈利 / 催化剂（规则假设，标注） + 与当前组合重合度（portfolio-data）
+ * 原则：行情维度用真实数据；无数据维度显式标记；不伪造。
+ */
+const RADAR_UNIVERSE = [
+  { name: '沪深300ETF', sym: 'sh510300', cat: '核心', region: 'A股', type: '宽基', val: 6, fcat: 2, riskNote: '经济复苏不及预期', note: '估值中低分位(规则假设)；核心配置' },
+  { name: '南方红利低波50ETF', sym: 'sh515450', cat: '红利', region: 'A股', type: '红利现金流', val: 6, fcat: 4, riskNote: '利率快速上行', note: '股息现金流(规则假设)；防御' },
+  { name: '医药ETF', sym: 'sh512010', cat: '医药', region: 'A股', type: '超跌修复', val: 5, fcat: 1, riskNote: '集采降价超预期', note: '估值低分位+集采出清(规则假设)' },
+  { name: '消费ETF', sym: 'sz159928', cat: '消费', region: 'A股', type: '估值修复', val: 4, fcat: 1, riskNote: '需求复苏不及预期', note: '消费偏弱但估值低(规则假设)' },
+  { name: '新能源车ETF', sym: 'sh515030', cat: '新能源', region: 'A股', type: '周期底部', val: 3, fcat: 0, riskNote: '价格战持续', note: '产能出清中、景气待验证(规则假设)' },
+  { name: '黄金ETF', sym: 'sh518880', cat: '黄金', region: '另类', type: '避险/货币', val: 3, fcat: 4, riskNote: '美债利率上行', note: '实际利率/避险驱动(规则假设)' },
+  { name: '半导体ETF', sym: 'sh512480', cat: '科技/AI', region: 'A股', type: '科技成长', val: 1, fcat: 5, riskNote: '周期下行/估值波动', note: '国产替代+AI(规则假设)' },
+  { name: '腾讯控股', sym: 'hk00700', cat: '成长', region: '中国', type: '平台价值', val: 4, fcat: 4, riskNote: '监管/宏观消费', note: '盈利修复+回购(规则假设)' }
+];
+const RADAR_NADAQ_HELD = { name: '纳斯达克100(建信539001已持有)', sym: null, cat: 'QDII全球', region: '美国', type: '美股科技', val: 2, fcat: 5, riskNote: '美股高位/汇率', note: '组合已持有，纳入仅用于暴露提示' };
+
+async function fetchKlineSeries(sym) {
+  const s = await apiText('/qz/appstock/app/fqkline/get?param=' + encodeURIComponent(sym) + ',day,,,90,qfq');
+  if (!s) return null;
+  try {
+    const d = JSON.parse(s);
+    const dd = (d.data || {})[sym] || {};
+    const rows = dd.qfqday || dd.day || [];
+    if (!rows || rows.length < 20) return null;
+    return rows.map(function (r) {
+      return { date: r[0], open: Number(r[1]), close: Number(r[2]), high: Number(r[3]), low: Number(r[4]), vol: Number(r[5]) || 0 };
+    });
+  } catch (e) { return null; }
+}
+
+function radarDims(series) {
+  const closes = series.map(function (r) { return r.close; });
+  const vols = series.map(function (r) { return r.vol; });
+  const c = closes[closes.length - 1];
+  const n = closes.length;
+  const ma = function (k) {
+    if (n < k) return null;
+    let s = 0; for (let i = n - k; i < n; i++) s += closes[i]; return s / k;
+  };
+  const ma20 = ma(20), ma60 = n >= 60 ? ma(60) : null;
+  const p20 = n >= 21 ? closes[n - 21] : null;
+  const mom20 = p20 ? (c / p20 - 1) * 100 : null;
+  // 年化波动
+  let volAnn = null;
+  if (n >= 21) {
+    const rs = [];
+    for (let i = n - 20; i < n; i++) rs.push(closes[i] / closes[i - 1] - 1);
+    const mean = rs.reduce(function (a, b) { return a + b; }, 0) / rs.length;
+    const varr = rs.reduce(function (a, b) { return a + (b - mean) * (b - mean); }, 0) / rs.length;
+    volAnn = Math.sqrt(varr) * Math.sqrt(252) * 100;
+  }
+  const volTrend = vols.length > 20 && vols.slice(-20).reduce(function (a, b) { return a + b; }, 0)
+    ? (vols.slice(-5).reduce(function (a, b) { return a + b; }, 0) / 5) / (vols.slice(-20).reduce(function (a, b) { return a + b; }, 0) / 20)
+    : null;
+  return { c: c, ma20: ma20, ma60: ma60, mom20: mom20, volAnn: volAnn, volTrend: volTrend };
+}
+
+async function buildOpportunityRadar() {
+  const d = await loadPortfolio();
+  const total = sumHoldings(d.holdings);
+  const catW = {}, regW = {};
+  d.holdings.forEach(function (h) {
+    catW[h.category] = (catW[h.category] || 0) + Number(h.amount);
+    regW[h.region] = (regW[h.region] || 0) + Number(h.amount);
+  });
+  const cw = function (cat) { return pct(catW[cat] || 0, total); };
+  const rw = function (reg) { return pct(regW[reg] || 0, total); };
+  const rows = [];
+  const pushOne = async function (u) {
+    if (!u.sym) {
+      const ew = cw(u.cat);
+      rows.push({
+        asset: u.name, score: null, grade: '—', type: u.type, action: '回避（已持有）', position: '—',
+        exposure: 'QDII全球 已有暴露 ' + ew + '%', logic: u.note + '；未接入K线（场外/指数）', risk: u.riskNote,
+        held: true, date: '', source: '组合档案'
+      });
+      return;
+    }
+    const series = await fetchKlineSeries(u.sym);
+    const dim = series ? radarDims(series) : null;
+    const catExpo = cw(u.cat);
+    let s = 50;
+    if (dim) {
+      if (dim.ma20 && dim.c > dim.ma20 && (dim.ma60 == null || dim.ma20 > dim.ma60)) s += 10;
+      else if (dim.ma20 && dim.c > dim.ma20) s += 4;
+      else if (dim.ma20) s -= 6;
+      if (dim.mom20 != null) { if (dim.mom20 > 8) s += 9; else if (dim.mom20 > 0) s += 5; else if (dim.mom20 < -8) s -= 7; else s -= 2; }
+      if (dim.volAnn != null) { if (dim.volAnn > 40) s -= 6; else if (dim.volAnn < 18) s += 4; }
+      if (dim.volTrend != null) { if (dim.volTrend > 1.5) s += 6; else if (dim.volTrend > 1.15) s += 3; else if (dim.volTrend < 0.8) s -= 3; }
+      if (dim.mom20 != null && dim.mom20 > 15 && dim.volTrend != null && dim.volTrend > 1.4) s -= 9; // 拥挤
+    }
+    s += (u.val || 0) + (u.fcat || 0);
+    if (catExpo > 40) s -= 12;
+    else if (catExpo > 25) s -= 7;
+    else if (catExpo > 10) s -= 2;
+    const rr = rw(u.region);
+    if (rr > 50) s -= 6;
+    s = Math.max(8, Math.min(94, Math.round(s)));
+    const grade = s >= 85 ? 'A' : s >= 70 ? 'B' : s >= 55 ? 'C' : 'D';
+    let action;
+    if (catExpo > 40) action = '回避（已有暴露）';
+    else if (catExpo > 25) action = '小仓试探（已有暴露）';
+    else if (s >= 80) action = '买入';
+    else if (s >= 70) action = '小仓试探';
+    else if (s >= 55) action = '等待';
+    else action = '回避';
+    const pos = !dim ? '数据不足' :
+      (dim.c > dim.ma20 && (dim.ma60 == null || dim.ma20 > dim.ma60)) ? '多头排列，站上MA20' :
+        dim.c > dim.ma20 ? '站上MA20，趋势中性' : '跌破MA20，趋势偏弱';
+    const logic = (series ? '20日 ' + (dim.mom20 >= 0 ? '+' : '') + (dim.mom20 == null ? '—' : dim.mom20.toFixed(1)) + '% · 年化波动 ' + (dim.volAnn == null ? '—' : dim.volAnn.toFixed(0) + '%') + ' · 量能 ' + (dim.volTrend == null ? '—' : dim.volTrend.toFixed(2)) : '数据不足') + '；' + u.note;
+    rows.push({
+      asset: u.name, score: s, grade: grade, type: u.type, action: action, position: pos,
+      exposure: catExpo > 0 ? u.cat + ' 已有暴露 ' + catExpo + '%' : '—',
+      logic: logic, risk: u.riskNote + (dim && dim.mom20 > 15 && dim.volTrend > 1.4 ? '；拥挤度偏高' : ''),
+      held: false, date: series ? series[series.length - 1].date : '', source: '腾讯日K'
+    });
+  };
+  for (const u of RADAR_UNIVERSE) await pushOne(u);
+  await pushOne(RADAR_NADAQ_HELD);
+  const latest = rows.map(function (r) { return r.date; }).filter(Boolean).sort().pop() || '';
+  return { rows: rows, date: latest, source: '腾讯日K（行情维度；估值/盈利/催化剂为规则假设）' };
 }
 /* 其余演示数据 */
 const MockDB = {
@@ -496,7 +619,7 @@ const DataSource = {
       };
     });
   },
-  async getOpportunities() { return MockDB.opportunities; },
+  async getOpportunities() { return buildOpportunityRadar(); },
   async getWatchlist() { return MockDB.watchlist; },
   async getResearch() { return MockDB.research; },
   async getHoldings() {
