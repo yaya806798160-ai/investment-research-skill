@@ -15,6 +15,9 @@ import os
 PORT = int(os.environ.get("PORT", "8080"))
 MT = "https://market.ft.tech/gateway"
 AI = "https://ftai.chat"
+EMFUND = "https://api.fund.eastmoney.com"   # 东财基金净值
+QQ = "https://qt.gtimg.cn"                  # 腾讯行情
+EMQ = "https://push2.eastmoney.com"         # 东财 quote（美股指数等）
 ROOT = os.path.dirname(os.path.abspath(__file__))
 HEADERS = {"X-Client-Name": "ft-claw", "User-Agent": "investment-os/1.0"}
 
@@ -31,12 +34,24 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if p.startswith("/ai/"):
             self._proxy(AI, p[len("/ai"):])
             return
+        if p.startswith("/em/"):
+            self._proxy(EMFUND, p[len("/em"):], extra={"Referer": "https://fundf10.eastmoney.com/"})
+            return
+        if p.startswith("/qq/"):
+            self._proxy(QQ, p[len("/qq"):], extra={})
+            return
+        if p.startswith("/emq/"):
+            self._proxy(EMQ, p[len("/emq"):], extra={"Referer": "https://quote.eastmoney.com/"})
+            return
         super().do_GET()
 
-    def _proxy(self, base, rest):
+    def _proxy(self, base, rest, extra=None):
         url = base + rest  # rest 保留 /api/... 与 query
         try:
-            req = urllib.request.Request(url, headers=HEADERS)
+            hdrs = dict(HEADERS)
+            if extra:
+                hdrs.update(extra)
+            req = urllib.request.Request(url, headers=hdrs)
             with urllib.request.urlopen(req, timeout=30) as r:
                 body = r.read()
                 ctype = r.headers.get("Content-Type", "application/json")

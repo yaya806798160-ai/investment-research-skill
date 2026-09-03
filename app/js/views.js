@@ -41,7 +41,7 @@ async function renderDashboard(content) {
     { l: '新兴市场', v: pf.emergingExposure + '%' },
     { l: '风险评分', v: String(pf.riskScore) + ' · ' + pf.riskLabel, cls: pf.riskCls },
     { l: '最大回撤', v: pf.maxDrawdown },
-    { l: '今日变化', v: pf.today },
+    { l: '今日变化', v: pf.today + (pf.todayPnl ? ' (' + pf.todayPnl + ')' : '') },
     { l: '收益率', v: pf.return }
   ].map(function (k) {
     return '<div class="kpi"><div class="label">' + k.l + '</div><div class="value' + (k.cls ? ' ' + k.cls : '') + '">' + esc(k.v) + '</div></div>';
@@ -184,18 +184,31 @@ async function renderPortfolio(content) {
   const holdings = await DataSource.getHoldings();
   const rows = holdings.map(function (h) {
     const rk = h.risk === '高' ? 'risk-high' : h.risk === '中' ? 'risk-mid' : 'risk-low';
+    const chgCls = h.todayChg == null ? 'flat' : h.todayChg > 0 ? 'up' : h.todayChg < 0 ? 'down' : 'flat';
+    const navCell = h.unitNav != null
+      ? h.unitNav + '<div class="label" style="font-size:11px;color:var(--text-dim)">' + esc(h.navDate || '') + '</div>'
+      : (h.fundCode ? '<span class="flat">净值源未覆盖</span>' : '<span class="risk-mid">未配置代码</span>');
+    const chgCell = h.todayChg == null
+      ? '—'
+      : '<span class="' + chgCls + '">' + signedPct(h.todayChg) + '</span>' +
+        (h.todayPnl != null ? '<div class="label" style="font-size:11px;color:var(--text-dim)">' + (h.todayPnl >= 0 ? '+' : '-') + fmtMoney(Math.abs(h.todayPnl)) + '</div>' : '');
     return '<tr><td><strong>' + esc(h.asset) + '</strong></td>' +
       '<td class="num">' + fmtMoney(h.amount) + '</td>' +
       '<td>' + esc(h.cat) + '</td>' +
       '<td class="num">' + h.pct + '%</td>' +
       '<td class="' + rk + '">' + esc(h.risk) + '</td>' +
-      '<td>' + esc(h.advice) + '</td></tr>';
+      '<td>' + esc(h.advice) + '</td>' +
+      '<td class="num">' + navCell + '</td>' +
+      '<td class="num">' + chgCell + '</td></tr>';
   }).join('');
+  const noCode = holdings.filter(function (h) { return !h.fundCode; });
   content.innerHTML =
     '<div class="card"><h3>持仓列表 · Portfolio Holdings</h3>' +
-    '<p class="score-meta" style="margin-bottom:10px">数据来源：portfolio-data.json（手动录入，待行情接入）</p>' +
-    '<table><thead><tr><th>名称</th><th>金额</th><th>分类</th><th>占比</th><th>风险暴露</th><th>建议</th></tr></thead>' +
-    '<tbody>' + rows + '</tbody></table></div>';
+    '<p class="score-meta" style="margin-bottom:10px">金额=portfolio-data.json 持仓市值；最新净值/今日涨跌来自真实净值（东财/腾讯等），今日盈亏为按市值估算。</p>' +
+    '<table><thead><tr><th>名称</th><th>金额</th><th>分类</th><th>占比</th><th>风险暴露</th><th>建议</th><th>最新净值</th><th>今日涨跌</th></tr></thead>' +
+    '<tbody>' + rows + '</tbody></table>' +
+    (noCode.length ? '<p class="score-meta" style="margin-top:8px;color:var(--warn)">未配置基金代码：' + noCode.map(function (h) { return h.asset; }).join('、') + '（待确认对应基金后自动接入净值）</p>' : '') +
+    '</div>';
 }
 
 /* ---------- Research ---------- */

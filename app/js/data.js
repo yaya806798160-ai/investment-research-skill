@@ -12,14 +12,14 @@ const DEFAULT_PORTFOLIO = {
   updatedAt: '2026-08-24',
   currency: 'CNY',
   holdings: [
-    { name: '建信新兴市场QDII', amount: 90000, category: 'QDII全球', region: '新兴市场', fundCode: '' },
-    { name: '财通成长C', amount: 18000, category: '成长', region: 'A股' },
-    { name: '华夏国证半导体', amount: 11000, category: '科技/AI', region: 'A股' },
-    { name: '东方人工智能', amount: 11000, category: '科技/AI', region: 'A股' },
-    { name: '浦银智能科技', amount: 10000, category: '科技/AI', region: 'A股' },
-    { name: '永赢数字经济', amount: 4000, category: '科技/AI', region: 'A股' },
-    { name: '纳斯达克基金', amount: 7000, category: 'QDII全球', region: '美国', fundCode: '' },
-    { name: '南方红利低波', amount: 2000, category: '红利', region: 'A股' }
+    { name: '建信新兴市场QDII', amount: 90000, category: 'QDII全球', region: '新兴市场', fundCode: '539002', costBasis: null },
+    { name: '财通成长C', amount: 18000, category: '成长', region: 'A股', fundCode: '021528', costBasis: null },
+    { name: '华夏国证半导体', amount: 11000, category: '科技/AI', region: 'A股', fundCode: '008887', costBasis: null },
+    { name: '东方人工智能', amount: 11000, category: '科技/AI', region: 'A股', fundCode: '005844', costBasis: null },
+    { name: '浦银智能科技', amount: 10000, category: '科技/AI', region: 'A股', fundCode: '006555', costBasis: null },
+    { name: '永赢数字经济', amount: 4000, category: '科技/AI', region: 'A股', fundCode: '018122', costBasis: null },
+    { name: '纳斯达克基金', amount: 7000, category: 'QDII全球', region: '美国', fundCode: '', costBasis: null },
+    { name: '南方红利低波', amount: 2000, category: '红利', region: 'A股', fundCode: '008163', costBasis: null }
   ],
   profile: {
     goal: '10年以上资产增长',
@@ -160,9 +160,12 @@ function signedPct(v) {
 }
 
 async function apiJson(path) {
-  const upstream = path.indexOf('/mt/') === 0
-    ? 'https://market.ft.tech/gateway' + path.slice(3)
-    : path.indexOf('/ai/') === 0 ? 'https://ftai.chat' + path.slice(3) : null;
+  let upstream = null;
+  if (path.indexOf('/mt/') === 0) upstream = 'https://market.ft.tech/gateway' + path.slice(3);
+  else if (path.indexOf('/ai/') === 0) upstream = 'https://ftai.chat' + path.slice(3);
+  else if (path.indexOf('/em/') === 0) upstream = 'https://api.fund.eastmoney.com' + path.slice(3);
+  else if (path.indexOf('/qq/') === 0) upstream = 'https://qt.gtimg.cn' + path.slice(3);
+  else if (path.indexOf('/emq/') === 0) upstream = 'https://push2.eastmoney.com' + path.slice(3);
   if (!upstream) return null;
   const haveOrigin = typeof location !== 'undefined' && location.protocol !== 'file:';
   const attempts = [];
@@ -175,6 +178,25 @@ async function apiJson(path) {
       const j = await r.json();
       if (j && (j.code === 200 || Array.isArray(j.data) || (j.data && (j.data.items || j.data.records)))) return j;
     } catch (e) { /* try next */ }
+  }
+  return null;
+}
+
+/* 文本类接口（如腾讯行情） */
+async function apiText(path) {
+  const map = { '/qq/': 'https://qt.gtimg.cn', '/em/': 'https://api.fund.eastmoney.com', '/emq/': 'https://push2.eastmoney.com', '/mt/': 'https://market.ft.tech/gateway', '/ai/': 'https://ftai.chat' };
+  let upstream = null;
+  Object.keys(map).forEach(function (k) { if (path.indexOf(k) === 0) upstream = map[k] + path.slice(k.length); });
+  if (!upstream) return null;
+  const haveOrigin = typeof location !== 'undefined' && location.protocol !== 'file:';
+  const attempts = [];
+  if (haveOrigin) attempts.push(location.origin + path);
+  attempts.push(upstream);
+  for (const u of attempts) {
+    try {
+      const r = await fetch(u, { headers: { 'X-Client-Name': 'ft-claw' } });
+      if (r.ok) return await r.text();
+    } catch (e) { /* next */ }
   }
   return null;
 }
@@ -197,6 +219,68 @@ async function fetchIndexHk() {
   const dir = chg == null ? 'flat' : chg > 0 ? 'up' : chg < 0 ? 'down' : 'flat';
   return { label: '港股', name: '恒生指数', level: Number(last.close), chg: chg, dir: dir, date: String(last.trade_date || '') };
 }
+/* 美股指数：腾讯证券（主），东财 push2（备） */
+async function fetchIndexUs() {
+  const qq = await apiText('/qq/q=usINX');
+  if (qq && typeof qq === 'string') {
+    const m = qq.match(/v_usINX="([^"]*)"/);
+    if (m) {
+      const f = m[1].split('~');
+      const price = Number(f[3]), pct = Number(f[32]);
+      if (price) {
+        const dir = pct > 0 ? 'up' : pct < 0 ? 'down' : 'flat';
+        return { source: '腾讯证券', label: '美股', name: 'S&P 500', level: price, chg: pct, dir: dir, date: String(f[30] || '').slice(0, 10) };
+      }
+    }
+  }
+  const em = await apiJson('/emq/api/qt/stock/get?secid=100.SPX&fields=f43,f44,f45,f46,f60,f170&fltt=2&invt=2');
+  const dd = em && em.data;
+  if (dd && dd.f43 != null) {
+    const pct = Number(dd.f170);
+    const dir = pct > 0 ? 'up' : pct < 0 ? 'down' : 'flat';
+    return { source: '东方财富', label: '美股', name: 'S&P 500', level: Number(dd.f43), chg: pct, dir: dir, date: '' };
+  }
+  return null;
+}
+
+function fmtYmd(v) {
+  const s = String(v || '');
+  return s.length === 8 ? s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8) : s;
+}
+/* 基金净值：东财 lsjz（主，重试1次），ftshare（备）。返回 {unitNav, navDate, grwPct} */
+async function fetchFundNav(code) {
+  if (!code) return null;
+  for (let tryI = 0; tryI < 2; tryI++) {
+    const em = await apiJson('/em/f10/lsjz?fundCode=' + encodeURIComponent(code) + '&pageIndex=1&pageSize=5');
+    const list = em && em.Data && em.Data.LSJZList;
+    if (list && list.length) {
+      const row = list[0];
+      return { unitNav: Number(row.DWJZ), navDate: fmtYmd(row.FSRQ), grwPct: row.JZZZL === '' ? null : Number(row.JZZZL), source: '东方财富' };
+    }
+    if (tryI === 0) await new Promise(function (r) { setTimeout(r, 250); });
+  }
+  const ft = await apiJson('/mt/api/v1/market/data/fund/fund-net-value?fund_code=' + encodeURIComponent(code) +
+    '&start_date=' + last30Ymd() + '&end_date=' + ymd(new Date()) + '&page=1&page_size=5');
+  const items = ft && ft.data && (ft.data.items || []);
+  if (items && items.length) {
+    const row = items[0];
+    return { unitNav: Number(row.unit_nav), navDate: fmtYmd(row.nav_date || row.publish_date || ''), grwPct: row.unit_nav_growth === undefined ? null : Number(row.unit_nav_growth), source: 'ftshare' };
+  }
+  return null;
+}
+/* 顺序拉取持仓净值（避免东财并发限流） */
+async function loadNavRows(holdings) {
+  // 返回与 holdings 等长数组：失败为 null，保证索引对齐
+  const rows = [];
+  for (const h of holdings) {
+    let r = null;
+    if (h.fundCode) r = await fetchHoldingNav(h).catch(function () { return null; });
+    rows.push(r);
+    if (h.fundCode) await new Promise(function (res) { setTimeout(res, 120); });
+  }
+  return rows;
+}
+
 async function fetchRateUs() {
   const j = await apiJson('/mt/api/v1/market/data/economic/us-economic?type=fed-funds-rate-upper');
   const rows = j && (Array.isArray(j.data) ? j.data : (j.data || []));
@@ -205,16 +289,12 @@ async function fetchRateUs() {
   return { label: '美联储利率', name: '政策利率(月)', level: Number(r.current_value), chg: null, dir: 'flat', date: String(r.release_date || ''), note: '月频 · ' + String(r.month || '') };
 }
 
-/* 组合持仓基金净值（按 fundCode；未配置/未覆盖则跳过） */
+/* 组合持仓最新净值（按 fundCode；东财→ftshare 多源） */
 async function fetchHoldingNav(holding) {
   if (!holding.fundCode) return null;
-  const j = await apiJson('/mt/api/v1/market/data/fund/fund-net-value?fund_code=' + encodeURIComponent(holding.fundCode) +
-    '&start_date=' + last30Ymd() + '&end_date=' + ymd(new Date()) + '&page=1&page_size=5');
-  const items = j && j.data && (j.data.items || []);
-  if (!items || !items.length) return null;
-  const last = items[0]; // 接口按净值日期倒序（最新在前）
-  const chg = last.unit_nav_growth === undefined ? null : Number(last.unit_nav_growth);
-  return { holding: holding, chg: chg, navDate: String(last.nav_date || last.publish_date || '') };
+  const nav = await fetchFundNav(holding.fundCode);
+  if (!nav) return null;
+  return { holding: holding, chg: nav.grwPct, unitNav: nav.unitNav, navDate: nav.navDate, source: nav.source };
 }
 /* 其余演示数据 */
 const MockDB = {
@@ -305,24 +385,26 @@ function gradeClass(g) {
  */
 const DataSource = {
   async getMarket() {
-    const [cn, hk, rate] = await Promise.all([
+    const [cn, hk, us, rate] = await Promise.all([
       fetchIndexCn().catch(function () { return null; }),
       fetchIndexHk().catch(function () { return null; }),
+      fetchIndexUs().catch(function () { return null; }),
       fetchRateUs().catch(function () { return null; })
     ]);
     const item = function (src, fallback) {
       if (!src) return fallback;
-      return { key: src.label, label: src.label, value: fmtLevel(src.level), chg: src.chg != null ? signedPct(src.chg) : '—', dir: src.dir };
+      return { key: src.label, label: src.label, value: fmtLevel(src.level), chg: src.chg != null ? signedPct(src.chg) : '—', dir: src.dir, source: src.source };
     };
     const items = [
-      item(cn, { key: 'cn', label: 'A股', value: '沪深300', chg: '数据源暂不可用', dir: 'flat' }),
-      item(hk, { key: 'hk', label: '港股', value: '恒生指数', chg: '数据源暂不可用', dir: 'flat' }),
-      item(rate, { key: 'rate', label: '美联储利率', value: '—', chg: '数据源暂不可用', dir: 'flat' }),
-      { key: 'us', label: '美股', value: 'S&P 500', chg: '源未提供', dir: 'flat' }
+      item(cn, { key: 'cn', label: 'A股', value: '沪深300', chg: '数据暂不可用', dir: 'flat', source: '' }),
+      item(hk, { key: 'hk', label: '港股', value: '恒生指数', chg: '数据暂不可用', dir: 'flat', source: '' }),
+      item(us, { key: 'us', label: '美股', value: 'S&P 500', chg: '数据暂不可用', dir: 'flat', source: '' }),
+      item(rate, { key: 'rate', label: '美联储利率', value: '—', chg: '数据暂不可用', dir: 'flat', source: '' })
     ];
-    const date = [cn, hk, rate].map(function (x) { return x && x.date ? x.date : ''; }).filter(Boolean).sort().pop() || '';
+    const srcs = [cn, hk, us, rate].map(function (x) { return x && x.source; }).filter(Boolean).join(' / ') || DATA_SOURCE_NAME;
+    const date = [cn, hk, us, rate].map(function (x) { return x && x.date ? x.date : ''; }).filter(Boolean).sort().pop() || '';
     return {
-      global: { trend: '—', regime: '实时行情', riskLevel: '—', riskColor: 'risk-mid', source: DATA_SOURCE_NAME, dataDate: date, updatedAt: nowStamp() },
+      global: { trend: '—', regime: '实时行情', riskLevel: '—', riskColor: 'risk-mid', source: srcs, dataDate: date, updatedAt: nowStamp() },
       items: items,
       events: []
     };
@@ -332,23 +414,31 @@ const DataSource = {
     const total = sumHoldings(d.holdings);
     const risk = computeRiskScore(d.holdings, total);
     const coded = d.holdings.filter(function (h) { return h.fundCode; });
-    let today = null, dataNote = '', dataDate = '';
+    const noCode = d.holdings.filter(function (h) { return !h.fundCode; });
+    let today = null, todayPnl = null, dataNote = '', dataDate = '', srcUsed = '';
     if (!coded.length) {
-      dataNote = '持仓未配置基金代码(fundCode)：请在 portfolio-data.json 补全后自动计算净值涨跌';
+      dataNote = '持仓未配置基金代码：纳斯达克基金待确认（同名 61 只）';
+      if (noCode.length) dataNote = noCode.map(function (h) { return h.name; }).join('、') + ' 未配置基金代码';
     } else {
-      const rows = (await Promise.all(coded.map(fetchHoldingNav))).filter(Boolean);
+      const rows = (await loadNavRows(d.holdings)).filter(Boolean);
       if (!rows.length) {
         dataNote = '数据源暂未覆盖已配置代码的基金净值';
       } else {
         const coveredSum = rows.reduce(function (s, r) { return s + Number(r.holding.amount); }, 0);
-        if (coveredSum > 0) {
-          today = rows.reduce(function (s, r) {
-            return s + (r.chg == null ? 0 : r.chg * Number(r.holding.amount));
-          }, 0) / coveredSum;
-        }
+        const weightToday = rows.reduce(function (s, r) {
+          return s + (r.chg == null ? 0 : r.chg / 100 * Number(r.holding.amount) / (1 + (r.chg == null ? 0 : r.chg) / 100));
+        }, 0);
+        const pnl = rows.reduce(function (s, r) {
+          if (r.chg == null) return s;
+          return s + Number(r.holding.amount) * (r.chg / 100) / (1 + r.chg / 100);
+        }, 0);
+        if (coveredSum > 0) today = pnl / coveredSum * 100;
+        todayPnl = Math.round(pnl);
         dataDate = rows.map(function (r) { return r.navDate; }).filter(Boolean).sort().pop() || '';
-        const missing = d.holdings.length - rows.length;
-        if (missing > 0) dataNote = '部分持仓净值源未覆盖（' + missing + '/' + d.holdings.length + '），今日变化为已覆盖部分加权';
+        srcUsed = rows.map(function (r) { return r.source; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).join(' / ');
+        const missing = coded.length - rows.length;
+        const noNav = d.holdings.length - rows.length;
+        if (noNav > 0) dataNote = '部分持仓无净值（' + noNav + '/' + d.holdings.length + '），今日变化为已覆盖部分加权估算';
       }
     }
     return {
@@ -361,8 +451,9 @@ const DataSource = {
       riskCls: risk.cls,
       maxDrawdown: '目标 ' + d.profile.maxDrawdown,
       today: today == null ? '—' : signedPct(today),
-      return: '—（需成本口径，Phase 2）',
-      source: DATA_SOURCE_NAME,
+      todayPnl: todayPnl == null ? null : (todayPnl >= 0 ? '+' : '-') + fmtMoney(Math.abs(todayPnl)),
+      return: '—（待 costBasis，Phase 2）',
+      source: srcUsed || DATA_SOURCE_NAME,
       dataDate: dataDate || (d.updatedAt || ''),
       updatedAt: nowStamp(),
       dataNote: dataNote
@@ -411,15 +502,26 @@ const DataSource = {
   async getHoldings() {
     const d = await loadPortfolio();
     const total = sumHoldings(d.holdings);
-    return d.holdings.map(function (h) {
+    const navs = await loadNavRows(d.holdings);
+    return d.holdings.map(function (h, i) {
+      const n = navs[i];
+      const amt = Number(h.amount);
+      const grw = n && n.chg != null ? n.chg : null;
+      const todayPnl = grw == null ? null : Math.round(amt * (grw / 100) / (1 + grw / 100));
       return {
         asset: h.name,
         amount: h.amount,
+        fundCode: h.fundCode || '',
         cat: h.category,
         region: h.region || '—',
-        pct: pct(Number(h.amount), total),
+        pct: pct(amt, total),
         risk: h.category === '科技/AI' ? '高' : h.category === 'QDII全球' ? '中' : '低',
-        advice: CATEGORY_ADVICE[h.category] || '维持'
+        advice: CATEGORY_ADVICE[h.category] || '维持',
+        unitNav: n ? n.unitNav : null,
+        navDate: n ? n.navDate : '',
+        navSource: n ? n.source : '',
+        todayChg: grw == null ? null : grw,
+        todayPnl: todayPnl
       };
     });
   },

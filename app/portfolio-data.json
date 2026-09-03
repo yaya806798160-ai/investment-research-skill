@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-08-24",
+  "updatedAt": "2026-09-03",
   "currency": "CNY",
   "holdings": [
-    { "name": "建信新兴市场QDII", "amount": 90000, "category": "QDII全球", "region": "新兴市场", "fundCode": "" },
-    { "name": "财通成长C", "amount": 18000, "category": "成长", "region": "A股", "fundCode": "" },
-    { "name": "华夏国证半导体", "amount": 11000, "category": "科技/AI", "region": "A股", "fundCode": "" },
-    { "name": "东方人工智能", "amount": 11000, "category": "科技/AI", "region": "A股", "fundCode": "" },
-    { "name": "浦银智能科技", "amount": 10000, "category": "科技/AI", "region": "A股", "fundCode": "" },
-    { "name": "永赢数字经济", "amount": 4000, "category": "科技/AI", "region": "A股", "fundCode": "" },
-    { "name": "纳斯达克基金", "amount": 7000, "category": "QDII全球", "region": "美国", "fundCode": "" },
-    { "name": "南方红利低波", "amount": 2000, "category": "红利", "region": "A股", "fundCode": "" }
+    { "name": "建信新兴市场QDII", "amount": 90000, "category": "QDII全球", "region": "新兴市场", "fundCode": "539002", "costBasis": null },
+    { "name": "财通成长C", "amount": 18000, "category": "成长", "region": "A股", "fundCode": "021528", "costBasis": null },
+    { "name": "华夏国证半导体", "amount": 11000, "category": "科技/AI", "region": "A股", "fundCode": "008887", "costBasis": null },
+    { "name": "东方人工智能", "amount": 11000, "category": "科技/AI", "region": "A股", "fundCode": "005844", "costBasis": null },
+    { "name": "浦银智能科技", "amount": 10000, "category": "科技/AI", "region": "A股", "fundCode": "006555", "costBasis": null },
+    { "name": "永赢数字经济", "amount": 4000, "category": "科技/AI", "region": "A股", "fundCode": "018122", "costBasis": null },
+    { "name": "纳斯达克基金", "amount": 7000, "category": "QDII全球", "region": "美国", "fundCode": "", "costBasis": null },
+    { "name": "南方红利低波", "amount": 2000, "category": "红利", "region": "A股", "fundCode": "008163", "costBasis": null }
   ],
   "profile": {
     "goal": "10年以上资产增长",
