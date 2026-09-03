@@ -16,9 +16,9 @@ const DEFAULT_PORTFOLIO = {
     { name: '财通成长C', amount: 18000, category: '成长', region: 'A股', fundCode: '021528', costBasis: null },
     { name: '华夏国证半导体', amount: 11000, category: '科技/AI', region: 'A股', fundCode: '008887', costBasis: null },
     { name: '东方人工智能', amount: 11000, category: '科技/AI', region: 'A股', fundCode: '005844', costBasis: null },
-    { name: '浦银智能科技', amount: 10000, category: '科技/AI', region: 'A股', fundCode: '006555', costBasis: null },
+    { name: '浦银智能科技', amount: 10000, category: 'QDII全球', region: '全球', fundCode: '006555', costBasis: null },
     { name: '永赢数字经济', amount: 4000, category: '科技/AI', region: 'A股', fundCode: '018122', costBasis: null },
-    { name: '纳斯达克基金', amount: 7000, category: 'QDII全球', region: '美国', fundCode: '', costBasis: null },
+    { name: '纳斯达克基金', amount: 7000, category: 'QDII全球', region: '美国', fundCode: '539001', costBasis: null },
     { name: '南方红利低波', amount: 2000, category: '红利', region: 'A股', fundCode: '008163', costBasis: null }
   ],
   profile: {
@@ -28,15 +28,15 @@ const DEFAULT_PORTFOLIO = {
     strategy: '全球成长 + 科技 + 现金流'
   },
   actionCenter: {
-    status: '组合偏集中：建信新兴市场QDII 单仓 58.8%，科技/AI 暴露 23.5%，红利仅 1.3%，防御缓冲不足',
+    status: '组合偏集中：建信新兴市场QDII 单仓 58.8%，QDII全球合计 69.9%，科技/AI 17%，红利仅 1.3%，防御缓冲不足',
     suggestions: [
       { action: '降低单仓集中度', reason: '最大单仓占比 58.8%，超过 v2.3 集中度上限（40%）', trigger: '单仓占比 > 40% 触发；回落至 30% 以下后停止' },
       { action: '回补红利/现金流仓位', reason: '红利+现金仅 1.3%，防御缓冲不足（<10%）', trigger: '红利+现金占比 < 10% 触发；> 20% 后停止' },
-      { action: '科技/AI 逢高减仓', reason: '科技/AI 暴露 23.5%，接近 30% 上限', trigger: '科技暴露 > 30% 触发减仓；回落至 20% 以下后停止' }
+      { action: '控制 QDII 全球总暴露', reason: 'QDII全球合计 69.9%，超过 60% 上限（v2.3 地域/汇率约束）', trigger: 'QDII全球占比 > 65% 触发减仓；回落至 55% 以下后停止' }
     ],
     alerts: [
       { level: '高', text: '单一新兴市场 QDII 占比 58.8%，地域集中风险高' },
-      { level: '中', text: '汇率风险：QDII 全球类合计约 63%，关注人民币汇率波动' },
+      { level: '中', text: '汇率风险：QDII 全球类合计 69.9%，关注人民币汇率波动' },
       { level: '中', text: '防御缓冲不足：红利+现金仅 1.3%，回撤保护弱' }
     ]
   }
