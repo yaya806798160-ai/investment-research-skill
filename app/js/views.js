@@ -25,13 +25,14 @@ async function renderDashboard(content) {
       '<div class="value">' + esc(it.value) + '</div>' +
       '<div class="sub ' + cls + '">' + esc(it.chg) + '</div></div>';
   }).join('');
-  const events = mkt.events.map(function (e) {
-    return '<div class="list-item"><div><div class="title">' + esc(e.t) + '</div></div>' +
-      '<div class="right"><span class="badge b">' + esc(e.tag) + '</span></div></div>';
-  }).join('');
-  const marketCard = card('Market Overview · 市场概览', 
-    '<div class="market-tiles">' + tiles + '</div>' +
-    '<h3 style="margin-top:16px">Major Events · 重要事件</h3>' + events);
+  const eventsHtml = (mkt.events && mkt.events.length)
+    ? '<h3 style="margin-top:16px">Major Events · 重要事件</h3>' + mkt.events.map(function (e) {
+        return '<div class="list-item"><div><div class="title">' + esc(e.t) + '</div></div>' +
+          '<div class="right"><span class="badge b">' + esc(e.tag) + '</span></div></div>';
+      }).join('')
+    : '<p class="score-meta" style="margin-top:12px">暂无事件流（Phase 3 将接入财经日历）</p>';
+  const marketCard = card('Market Overview · 市场概览',
+    '<div class="market-tiles">' + tiles + '</div>' + eventsHtml);
   // 组合概览（真实数据 + 自动计算指标）
   const kpis = [
     { l: '总资产', v: fmtMoney(pf.total) },
@@ -108,7 +109,12 @@ async function renderDashboard(content) {
     }).join('');
   const researchCard = card('Latest Research · 最新研究', latest);
 
-  content.innerHTML =
+  const metaLine = '<div style="margin-bottom:12px" class="score-meta">数据源：' + esc(pf.source || (mkt.global && mkt.global.source) || '—') +
+    ' · 行情时间：' + esc((mkt.global && mkt.global.dataDate) || '—') +
+    (pf.dataDate && pf.dataDate !== (mkt.global && mkt.global.dataDate) ? ' · 组合档案更新：' + esc(pf.dataDate) : '') +
+    ' · 拉取于 ' + esc(pf.updatedAt || nowStamp()) +
+    (pf.dataNote ? ' · <span style="color:var(--warn)">' + esc(pf.dataNote) + '</span>' : '') + '</div>';
+  content.innerHTML = metaLine +
     '<div class="grid" style="gap:14px">' + marketCard + '</div>' +
     '<div class="grid" style="gap:14px;margin-top:14px">' + portfolioCard + '</div>' +
     '<div class="grid cols-2" style="gap:14px;margin-top:14px">' + allocCard + profileCard + '</div>' +

@@ -12,13 +12,13 @@ const DEFAULT_PORTFOLIO = {
   updatedAt: '2026-08-24',
   currency: 'CNY',
   holdings: [
-    { name: '建信新兴市场QDII', amount: 90000, category: 'QDII全球', region: '新兴市场' },
+    { name: '建信新兴市场QDII', amount: 90000, category: 'QDII全球', region: '新兴市场', fundCode: '' },
     { name: '财通成长C', amount: 18000, category: '成长', region: 'A股' },
     { name: '华夏国证半导体', amount: 11000, category: '科技/AI', region: 'A股' },
     { name: '东方人工智能', amount: 11000, category: '科技/AI', region: 'A股' },
     { name: '浦银智能科技', amount: 10000, category: '科技/AI', region: 'A股' },
     { name: '永赢数字经济', amount: 4000, category: '科技/AI', region: 'A股' },
-    { name: '纳斯达克基金', amount: 7000, category: 'QDII全球', region: '美国' },
+    { name: '纳斯达克基金', amount: 7000, category: 'QDII全球', region: '美国', fundCode: '' },
     { name: '南方红利低波', amount: 2000, category: '红利', region: 'A股' }
   ],
   profile: {
@@ -138,6 +138,84 @@ function computeConcentrationScore(maxHoldPct) {
   return { score: s, label: s >= 70 ? '高' : s >= 40 ? '中' : '低' };
 }
 
+
+/* ============ 真实数据接入（Phase 1）============
+ * 数据源：market.ft.tech/gateway（东方财富口径）+ ftai.chat
+ * 访问：优先同源代理 /mt /ai（运行 app/server.py）；兜底直连上游
+ * 原则：只展示真实返回；失败显示"数据源暂不可用"，绝不伪造行情
+ */
+const DATA_SOURCE_NAME = 'market.ft.tech · 东方财富';
+
+function two(n) { return n < 10 ? '0' + n : '' + n; }
+function ymd(d) { return '' + d.getFullYear() + two(d.getMonth() + 1) + two(d.getDate()); }
+function nowStamp() {
+  const d = new Date();
+  return d.getFullYear() + '-' + two(d.getMonth() + 1) + '-' + two(d.getDate()) + ' ' + two(d.getHours()) + ':' + two(d.getMinutes());
+}
+function last30Ymd() { const d = new Date(); d.setDate(d.getDate() - 30); return ymd(d); }
+function fmtLevel(v) { return v == null ? '' : Number(v).toLocaleString('zh-CN', { maximumFractionDigits: 2 }); }
+function signedPct(v) {
+  if (v == null || isNaN(v)) return null;
+  return (v > 0 ? '+' : '') + (Math.round(v * 1000) / 1000) + '%';
+}
+
+async function apiJson(path) {
+  const upstream = path.indexOf('/mt/') === 0
+    ? 'https://market.ft.tech/gateway' + path.slice(3)
+    : path.indexOf('/ai/') === 0 ? 'https://ftai.chat' + path.slice(3) : null;
+  if (!upstream) return null;
+  const haveOrigin = typeof location !== 'undefined' && location.protocol !== 'file:';
+  const attempts = [];
+  if (haveOrigin) attempts.push(location.origin + path);
+  attempts.push(upstream);
+  for (const u of attempts) {
+    try {
+      const r = await fetch(u, { headers: { 'X-Client-Name': 'ft-claw' } });
+      if (!r.ok) continue;
+      const j = await r.json();
+      if (j && (j.code === 200 || Array.isArray(j.data) || (j.data && (j.data.items || j.data.records)))) return j;
+    } catch (e) { /* try next */ }
+  }
+  return null;
+}
+
+async function fetchIndexCn() {
+  const j = await apiJson('/mt/api/v1/market/data/eastmoney-market-valuation?market_code=000300&page=1&page_size=1');
+  const rec = j && j.data && j.data.records && j.data.records[0];
+  if (!rec || rec.close_price == null) return null;
+  const chg = Number(rec.change_rate);
+  return { label: 'A股', name: '沪深300', level: Number(rec.close_price), chg: chg, dir: chg > 0 ? 'up' : chg < 0 ? 'down' : 'flat', date: String(rec.trade_date || '') };
+}
+async function fetchIndexHk() {
+  const j = await apiJson('/mt/api/v1/market/data/eastmoney-hk-index-daily-kline?index_code=HSI&start_date=' + last30Ymd() + '&end_date=' + ymd(new Date()) + '&page=1&page_size=200');
+  const recs = j && j.data && (j.data.records || []);
+  if (!recs || recs.length < 1) return null;
+  const last = recs[0], prev = recs[1]; // 接口按交易日倒序，最新在前
+  let chg = null;
+  if (last && last.change_pct !== undefined && String(last.change_pct || '') !== '') chg = Number(last.change_pct);
+  else if (last && prev && Number(prev.close)) chg = (Number(last.close) - Number(prev.close)) / Number(prev.close) * 100;
+  const dir = chg == null ? 'flat' : chg > 0 ? 'up' : chg < 0 ? 'down' : 'flat';
+  return { label: '港股', name: '恒生指数', level: Number(last.close), chg: chg, dir: dir, date: String(last.trade_date || '') };
+}
+async function fetchRateUs() {
+  const j = await apiJson('/mt/api/v1/market/data/economic/us-economic?type=fed-funds-rate-upper');
+  const rows = j && (Array.isArray(j.data) ? j.data : (j.data || []));
+  const r = rows && rows[0];
+  if (!r) return null;
+  return { label: '美联储利率', name: '政策利率(月)', level: Number(r.current_value), chg: null, dir: 'flat', date: String(r.release_date || ''), note: '月频 · ' + String(r.month || '') };
+}
+
+/* 组合持仓基金净值（按 fundCode；未配置/未覆盖则跳过） */
+async function fetchHoldingNav(holding) {
+  if (!holding.fundCode) return null;
+  const j = await apiJson('/mt/api/v1/market/data/fund/fund-net-value?fund_code=' + encodeURIComponent(holding.fundCode) +
+    '&start_date=' + last30Ymd() + '&end_date=' + ymd(new Date()) + '&page=1&page_size=5');
+  const items = j && j.data && (j.data.items || []);
+  if (!items || !items.length) return null;
+  const last = items[0]; // 接口按净值日期倒序（最新在前）
+  const chg = last.unit_nav_growth === undefined ? null : Number(last.unit_nav_growth);
+  return { holding: holding, chg: chg, navDate: String(last.nav_date || last.publish_date || '') };
+}
 /* 其余演示数据 */
 const MockDB = {
   market: {
@@ -226,11 +304,53 @@ function gradeClass(g) {
  * 例如：async getMarket() { const r = await fetch('/api/market'); return r.json(); }
  */
 const DataSource = {
-  async getMarket() { return MockDB.market; },
+  async getMarket() {
+    const [cn, hk, rate] = await Promise.all([
+      fetchIndexCn().catch(function () { return null; }),
+      fetchIndexHk().catch(function () { return null; }),
+      fetchRateUs().catch(function () { return null; })
+    ]);
+    const item = function (src, fallback) {
+      if (!src) return fallback;
+      return { key: src.label, label: src.label, value: fmtLevel(src.level), chg: src.chg != null ? signedPct(src.chg) : '—', dir: src.dir };
+    };
+    const items = [
+      item(cn, { key: 'cn', label: 'A股', value: '沪深300', chg: '数据源暂不可用', dir: 'flat' }),
+      item(hk, { key: 'hk', label: '港股', value: '恒生指数', chg: '数据源暂不可用', dir: 'flat' }),
+      item(rate, { key: 'rate', label: '美联储利率', value: '—', chg: '数据源暂不可用', dir: 'flat' }),
+      { key: 'us', label: '美股', value: 'S&P 500', chg: '源未提供', dir: 'flat' }
+    ];
+    const date = [cn, hk, rate].map(function (x) { return x && x.date ? x.date : ''; }).filter(Boolean).sort().pop() || '';
+    return {
+      global: { trend: '—', regime: '实时行情', riskLevel: '—', riskColor: 'risk-mid', source: DATA_SOURCE_NAME, dataDate: date, updatedAt: nowStamp() },
+      items: items,
+      events: []
+    };
+  },
   async getPortfolio() {
     const d = await loadPortfolio();
     const total = sumHoldings(d.holdings);
     const risk = computeRiskScore(d.holdings, total);
+    const coded = d.holdings.filter(function (h) { return h.fundCode; });
+    let today = null, dataNote = '', dataDate = '';
+    if (!coded.length) {
+      dataNote = '持仓未配置基金代码(fundCode)：请在 portfolio-data.json 补全后自动计算净值涨跌';
+    } else {
+      const rows = (await Promise.all(coded.map(fetchHoldingNav))).filter(Boolean);
+      if (!rows.length) {
+        dataNote = '数据源暂未覆盖已配置代码的基金净值';
+      } else {
+        const coveredSum = rows.reduce(function (s, r) { return s + Number(r.holding.amount); }, 0);
+        if (coveredSum > 0) {
+          today = rows.reduce(function (s, r) {
+            return s + (r.chg == null ? 0 : r.chg * Number(r.holding.amount));
+          }, 0) / coveredSum;
+        }
+        dataDate = rows.map(function (r) { return r.navDate; }).filter(Boolean).sort().pop() || '';
+        const missing = d.holdings.length - rows.length;
+        if (missing > 0) dataNote = '部分持仓净值源未覆盖（' + missing + '/' + d.holdings.length + '），今日变化为已覆盖部分加权';
+      }
+    }
     return {
       total: total,
       count: d.holdings.length,
@@ -240,8 +360,12 @@ const DataSource = {
       riskLabel: risk.label,
       riskCls: risk.cls,
       maxDrawdown: '目标 ' + d.profile.maxDrawdown,
-      today: '待行情接入',
-      return: '待行情接入'
+      today: today == null ? '—' : signedPct(today),
+      return: '—（需成本口径，Phase 2）',
+      source: DATA_SOURCE_NAME,
+      dataDate: dataDate || (d.updatedAt || ''),
+      updatedAt: nowStamp(),
+      dataNote: dataNote
     };
   },
   async getProfile() { return (await loadPortfolio()).profile; },
