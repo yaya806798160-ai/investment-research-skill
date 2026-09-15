@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-09-14T14:52:00+08:00",
+  "market_date": "2026-09-14",
+  "timezone": "Asia/Shanghai",
+  "data_quality": {
+    "status": "realtime",
+    "max_age_minutes": 8,
+    "sources": ["eastmoney", "tencent", "workbuddy"],
+    "missing": []
+  },
+  "indices": {
+    "shanghai": {"pct": null, "turnover": null, "source_time": null},
+    "chinext": {"pct": null, "turnover": null, "source_time": null},
+    "star50": {"pct": null, "turnover": null, "source_time": null}
+  },
+  "breadth": {"up": null, "down": null, "limit_up": null, "limit_down": null},
+  "themes": {
+    "cpo_optical": {"pct": null, "main_net_inflow": null, "super_net_inflow": null, "turnover": null, "limit_up": null, "limit_up_20cm": null, "source_time": null},
+    "pcb": {"pct": null, "main_net_inflow": null, "super_net_inflow": null, "turnover": null, "limit_up": null, "limit_up_20cm": null, "source_time": null},
+    "ai_compute": {"pct": null, "main_net_inflow": null, "super_net_inflow": null, "turnover": null, "limit_up": null, "limit_up_20cm": null, "source_time": null},
+    "semiconductor_equipment": {"pct": null, "main_net_inflow": null, "super_net_inflow": null, "turnover": null, "limit_up": null, "limit_up_20cm": null, "source_time": null},
+    "domestic_gpu": {"pct": null, "main_net_inflow": null, "super_net_inflow": null, "turnover": null, "limit_up": null, "limit_up_20cm": null, "source_time": null}
+  },
+  "core_stocks": [],
+  "fund_map": {
+    "021528": {"name": "财通成长C", "primary_themes": ["cpo_optical", "pcb", "ai_compute"]},
+    "017811": {"name": "东方人工智能C", "primary_themes": ["semiconductor_equipment"]},
+    "018123": {"name": "永赢数字经济智选C", "primary_themes": ["domestic_gpu", "ai_compute"]},
+    "008888": {"name": "华夏国证半导体芯片ETF联接C", "primary_themes": ["semiconductor_equipment", "domestic_gpu"]}
+  },
+  "alerts": []
+}
