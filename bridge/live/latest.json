@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-17T10:56:48+08:00",
+  "source_time": "2026-09-17T10:56:48+08:00",
+  "trade_date": "2026-09-17",
+  "market_time": "10:56:48",
+  "source": [
+    "Investment OS local proxy",
+    "Eastmoney push2 via /emq/"
+  ],
+  "stale": false,
+  "stale_after_minutes": 8,
+  "missing": [
+    "boards",
+    "breadth",
+    "index:上证",
+    "index:创业板",
+    "index:科创50"
+  ],
+  "indices": {},
+  "breadth": {},
+  "themes": {},
+  "fund_mapping": {
+    "021528": {
+      "name": "财通成长C",
+      "themes": [
+        "CPO/光模块",
+        "PCB",
+        "AI算力"
+      ],
+      "theme_pct_avg": null,
+      "theme_main_flow_sum": null
+    },
+    "017811": {
+      "name": "东方人工智能",
+      "themes": [
+        "半导体设备"
+      ],
+      "theme_pct_avg": null,
+      "theme_main_flow_sum": null
+    },
+    "018123": {
+      "name": "永赢数字经济智选C",
+      "themes": [
+        "国产GPU/AI芯片",
+        "AI算力"
+      ],
+      "theme_pct_avg": null,
+      "theme_main_flow_sum": null
+    },
+    "008888": {
+      "name": "华夏国证半导体",
+      "themes": [
+        "半导体设备",
+        "国产GPU/AI芯片"
+      ],
+      "theme_pct_avg": null,
+      "theme_main_flow_sum": null
+    }
+  },
+  "rules": {
+    "local_strength_independent_confirmation": true,
+    "note": "PCB/CPO/etc can be locally strong even when broad communication/semiconductor flow is negative; do not require whole-tech confirmation."
+  }
+}
