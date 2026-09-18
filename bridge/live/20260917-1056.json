@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-18T09:37:22+08:00",
-  "source_time": "2026-09-18T09:37:22+08:00",
-  "trade_date": "2026-09-18",
-  "market_time": "09:37:22",
+  "generated_at": "2026-09-17T10:56:48+08:00",
+  "source_time": "2026-09-17T10:56:48+08:00",
+  "trade_date": "2026-09-17",
+  "market_time": "10:56:48",
   "source": [
     "Investment OS local proxy",
     "Eastmoney push2 via /emq/"
