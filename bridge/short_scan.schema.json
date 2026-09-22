@@ -1,0 +1,513 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/yaya806798160-ai/investment-research-skill/bridge/short_scan.schema.json",
+  "title": "Investment OS short scan v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "market_time",
+    "stale",
+    "stale_after_minutes",
+    "expires_at",
+    "data_sources",
+    "market_regime",
+    "strong_boards",
+    "candidates",
+    "top3",
+    "rejected",
+    "missing",
+    "source_errors",
+    "transport_events",
+    "coverage",
+    "rules"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "market_time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stale": {
+      "type": "boolean"
+    },
+    "stale_after_minutes": {
+      "const": 8
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "source_time",
+          "stale"
+        ],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "source_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stale": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "market_regime": {
+      "type": "object"
+    },
+    "strong_boards": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    },
+    "top3": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "rejected": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    },
+    "missing": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_errors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "transport_events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "coverage": {
+      "type": "object"
+    },
+    "rules": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "capital": {
+      "type": "object",
+      "required": [
+        "main_3d",
+        "main_5d",
+        "consecutive_inflow_days",
+        "super_large_change",
+        "capital_inflow_score",
+        "complete",
+        "source_date",
+        "institution_verified",
+        "basis",
+        "evidence",
+        "risk_flags"
+      ],
+      "properties": {
+        "main_3d": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "main_5d": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "consecutive_inflow_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "super_large_change": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "capital_inflow_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "complete": {
+          "type": "boolean"
+        },
+        "source_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "institution_verified": {
+          "const": false
+        },
+        "basis": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "risk_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "required": [
+        "price",
+        "pct",
+        "volume",
+        "amount",
+        "turnover",
+        "volume_ratio",
+        "high",
+        "low",
+        "open",
+        "prev_close",
+        "main_flow",
+        "super_large_flow",
+        "code",
+        "name",
+        "source_time",
+        "boards",
+        "capital_3d_5d",
+        "capital_inflow_score",
+        "ma5",
+        "ma10",
+        "ma20",
+        "rsi",
+        "return_5d",
+        "resistance",
+        "macd",
+        "rs",
+        "breakout",
+        "volume_pattern",
+        "vwap_status",
+        "intraday",
+        "intraday_status",
+        "candidate_status",
+        "score",
+        "stale",
+        "critical_source_times",
+        "evidence",
+        "risk_flags"
+      ],
+      "properties": {
+        "price": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pct": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "volume": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "amount": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "turnover": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "volume_ratio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "high": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "low": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "open": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "prev_close": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "main_flow": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "super_large_flow": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "boards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "code",
+              "name"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "capital_3d_5d": {
+          "$ref": "#/$defs/capital"
+        },
+        "capital_inflow_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "ma5": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "ma10": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "ma20": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rsi": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "return_5d": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "resistance": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "macd": {
+          "anyOf": [
+            {
+              "type": "object",
+              "required": [
+                "dif",
+                "dea",
+                "histogram"
+              ],
+              "properties": {
+                "dif": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "dea": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "histogram": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rs": {
+          "type": "object",
+          "required": [
+            "market",
+            "board"
+          ],
+          "properties": {
+            "market": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "board": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "breakout": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "volume_pattern": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "vwap_status": {
+          "enum": [
+            "above",
+            "below",
+            "unknown"
+          ]
+        },
+        "intraday": {
+          "type": "object"
+        },
+        "intraday_status": {
+          "enum": [
+            "confirmed",
+            "waiting",
+            "rejected"
+          ]
+        },
+        "candidate_status": {
+          "enum": [
+            "candidate",
+            "rejected"
+          ]
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0
+        },
+        "stale": {
+          "type": "boolean"
+        },
+        "critical_source_times": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "evidence": {
+          "type": "object"
+        },
+        "risk_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

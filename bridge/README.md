@@ -1,5 +1,59 @@
 # Investment OS → ChatGPT 实时桥接
 
+## A股短线机会扫描器
+
+固定入口：`bridge/live/short_scan.json`。ChatGPT 通过 GitHub 连接器读取该仓库文件，
+先检查 `schema_version`、`generated_at`、`expires_at`、`stale`、`missing` 和
+`data_sources`，再读取 `top3`、`candidates`、`rejected`。契约见
+`bridge/short_scan.schema.json`（版本 1；缺失数值为 null，禁止以零冒充）。
+
+`collector.py` 每次采集后自动运行扫描器，再沿用原有关键时点 git push。
+因此现有 5 分钟任务无需新建第二套调度；运行任务的 checkout 必须更新到本版本。
+本地刷新不等于 GitHub 已刷新，ChatGPT 必须以仓库中的源时间重新计算年龄。
+手动扫描（不启动 UI、不推送、不需要第三方依赖）：
+
+```powershell
+python bridge/short_scan.py --force
+python -m unittest discover -s bridge -p test_short_scan.py -v
+```
+
+扫描全量东财行业和概念板块，按代码稳定翻页；结合涨幅、主力资金占成交额比例、
+超大单净流入排序，默认深入检查前 8 个正涨幅且主力净流入为正的板块。
+不限于 PCB/CPO/AI/半导体/医药，也不使用固定主题白名单。
+对成分股去重后，优先 30 元以下、资金为正的股票，默认最多深查 100 只，输出 Top 10，
+`top3` 为其中前三只代码。实际覆盖量和预筛选规则完整记录在 `coverage`，
+不足十只时不补入拒绝对象，不宣称覆盖全市场全部个股。
+可用 `--boards`、`--stocks`、`--top` 调整范围。
+
+数据优先走现有 `/emq/` 代理，失败回退到同一东财 push2；日线、历史资金和分钟线来自
+东财 push2his。复用 bridge 的 `STALE_MINUTES = 8`，对指数、板块、个股、分钟线及核心股
+源时间分别校验，扫描结束后再次检查，`expires_at` 取最早关键源的到期时间。
+任一关键数据缺失或过期均不允许 `confirmed`；收盘后不延长盘中证据有效期。
+
+主要字段与口径：
+
+- `capital_3d_5d`：最近 3/5 个已完成交易日的主力资金总和、连续流入天数、超大单变化；
+  与指数的交易日序列核对，缺少完整五日或交易日基准则不给资金评分。金额单位元。
+- `capital_inflow_score`：0–30，资金持续性证据分。大单分类不能识别机构身份，
+  `institution_verified` 和 `institutional_inflow_claim` 始终为 false。
+- MA5/10/20、MACD(12,26,9，柱值为 2×DIF−DEA)、Wilder RSI14、五日涨幅、
+  相对上证指数/所属第一板块的五日超额收益（百分点）、前20日最高价压力位。
+  当前报价仅在自身日期为当天时加入日线；日线为前复权，上涨/回调量能比较只用已完成日。
+- `volume_ratio` 为源量比，`turnover` 为换手率百分比；`amount` 为成交额元，`volume` 为手。
+  板块成交比较为当日累计/前一日全天，明确不能视为同一时刻同比。
+- 连续涨停、高潮结构、爆量长上影和明显高开回落拒绝；五日涨幅超过15%、RSI过热、
+  偏离均线等扣分且阻止完整确认，15% 不是机械排除阈值。
+- `intraday` 检查9:30后的 VWAP、回踩、最近分钟量能、回落、板块同步和核心股联动。
+  `candidate_status=candidate` 是候选身份，`intraday_status=waiting` 是尚未确认；
+  `rejected` 独立输出。`confirmed` 也只是数据检查通过，不是买入指令。
+
+当前公共源未提供可验证的主动买单方向、ETF申赎资金、龙虎榜机构席位和北向/其他机构
+持仓流。这些字段不猜测；尤其主动买单是完整分时确认的必要门槛，因此当前源组合下
+候选只能为 `waiting`，不能用上涨分钟成交量替代主动买单而输出 `confirmed`。
+数据源失败仍写出可读的 stale 快照和错误列表，不保留旧榜单冒充本次成功。
+采集设150秒预算和同源连续失败后的短暂停用，避免数据故障拖延既有快照发布。
+扫描器异常会清空其候选并写 stale 错误快照，collector 仍继续原有发布流程。
+
 目标：用户只需要在 ChatGPT 里问“现在呢/14:30怎么操作”，ChatGPT 直接读取 Investment OS 的最新盘中快照，不再依赖搜索引擎抓分钟级行情。
 
 ## 数据流

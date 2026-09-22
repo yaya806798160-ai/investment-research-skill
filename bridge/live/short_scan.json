@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-22T17:05:17+08:00",
+  "market_time": null,
+  "stale": true,
+  "stale_after_minutes": 8,
+  "expires_at": "2026-09-22T17:05:17+08:00",
+  "data_sources": [
+    {
+      "source": "Eastmoney market quote",
+      "source_time": null,
+      "stale": true
+    }
+  ],
+  "market_regime": {
+    "index": null,
+    "return_5d": null,
+    "label": "mixed_or_defensive"
+  },
+  "strong_boards": [],
+  "candidates": [],
+  "top3": [],
+  "rejected": [],
+  "missing": [
+    "ETF creation/redemption flows",
+    "LHB institutional seats",
+    "aggressor-side buy orders",
+    "concept boards",
+    "industry boards",
+    "market trading-day reference",
+    "northbound/other institutional ownership flows",
+    "source:concept_boards",
+    "source:industry_boards",
+    "source:market_history",
+    "source:market_quote"
+  ],
+  "source_errors": [
+    {
+      "source": "market_quote",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+    },
+    {
+      "source": "concept_boards",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+    },
+    {
+      "source": "industry_boards",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+    },
+    {
+      "source": "market_history",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
+    }
+  ],
+  "transport_events": [
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
+    },
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
+    },
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
+    }
+  ],
+  "coverage": {
+    "industry_boards": 0,
+    "concept_boards": 0,
+    "positive_price_and_flow_boards": 0,
+    "selected_boards": 0,
+    "unique_constituents": 0,
+    "fully_assessed": 0,
+    "board_limit": 8,
+    "stock_limit": 100,
+    "collection_budget_seconds": 150,
+    "preselection": "price <=30 preferred, positive main flow and flow/turnover; overlapping boards deduplicated"
+  },
+  "rules": {
+    "not_a_buy_signal": true,
+    "capital_not_institution_identity": true,
+    "confirmation_requires": [
+      "fresh quote/board/index/minutes",
+      "complete capital history",
+      "technical structure",
+      "VWAP pullback support",
+      "active buy orders",
+      "board synchrony",
+      "core linkage",
+      "no overheating"
+    ],
+    "reader_must_recheck_age_minutes": 8,
+    "optional_unavailable": [
+      "ETF creation/redemption flows",
+      "LHB institutional seats",
+      "northbound/other institutional ownership flows",
+      "aggressor-side buy orders"
+    ]
+  }
+}

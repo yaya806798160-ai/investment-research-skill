@@ -269,6 +269,14 @@ def main() -> int:
     archive.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2), encoding="utf-8")
     logging.info("snapshot written %s missing=%s", generated.strftime("%H:%M"), len(missing))
 
+    # Keep the stock scan in the same refresh/publication chain as fund snapshots.
+    from short_scan import scan, write_failure
+    try:
+        scan()
+    except Exception as exc:
+        logging.exception("short scan failed; invalidating scan and continuing snapshot publication")
+        write_failure(exc)
+
     hm = generated.strftime("%H%M")
     if args.push or hm in PUSH_TIMES:
         push_snapshot(generated, archive)
