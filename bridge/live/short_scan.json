@@ -1,36 +1,19 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T14:54:32+08:00",
-  "market_time": "2026-09-23T14:54:31+08:00",
+  "generated_at": "2026-09-23T14:59:25+08:00",
+  "market_time": null,
   "stale": true,
   "stale_after_minutes": 8,
-  "expires_at": "2026-09-23T14:54:32+08:00",
+  "expires_at": "2026-09-23T14:59:25+08:00",
   "data_sources": [
     {
       "source": "Eastmoney market quote",
-      "source_time": "2026-09-23T14:54:31+08:00",
-      "stale": false
+      "source_time": null,
+      "stale": true
     }
   ],
   "market_regime": {
-    "index": {
-      "code": "000001",
-      "name": "上证指数",
-      "secid": "1.000001",
-      "price": 3935.98,
-      "pct": -0.41,
-      "volume": 452402910.0,
-      "amount": 810697813585.0,
-      "turnover": 0.93,
-      "volume_ratio": 0.96,
-      "high": 3951.52,
-      "low": 3934.46,
-      "open": 3951.37,
-      "prev_close": 3952.13,
-      "main_flow": -15571685376.0,
-      "super_large_flow": -5673054208.0,
-      "source_time": "2026-09-23T14:54:31+08:00"
-    },
+    "index": null,
     "return_5d": null,
     "label": "mixed_or_defensive"
   },
@@ -48,7 +31,8 @@
     "northbound/other institutional ownership flows",
     "source:concept_boards",
     "source:industry_boards",
-    "source:market_history"
+    "source:market_history",
+    "source:market_quote"
   ],
   "source_errors": [
     {
@@ -56,15 +40,24 @@
       "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
     },
     {
-      "source": "industry_boards",
+      "source": "market_quote",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
     },
     {
       "source": "concept_boards",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
+    },
+    {
+      "source": "industry_boards",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
     }
   ],
   "transport_events": [
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
+    },
     {
       "source": "Investment OS /emq/",
       "status": "fallback",
