@@ -1,38 +1,1957 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T14:34:33+08:00",
-  "market_time": null,
+  "generated_at": "2026-09-23T14:47:02+08:00",
+  "market_time": "2026-09-23T14:44:33+08:00",
   "stale": true,
   "stale_after_minutes": 8,
-  "expires_at": "2026-09-23T14:34:33+08:00",
+  "expires_at": "2026-09-23T14:52:33+08:00",
   "data_sources": [
     {
       "source": "Eastmoney market quote",
-      "source_time": null,
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1431",
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1369",
+      "source_time": "2026-09-23T14:44:31+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1401",
+      "source_time": "2026-09-23T14:44:31+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1530",
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1495",
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1426",
+      "source_time": "2026-09-23T14:44:31+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1464",
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1451",
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney stock:600802",
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:000401",
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:000877",
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:000789",
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:601992",
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:600449",
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:600326",
+      "source_time": "2026-09-23T14:45:34+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:600425",
+      "source_time": "2026-09-23T14:45:34+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:002233",
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:600585",
+      "source_time": "2026-09-23T14:45:34+08:00",
+      "minute_time": null,
+      "capital_date": null,
       "stale": true
     }
   ],
   "market_regime": {
-    "index": null,
+    "index": {
+      "code": "000001",
+      "name": "上证指数",
+      "secid": "1.000001",
+      "price": 3937.31,
+      "pct": -0.37,
+      "volume": 429929638.0,
+      "amount": 771597037516.5,
+      "turnover": 0.89,
+      "volume_ratio": 0.95,
+      "high": 3951.52,
+      "low": 3934.46,
+      "open": 3951.37,
+      "prev_close": 3952.13,
+      "main_flow": -14411390976.0,
+      "super_large_flow": -4929044480.0,
+      "source_time": "2026-09-23T14:44:33+08:00"
+    },
     "return_5d": null,
     "label": "mixed_or_defensive"
   },
-  "strong_boards": [],
-  "candidates": [],
-  "top3": [],
-  "rejected": [],
+  "strong_boards": [
+    {
+      "code": "BK1431",
+      "name": "有机硅",
+      "secid": "90.BK1431",
+      "price": 3462.66,
+      "pct": 2.74,
+      "volume": 1679954.0,
+      "amount": 2096109530.0,
+      "turnover": 3.02,
+      "volume_ratio": 1.04,
+      "high": 3471.92,
+      "low": 3352.73,
+      "open": 3365.8,
+      "prev_close": 3370.3,
+      "main_flow": 260996978.0,
+      "super_large_flow": 201939890.0,
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "score": 24.67,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 0,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": null,
+      "core_stocks": [],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1369",
+      "name": "长材",
+      "secid": "90.BK1369",
+      "price": 506.96,
+      "pct": 0.65,
+      "volume": 1508080.0,
+      "amount": 314589794.0,
+      "turnover": 1.96,
+      "volume_ratio": 2.73,
+      "high": 529.61,
+      "low": 497.83,
+      "open": 504.48,
+      "prev_close": 503.7,
+      "main_flow": 61544254.0,
+      "super_large_flow": 51744283.0,
+      "source_time": "2026-09-23T14:44:31+08:00",
+      "score": 20.95,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 0,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": null,
+      "core_stocks": [],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1401",
+      "name": "纺织服装设备",
+      "secid": "90.BK1401",
+      "price": 3597.24,
+      "pct": 2.3,
+      "volume": 2152059.0,
+      "amount": 2386363959.0,
+      "turnover": 3.22,
+      "volume_ratio": 1.05,
+      "high": 3610.86,
+      "low": 3525.0,
+      "open": 3527.53,
+      "prev_close": 3516.46,
+      "main_flow": 219698163.0,
+      "super_large_flow": 152994307.0,
+      "source_time": "2026-09-23T14:44:31+08:00",
+      "score": 20.11,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 0,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": null,
+      "core_stocks": [],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1530",
+      "name": "商用载货车",
+      "secid": "90.BK1530",
+      "price": 1823.69,
+      "pct": 0.75,
+      "volume": 3287990.0,
+      "amount": 5375861935.0,
+      "turnover": 1.49,
+      "volume_ratio": 1.5,
+      "high": 1841.63,
+      "low": 1810.16,
+      "open": 1814.68,
+      "prev_close": 1810.07,
+      "main_flow": 723444384.0,
+      "super_large_flow": 695866336.0,
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "score": 19.71,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 0,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": null,
+      "core_stocks": [],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1495",
+      "name": "生活用纸",
+      "secid": "90.BK1495",
+      "price": 1293.19,
+      "pct": 0.19,
+      "volume": 629618.0,
+      "amount": 1250591466.0,
+      "turnover": 1.95,
+      "volume_ratio": 0.85,
+      "high": 1298.45,
+      "low": 1282.23,
+      "open": 1289.93,
+      "prev_close": 1290.69,
+      "main_flow": 277917409.0,
+      "super_large_flow": 14150471.0,
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "score": 19.57,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 0,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": null,
+      "core_stocks": [],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1426",
+      "name": "聚氨酯",
+      "secid": "90.BK1426",
+      "price": 3390.17,
+      "pct": 2.18,
+      "volume": 1500273.0,
+      "amount": 3894309797.0,
+      "turnover": 2.64,
+      "volume_ratio": 1.46,
+      "high": 3399.06,
+      "low": 3293.91,
+      "open": 3308.24,
+      "prev_close": 3317.92,
+      "main_flow": 343806064.0,
+      "super_large_flow": 276829072.0,
+      "source_time": "2026-09-23T14:44:31+08:00",
+      "score": 19.37,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 0,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": null,
+      "core_stocks": [],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1464",
+      "name": "水泥制造",
+      "secid": "90.BK1464",
+      "price": 2100.51,
+      "pct": 2.06,
+      "volume": 3979636.0,
+      "amount": 2332671033.0,
+      "turnover": 1.28,
+      "volume_ratio": 1.92,
+      "high": 2138.96,
+      "low": 2047.68,
+      "open": 2056.76,
+      "prev_close": 2058.19,
+      "main_flow": 212178012.0,
+      "super_large_flow": 137891788.0,
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "score": 19.28,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 14,
+      "limit_up_count": 1,
+      "large_gain_count": 3,
+      "rising_fraction": 0.8571428571428571,
+      "core_stocks": [
+        {
+          "code": "600585",
+          "name": "海螺水泥",
+          "pct": 1.05,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "600326",
+          "name": "西藏天路",
+          "pct": 5.1,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "000877",
+          "name": "天山股份",
+          "pct": 7.59,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1451",
+      "name": "厨房电器",
+      "secid": "90.BK1451",
+      "price": 9011.53,
+      "pct": 2.22,
+      "volume": 697091.0,
+      "amount": 990656155.0,
+      "turnover": 2.4,
+      "volume_ratio": 1.57,
+      "high": 9118.43,
+      "low": 8775.35,
+      "open": 8785.13,
+      "prev_close": 8816.14,
+      "main_flow": 83759699.0,
+      "super_large_flow": 17263577.0,
+      "source_time": "2026-09-23T14:44:33+08:00",
+      "score": 19.11,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 6,
+      "limit_up_count": 0,
+      "large_gain_count": 1,
+      "rising_fraction": 0.6666666666666666,
+      "core_stocks": [
+        {
+          "code": "300911",
+          "name": "亿田智能",
+          "pct": 11.94,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "002035",
+          "name": "华帝股份",
+          "pct": 1.52,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "002508",
+          "name": "老板电器",
+          "pct": -1.32,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    }
+  ],
+  "candidates": [
+    {
+      "code": "600802",
+      "name": "福建水泥",
+      "secid": "1.600802",
+      "price": 6.02,
+      "pct": 10.05,
+      "volume": 343019.0,
+      "amount": 199262351.0,
+      "turnover": 7.49,
+      "volume_ratio": 0.81,
+      "high": 6.02,
+      "low": 5.36,
+      "open": 5.45,
+      "prev_close": 5.47,
+      "main_flow": 80843525.0,
+      "super_large_flow": 78220843.0,
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.3656307129798808,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:33+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 1,
+      "top3": true
+    },
+    {
+      "code": "000401",
+      "name": "金隅冀东",
+      "secid": "0.000401",
+      "price": 3.62,
+      "pct": 1.97,
+      "volume": 197700.0,
+      "amount": 72003756.9,
+      "turnover": 0.75,
+      "volume_ratio": 2.41,
+      "high": 3.72,
+      "low": 3.54,
+      "open": 3.55,
+      "prev_close": 3.55,
+      "main_flow": 18668331.0,
+      "super_large_flow": 7752018.0,
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.0,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:33+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 2,
+      "top3": true
+    },
+    {
+      "code": "000877",
+      "name": "天山股份",
+      "secid": "0.000877",
+      "price": 3.97,
+      "pct": 7.59,
+      "volume": 779795.0,
+      "amount": 309522795.38,
+      "turnover": 1.1,
+      "volume_ratio": 7.16,
+      "high": 4.06,
+      "low": 3.67,
+      "open": 3.68,
+      "prev_close": 3.69,
+      "main_flow": 66162785.0,
+      "super_large_flow": 35206396.0,
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.27100271002709064,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:33+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 3,
+      "top3": true
+    },
+    {
+      "code": "000789",
+      "name": "万年青",
+      "secid": "0.000789",
+      "price": 4.18,
+      "pct": 1.21,
+      "volume": 102272.0,
+      "amount": 43184563.11,
+      "turnover": 1.28,
+      "volume_ratio": 2.18,
+      "high": 4.32,
+      "low": 4.11,
+      "open": 4.13,
+      "prev_close": 4.13,
+      "main_flow": 8145417.0,
+      "super_large_flow": 3198501.0,
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.0,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:33+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 4,
+      "top3": false
+    },
+    {
+      "code": "601992",
+      "name": "金隅集团",
+      "secid": "1.601992",
+      "price": 1.43,
+      "pct": 1.42,
+      "volume": 942999.0,
+      "amount": 135799938.0,
+      "turnover": 1.13,
+      "volume_ratio": 2.0,
+      "high": 1.48,
+      "low": 1.4,
+      "open": 1.41,
+      "prev_close": 1.41,
+      "main_flow": 13456622.0,
+      "super_large_flow": 10871693.0,
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.0,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:33+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 5,
+      "top3": false
+    },
+    {
+      "code": "600449",
+      "name": "宁夏建材",
+      "secid": "1.600449",
+      "price": 13.11,
+      "pct": 0.08,
+      "volume": 60836.0,
+      "amount": 79634334.0,
+      "turnover": 1.27,
+      "volume_ratio": 0.51,
+      "high": 13.18,
+      "low": 13.0,
+      "open": 13.1,
+      "prev_close": 13.1,
+      "main_flow": 7103379.0,
+      "super_large_flow": 3065722.0,
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.0,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:33+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 6,
+      "top3": false
+    },
+    {
+      "code": "600326",
+      "name": "西藏天路",
+      "secid": "1.600326",
+      "price": 7.21,
+      "pct": 5.1,
+      "volume": 526602.0,
+      "amount": 379952779.0,
+      "turnover": 3.87,
+      "volume_ratio": 4.21,
+      "high": 7.47,
+      "low": 6.78,
+      "open": 6.87,
+      "prev_close": 6.86,
+      "main_flow": 28355787.0,
+      "super_large_flow": 6945843.0,
+      "source_time": "2026-09-23T14:45:34+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.1457725947521915,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:34+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 7,
+      "top3": false
+    },
+    {
+      "code": "600425",
+      "name": "青松建化",
+      "secid": "1.600425",
+      "price": 3.66,
+      "pct": 0.83,
+      "volume": 269270.0,
+      "amount": 99913579.0,
+      "turnover": 1.68,
+      "volume_ratio": 2.37,
+      "high": 3.85,
+      "low": 3.6,
+      "open": 3.63,
+      "prev_close": 3.63,
+      "main_flow": 5569563.0,
+      "super_large_flow": 736516.0,
+      "source_time": "2026-09-23T14:45:34+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.0,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:34+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 8,
+      "top3": false
+    },
+    {
+      "code": "002233",
+      "name": "塔牌集团",
+      "secid": "0.002233",
+      "price": 7.12,
+      "pct": -0.28,
+      "volume": 218972.0,
+      "amount": 156566310.15,
+      "turnover": 1.87,
+      "volume_ratio": 2.11,
+      "high": 7.26,
+      "low": 7.08,
+      "open": 7.14,
+      "prev_close": 7.14,
+      "main_flow": 6289465.0,
+      "super_large_flow": -10585625.0,
+      "source_time": "2026-09-23T14:45:33+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.0,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:33+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 9,
+      "top3": false
+    },
+    {
+      "code": "600585",
+      "name": "海螺水泥",
+      "secid": "1.600585",
+      "price": 17.3,
+      "pct": 1.05,
+      "volume": 246518.0,
+      "amount": 428190609.0,
+      "turnover": 0.62,
+      "volume_ratio": 1.37,
+      "high": 17.67,
+      "low": 17.05,
+      "open": 17.09,
+      "prev_close": 17.12,
+      "main_flow": 15030509.0,
+      "super_large_flow": -701344.0,
+      "source_time": "2026-09-23T14:45:34+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.17523364485981796,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:34+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 10,
+      "top3": false
+    }
+  ],
+  "top3": [
+    "600802",
+    "000401",
+    "000877"
+  ],
+  "rejected": [
+    {
+      "code": "600678",
+      "name": "ST金顶",
+      "secid": "1.600678",
+      "price": 5.74,
+      "pct": -0.35,
+      "volume": 67700.0,
+      "amount": 39448190.0,
+      "turnover": 1.94,
+      "volume_ratio": 1.35,
+      "high": 5.93,
+      "low": 5.72,
+      "open": 5.75,
+      "prev_close": 5.76,
+      "main_flow": 4994532.0,
+      "super_large_flow": -983545.0,
+      "source_time": "2026-09-23T14:45:34+08:00",
+      "boards": [
+        {
+          "code": "BK1464",
+          "name": "水泥制造"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.17361111111110494,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "rejected",
+      "candidate_status": "rejected",
+      "score": 9.28,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:34+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.28,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "special_treatment_or_delisting",
+        "technical_data_incomplete"
+      ]
+    },
+    {
+      "code": "605336",
+      "name": "*ST帅电",
+      "secid": "1.605336",
+      "price": 11.66,
+      "pct": -0.77,
+      "volume": 6642.0,
+      "amount": 7803396.0,
+      "turnover": 0.36,
+      "volume_ratio": 0.55,
+      "high": 11.9,
+      "low": 11.6,
+      "open": 11.62,
+      "prev_close": 11.75,
+      "main_flow": 86909.0,
+      "super_large_flow": 0.0,
+      "source_time": "2026-09-23T14:45:28+08:00",
+      "boards": [
+        {
+          "code": "BK1451",
+          "name": "厨房电器"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -1.106382978723408,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "rejected",
+      "candidate_status": "rejected",
+      "score": 9.11,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-23T14:44:33+08:00",
+        "2026-09-23T14:45:28+08:00",
+        null,
+        "2026-09-23T14:44:33+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 19.11,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "special_treatment_or_delisting",
+        "technical_data_incomplete"
+      ]
+    }
+  ],
   "missing": [
     "ETF creation/redemption flows",
     "LHB institutional seats",
     "aggressor-side buy orders",
     "concept boards",
-    "industry boards",
     "market trading-day reference",
     "northbound/other institutional ownership flows",
+    "source:board_history:BK1369",
+    "source:board_history:BK1401",
+    "source:board_history:BK1426",
+    "source:board_history:BK1431",
+    "source:board_history:BK1451",
+    "source:board_history:BK1464",
+    "source:board_history:BK1495",
+    "source:board_history:BK1530",
+    "source:board_minutes:BK1369",
+    "source:board_minutes:BK1401",
+    "source:board_minutes:BK1426",
+    "source:board_minutes:BK1431",
+    "source:board_minutes:BK1451",
+    "source:board_minutes:BK1464",
+    "source:board_minutes:BK1495",
+    "source:board_minutes:BK1530",
+    "source:capital:000401",
+    "source:capital:000672",
+    "source:capital:000789",
+    "source:capital:000877",
+    "source:capital:002035",
+    "source:capital:002233",
+    "source:capital:002508",
+    "source:capital:002677",
+    "source:capital:300894",
+    "source:capital:300911",
+    "source:capital:600326",
+    "source:capital:600425",
+    "source:capital:600449",
+    "source:capital:600585",
+    "source:capital:600668",
+    "source:capital:600678",
+    "source:capital:600801",
+    "source:capital:600802",
+    "source:capital:601992",
+    "source:capital:605336",
     "source:concept_boards",
-    "source:industry_boards",
+    "source:core_minutes:000877",
+    "source:core_minutes:002035",
+    "source:core_minutes:002508",
+    "source:core_minutes:300911",
+    "source:core_minutes:600326",
+    "source:core_minutes:600585",
+    "source:daily:000401",
+    "source:daily:000672",
+    "source:daily:000789",
+    "source:daily:000877",
+    "source:daily:002035",
+    "source:daily:002233",
+    "source:daily:002508",
+    "source:daily:002677",
+    "source:daily:300894",
+    "source:daily:300911",
+    "source:daily:600326",
+    "source:daily:600425",
+    "source:daily:600449",
+    "source:daily:600585",
+    "source:daily:600668",
+    "source:daily:600678",
+    "source:daily:600801",
+    "source:daily:600802",
+    "source:daily:601992",
+    "source:daily:605336",
     "source:market_history",
-    "source:market_quote"
+    "source:members:BK1369",
+    "source:members:BK1401",
+    "source:members:BK1426",
+    "source:members:BK1431",
+    "source:members:BK1495",
+    "source:members:BK1530",
+    "source:minutes:000401",
+    "source:minutes:000672",
+    "source:minutes:000789",
+    "source:minutes:000877",
+    "source:minutes:002035",
+    "source:minutes:002233",
+    "source:minutes:002508",
+    "source:minutes:002677",
+    "source:minutes:300894",
+    "source:minutes:300911",
+    "source:minutes:600326",
+    "source:minutes:600425",
+    "source:minutes:600449",
+    "source:minutes:600585",
+    "source:minutes:600668",
+    "source:minutes:600678",
+    "source:minutes:600801",
+    "source:minutes:600802",
+    "source:minutes:601992",
+    "source:minutes:605336"
   ],
   "source_errors": [
     {
@@ -40,16 +1959,360 @@
       "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
     },
     {
-      "source": "industry_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
-    },
-    {
-      "source": "market_quote",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
-    },
-    {
       "source": "concept_boards",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
+    },
+    {
+      "source": "members:BK1431",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
+    },
+    {
+      "source": "members:BK1530",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
+    },
+    {
+      "source": "members:BK1369",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
+    },
+    {
+      "source": "board_history:BK1431",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "board_history:BK1530",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "members:BK1401",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
+    },
+    {
+      "source": "board_minutes:BK1431",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "board_minutes:BK1530",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "board_history:BK1369",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "members:BK1495",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
+    },
+    {
+      "source": "members:BK1426",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
+    },
+    {
+      "source": "board_history:BK1401",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "board_history:BK1495",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "board_history:BK1426",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "board_minutes:BK1369",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "board_minutes:BK1401",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "board_minutes:BK1495",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "board_minutes:BK1426",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "board_history:BK1464",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "board_history:BK1451",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "core_minutes:600585",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "core_minutes:300911",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "core_minutes:600326",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "core_minutes:002035",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "core_minutes:000877",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "core_minutes:002508",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "board_minutes:BK1464",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "board_minutes:BK1451",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "daily:600802",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:000789",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:002677",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:002035",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:000877",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "capital:000789",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "daily:000401",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "capital:600802",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "capital:002677",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "minutes:000789",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "capital:002035",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "minutes:600802",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "minutes:002677",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "capital:000401",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "daily:600678",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "capital:000877",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "daily:600449",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:601992",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "minutes:002035",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "capital:600678",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "minutes:000401",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "capital:600449",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "capital:601992",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "minutes:000877",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "minutes:600678",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "minutes:601992",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "minutes:600449",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "daily:600425",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:600326",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:600585",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:002508",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:002233",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:300894",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "capital:600585",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "capital:002508",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "capital:600425",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "capital:300894",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "capital:600326",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "minutes:600585",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "minutes:002508",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "minutes:300894",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "capital:002233",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: AttributeError"
+    },
+    {
+      "source": "daily:000672",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:605336",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "daily:600668",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
+    },
+    {
+      "source": "capital:600668",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "minutes:600668",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "daily:600801",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "capital:600801",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "minutes:600801",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "daily:300911",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "capital:300911",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "minutes:300911",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "capital:000672",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: TimeoutError"
+    },
+    {
+      "source": "minutes:000672",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "capital:605336",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get: TimeoutError"
+    },
+    {
+      "source": "minutes:605336",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "minutes:600326",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
+    },
+    {
+      "source": "minutes:002233",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: TimeoutError"
+    },
+    {
+      "source": "minutes:600425",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: AttributeError"
     }
   ],
   "transport_events": [
@@ -67,15 +2330,35 @@
       "source": "Investment OS /emq/",
       "status": "fallback",
       "error": "HTTPError"
+    },
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
+    },
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
+    },
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
+    },
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
     }
   ],
   "coverage": {
-    "industry_boards": 0,
+    "industry_boards": 496,
     "concept_boards": 0,
-    "positive_price_and_flow_boards": 0,
-    "selected_boards": 0,
-    "unique_constituents": 0,
-    "fully_assessed": 0,
+    "positive_price_and_flow_boards": 76,
+    "selected_boards": 8,
+    "unique_constituents": 20,
+    "fully_assessed": 20,
     "board_limit": 8,
     "stock_limit": 100,
     "collection_budget_seconds": 150,

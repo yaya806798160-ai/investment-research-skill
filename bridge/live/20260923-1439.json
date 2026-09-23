@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T14:44:28+08:00",
-  "source_time": null,
+  "generated_at": "2026-09-23T14:39:26+08:00",
+  "source_time": "2026-09-23T14:39:18+08:00",
   "trade_date": "2026-09-23",
-  "market_time": null,
+  "market_time": "14:39:18",
   "source": [
     "Investment OS local proxy",
     "Eastmoney push2 via /emq/"
@@ -15,12 +15,37 @@
   ],
   "missing": [
     "boards",
-    "breadth",
-    "index:上证",
-    "index:创业板",
-    "index:科创50"
+    "breadth"
   ],
-  "indices": {},
+  "indices": {
+    "上证": {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3938.88,
+      "pct": -0.34,
+      "turnover": 755619809422.9,
+      "volume": 420878454,
+      "source_time": "2026-09-23T14:39:21+08:00"
+    },
+    "创业板": {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 3376.96,
+      "pct": -0.68,
+      "turnover": 397401864910.48,
+      "volume": 147876276,
+      "source_time": "2026-09-23T14:39:18+08:00"
+    },
+    "科创50": {
+      "code": "000688",
+      "name": "科创50",
+      "price": 1660.43,
+      "pct": -0.28,
+      "turnover": 68447548834.5,
+      "volume": 5526218,
+      "source_time": "2026-09-23T14:39:21+08:00"
+    }
+  },
   "breadth": {},
   "themes": {},
   "fund_mapping": {
