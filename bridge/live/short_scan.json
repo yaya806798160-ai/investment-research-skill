@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T14:59:25+08:00",
+  "generated_at": "2026-09-23T15:04:25+08:00",
   "market_time": null,
   "stale": true,
   "stale_after_minutes": 8,
-  "expires_at": "2026-09-23T14:59:25+08:00",
+  "expires_at": "2026-09-23T15:04:25+08:00",
   "data_sources": [
     {
       "source": "Eastmoney market quote",
@@ -40,7 +40,7 @@
       "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: AttributeError"
     },
     {
-      "source": "market_quote",
+      "source": "industry_boards",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
     },
     {
@@ -48,7 +48,7 @@
       "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
     },
     {
-      "source": "industry_boards",
+      "source": "market_quote",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
     }
   ],
