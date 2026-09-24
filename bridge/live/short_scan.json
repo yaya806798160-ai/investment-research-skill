@@ -1,55 +1,1599 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-24T14:19:38+08:00",
-  "market_time": null,
+  "generated_at": "2026-09-24T14:25:00+08:00",
+  "market_time": "2026-09-24T14:24:33+08:00",
   "stale": true,
   "stale_after_minutes": 8,
-  "expires_at": "2026-09-24T14:19:38+08:00",
+  "expires_at": "2026-09-24T14:32:32+08:00",
   "data_sources": [
     {
       "source": "Eastmoney market quote",
-      "source_time": null,
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1502",
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1255",
+      "source_time": "2026-09-24T14:24:36+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1456",
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1243",
+      "source_time": "2026-09-24T14:24:36+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1249",
+      "source_time": "2026-09-24T14:24:36+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1492",
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1510",
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1350",
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney stock:002614",
+      "source_time": "2026-09-24T14:24:45+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:000592",
+      "source_time": "2026-09-24T14:24:45+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:000663",
+      "source_time": "2026-09-24T14:24:45+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:603579",
+      "source_time": "2026-09-24T14:24:32+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:002679",
+      "source_time": "2026-09-24T14:24:45+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:300247",
+      "source_time": "2026-09-24T14:24:42+08:00",
+      "minute_time": null,
+      "capital_date": null,
       "stale": true
     }
   ],
   "market_regime": {
-    "index": null,
-    "return_5d": null,
+    "index": {
+      "code": "000001",
+      "name": "上证指数",
+      "secid": "1.000001",
+      "price": 3899.91,
+      "pct": -0.93,
+      "volume": 374727704.0,
+      "amount": 669193305070.6,
+      "turnover": 0.77,
+      "volume_ratio": 0.91,
+      "high": 3930.5,
+      "low": 3890.9,
+      "open": 3925.32,
+      "prev_close": 3936.52,
+      "main_flow": -26785746944.0,
+      "super_large_flow": -17108336640.0,
+      "source_time": "2026-09-24T14:24:33+08:00"
+    },
+    "return_5d": 0.6272577149344594,
     "label": "mixed_or_defensive"
   },
-  "strong_boards": [],
-  "candidates": [],
-  "top3": [],
-  "rejected": [],
+  "strong_boards": [
+    {
+      "code": "BK1502",
+      "name": "林业Ⅲ",
+      "secid": "90.BK1502",
+      "price": 5118.88,
+      "pct": 4.52,
+      "volume": 2947352.0,
+      "amount": 2473194651.0,
+      "turnover": 11.39,
+      "volume_ratio": 0.99,
+      "high": 5118.88,
+      "low": 4861.86,
+      "open": 4912.74,
+      "prev_close": 4897.34,
+      "main_flow": 316424912.0,
+      "super_large_flow": 330097376.0,
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "score": 30.35,
+      "return_5d": 4.0558121381643275,
+      "turnover_vs_previous_full_day": 1.0428136023736743,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 4,
+      "limit_up_count": 1,
+      "large_gain_count": 2,
+      "rising_fraction": 1.0,
+      "core_stocks": [
+        {
+          "code": "000592",
+          "name": "平潭发展",
+          "pct": 10.03,
+          "vwap": 8.274,
+          "vwap_status": "above",
+          "source_time": "2026-09-24T14:25:00+08:00",
+          "fresh": true,
+          "pullback_support": false,
+          "recent_volume_ratio": 1.8336649754355137,
+          "return_5m": 2.211874272409764,
+          "drawdown_from_high_pct": 0.0,
+          "active_buy_orders": null
+        },
+        {
+          "code": "002679",
+          "name": "福建金森",
+          "pct": 5.13,
+          "vwap": 10.61,
+          "vwap_status": "above",
+          "source_time": "2026-09-24T14:25:00+08:00",
+          "fresh": true,
+          "pullback_support": false,
+          "recent_volume_ratio": 2.634727109074544,
+          "return_5m": 3.9436619718309807,
+          "drawdown_from_high_pct": -0.18034265103696878,
+          "active_buy_orders": null
+        },
+        {
+          "code": "600265",
+          "name": "*ST景谷",
+          "pct": 0.99,
+          "vwap": 23.826,
+          "vwap_status": "below",
+          "source_time": "2026-09-24T14:25:00+08:00",
+          "fresh": true,
+          "pullback_support": false,
+          "recent_volume_ratio": 8.571428571428571,
+          "return_5m": 0.0,
+          "drawdown_from_high_pct": -3.924775143090764,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": 4973.758,
+        "vwap_status": "above",
+        "source_time": "2026-09-24T14:25:00+08:00",
+        "fresh": true,
+        "pullback_support": false,
+        "recent_volume_ratio": 1.8947051513285236,
+        "return_5m": 1.8991107370197158,
+        "drawdown_from_high_pct": 0.0,
+        "active_buy_orders": null
+      },
+      "history_date": "2026-09-23"
+    },
+    {
+      "code": "BK1255",
+      "name": "林业Ⅱ",
+      "secid": "90.BK1255",
+      "price": 5111.9,
+      "pct": 4.38,
+      "volume": 2952621.0,
+      "amount": 2478321798.0,
+      "turnover": 11.41,
+      "volume_ratio": 0.99,
+      "high": 5118.88,
+      "low": 4861.86,
+      "open": 4912.74,
+      "prev_close": 4897.34,
+      "main_flow": 319100048.0,
+      "super_large_flow": 332976720.0,
+      "source_time": "2026-09-24T14:24:36+08:00",
+      "score": 30.02,
+      "return_5d": 3.913923762440641,
+      "turnover_vs_previous_full_day": 1.0449754454096873,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 4,
+      "limit_up_count": 1,
+      "large_gain_count": 2,
+      "rising_fraction": 1.0,
+      "core_stocks": [
+        {
+          "code": "000592",
+          "name": "平潭发展",
+          "pct": 10.03,
+          "vwap": 8.274,
+          "vwap_status": "above",
+          "source_time": "2026-09-24T14:25:00+08:00",
+          "fresh": true,
+          "pullback_support": false,
+          "recent_volume_ratio": 1.8336649754355137,
+          "return_5m": 2.211874272409764,
+          "drawdown_from_high_pct": 0.0,
+          "active_buy_orders": null
+        },
+        {
+          "code": "002679",
+          "name": "福建金森",
+          "pct": 5.13,
+          "vwap": 10.617,
+          "vwap_status": "above",
+          "source_time": "2026-09-24T14:25:00+08:00",
+          "fresh": true,
+          "pullback_support": false,
+          "recent_volume_ratio": 2.7721954013583177,
+          "return_5m": 4.037558685445997,
+          "drawdown_from_high_pct": -0.27002700270026825,
+          "active_buy_orders": null
+        },
+        {
+          "code": "600265",
+          "name": "*ST景谷",
+          "pct": 0.99,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": "2026-09-23"
+    },
+    {
+      "code": "BK1456",
+      "name": "其他家电Ⅲ",
+      "secid": "90.BK1456",
+      "price": 1332.33,
+      "pct": 4.0,
+      "volume": 656576.0,
+      "amount": 533675677.0,
+      "turnover": 4.54,
+      "volume_ratio": 1.57,
+      "high": 1342.45,
+      "low": 1276.05,
+      "open": 1276.05,
+      "prev_close": 1281.14,
+      "main_flow": 66094445.0,
+      "super_large_flow": 73078463.0,
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "score": 28.38,
+      "return_5d": 18.74387265824138,
+      "turnover_vs_previous_full_day": 0.496745124459653,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 3,
+      "limit_up_count": 1,
+      "large_gain_count": 1,
+      "rising_fraction": 0.6666666666666666,
+      "core_stocks": [
+        {
+          "code": "002614",
+          "name": "奥佳华",
+          "pct": 10.04,
+          "vwap": 8.08,
+          "vwap_status": "above",
+          "source_time": "2026-09-24T14:25:00+08:00",
+          "fresh": true,
+          "pullback_support": false,
+          "recent_volume_ratio": 1.8653846153846154,
+          "return_5m": 0.0,
+          "drawdown_from_high_pct": 0.0,
+          "active_buy_orders": null
+        },
+        {
+          "code": "603579",
+          "name": "荣泰健康",
+          "pct": 1.68,
+          "vwap": 18.228,
+          "vwap_status": "below",
+          "source_time": "2026-09-24T14:25:00+08:00",
+          "fresh": true,
+          "pullback_support": false,
+          "recent_volume_ratio": 1.4793814432989691,
+          "return_5m": -0.11007154650524154,
+          "drawdown_from_high_pct": -1.51926207270755,
+          "active_buy_orders": null
+        },
+        {
+          "code": "300247",
+          "name": "融捷健康",
+          "pct": 0.0,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": "2026-09-23"
+    },
+    {
+      "code": "BK1243",
+      "name": "其他家电Ⅱ",
+      "secid": "90.BK1243",
+      "price": 1331.19,
+      "pct": 3.91,
+      "volume": 656577.0,
+      "amount": 533676052.0,
+      "turnover": 4.54,
+      "volume_ratio": 1.57,
+      "high": 1342.45,
+      "low": 1276.05,
+      "open": 1276.05,
+      "prev_close": 1281.14,
+      "main_flow": 66094445.0,
+      "super_large_flow": 73078463.0,
+      "source_time": "2026-09-24T14:24:36+08:00",
+      "score": 28.11,
+      "return_5d": 18.642270191262188,
+      "turnover_vs_previous_full_day": 0.4967454735095155,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 3,
+      "limit_up_count": 1,
+      "large_gain_count": 1,
+      "rising_fraction": 0.6666666666666666,
+      "core_stocks": [
+        {
+          "code": "002614",
+          "name": "奥佳华",
+          "pct": 10.04,
+          "vwap": 8.08,
+          "vwap_status": "above",
+          "source_time": "2026-09-24T14:25:00+08:00",
+          "fresh": true,
+          "pullback_support": false,
+          "recent_volume_ratio": 1.8653846153846154,
+          "return_5m": 0.0,
+          "drawdown_from_high_pct": 0.0,
+          "active_buy_orders": null
+        },
+        {
+          "code": "603579",
+          "name": "荣泰健康",
+          "pct": 1.68,
+          "vwap": 18.228,
+          "vwap_status": "below",
+          "source_time": "2026-09-24T14:25:00+08:00",
+          "fresh": true,
+          "pullback_support": false,
+          "recent_volume_ratio": 1.4793814432989691,
+          "return_5m": -0.11007154650524154,
+          "drawdown_from_high_pct": -1.51926207270755,
+          "active_buy_orders": null
+        },
+        {
+          "code": "300247",
+          "name": "融捷健康",
+          "pct": 0.0,
+          "vwap": 3.757,
+          "vwap_status": "below",
+          "source_time": "2026-09-24T14:25:00+08:00",
+          "fresh": true,
+          "pullback_support": false,
+          "recent_volume_ratio": 3.1904761904761907,
+          "return_5m": 0.0,
+          "drawdown_from_high_pct": -1.055408970976257,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": "2026-09-23"
+    },
+    {
+      "code": "BK1249",
+      "name": "焦炭Ⅱ",
+      "secid": "90.BK1249",
+      "price": 826.22,
+      "pct": 2.38,
+      "volume": 3922342.0,
+      "amount": 1738686803.0,
+      "turnover": 2.68,
+      "volume_ratio": 1.08,
+      "high": 837.24,
+      "low": 799.32,
+      "open": 804.17,
+      "prev_close": 806.98,
+      "main_flow": 461286070.0,
+      "super_large_flow": 444687670.0,
+      "source_time": "2026-09-24T14:24:36+08:00",
+      "score": 26.14,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 0,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": null,
+      "core_stocks": [],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1492",
+      "name": "焦炭Ⅲ",
+      "secid": "90.BK1492",
+      "price": 825.9,
+      "pct": 2.34,
+      "volume": 3920069.0,
+      "amount": 1737455322.0,
+      "turnover": 2.68,
+      "volume_ratio": 1.08,
+      "high": 837.24,
+      "low": 799.32,
+      "open": 804.17,
+      "prev_close": 806.98,
+      "main_flow": 461198790.0,
+      "super_large_flow": 444687670.0,
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "score": 26.02,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 0,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": null,
+      "core_stocks": [],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1510",
+      "name": "其他养殖",
+      "secid": "90.BK1510",
+      "price": 954.51,
+      "pct": 2.08,
+      "volume": 1216870.0,
+      "amount": 410918449.0,
+      "turnover": 3.87,
+      "volume_ratio": 0.9,
+      "high": 970.12,
+      "low": 949.78,
+      "open": 951.14,
+      "prev_close": 935.03,
+      "main_flow": 105818425.0,
+      "super_large_flow": 140906486.0,
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "score": 25.24,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 0,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": null,
+      "core_stocks": [],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1350",
+      "name": "其他纺织",
+      "secid": "90.BK1350",
+      "price": 2003.47,
+      "pct": 1.47,
+      "volume": 1363880.0,
+      "amount": 1236457207.0,
+      "turnover": 1.87,
+      "volume_ratio": 1.17,
+      "high": 2022.15,
+      "low": 1970.88,
+      "open": 1970.92,
+      "prev_close": 1974.35,
+      "main_flow": 168311936.0,
+      "super_large_flow": 161694601.0,
+      "source_time": "2026-09-24T14:24:33+08:00",
+      "score": 22.02,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 0,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": null,
+      "core_stocks": [],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    }
+  ],
+  "candidates": [
+    {
+      "code": "002614",
+      "name": "奥佳华",
+      "secid": "0.002614",
+      "price": 8.33,
+      "pct": 10.04,
+      "volume": 566670.0,
+      "amount": 457880568.88,
+      "turnover": 12.84,
+      "volume_ratio": 1.93,
+      "high": 8.33,
+      "low": 7.5,
+      "open": 7.5,
+      "prev_close": 7.57,
+      "main_flow": 69307265.0,
+      "super_large_flow": 73081795.0,
+      "source_time": "2026-09-24T14:24:45+08:00",
+      "boards": [
+        {
+          "code": "BK1456",
+          "name": "其他家电Ⅲ"
+        },
+        {
+          "code": "BK1243",
+          "name": "其他家电Ⅱ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.9247027741083214,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:24:45+08:00",
+        null,
+        "2026-09-24T14:24:33+08:00",
+        null,
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 28.38,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 1,
+      "top3": true
+    },
+    {
+      "code": "000592",
+      "name": "平潭发展",
+      "secid": "0.000592",
+      "price": 8.78,
+      "pct": 10.03,
+      "volume": 2802992.0,
+      "amount": 2318959137.32,
+      "turnover": 14.64,
+      "volume_ratio": 1.01,
+      "high": 8.78,
+      "low": 7.8,
+      "open": 8.02,
+      "prev_close": 7.98,
+      "main_flow": 325861294.0,
+      "super_large_flow": 344495998.0,
+      "source_time": "2026-09-24T14:24:45+08:00",
+      "boards": [
+        {
+          "code": "BK1502",
+          "name": "林业Ⅲ"
+        },
+        {
+          "code": "BK1255",
+          "name": "林业Ⅱ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.5012531328320691,
+        "board_synchrony": false,
+        "core_linkage": true
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:24:45+08:00",
+        null,
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00"
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 30.35,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 2,
+      "top3": true
+    },
+    {
+      "code": "000663",
+      "name": "永安林业",
+      "secid": "0.000663",
+      "price": 6.03,
+      "pct": 1.86,
+      "volume": 46319.0,
+      "amount": 27547071.0,
+      "turnover": 1.51,
+      "volume_ratio": 0.85,
+      "high": 6.04,
+      "low": 5.88,
+      "open": 5.94,
+      "prev_close": 5.92,
+      "main_flow": 2395668.0,
+      "super_large_flow": 0.0,
+      "source_time": "2026-09-24T14:24:45+08:00",
+      "boards": [
+        {
+          "code": "BK1502",
+          "name": "林业Ⅲ"
+        },
+        {
+          "code": "BK1255",
+          "name": "林业Ⅱ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.33783783783785104,
+        "board_synchrony": false,
+        "core_linkage": true
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:24:45+08:00",
+        null,
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00"
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 30.35,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 3,
+      "top3": true
+    },
+    {
+      "code": "603579",
+      "name": "荣泰健康",
+      "secid": "1.603579",
+      "price": 18.15,
+      "pct": 1.68,
+      "volume": 29037.0,
+      "amount": 52928603.0,
+      "turnover": 1.44,
+      "volume_ratio": 1.03,
+      "high": 18.43,
+      "low": 17.74,
+      "open": 17.85,
+      "prev_close": 17.85,
+      "main_flow": -1233423.0,
+      "super_large_flow": 0.0,
+      "source_time": "2026-09-24T14:24:32+08:00",
+      "boards": [
+        {
+          "code": "BK1456",
+          "name": "其他家电Ⅲ"
+        },
+        {
+          "code": "BK1243",
+          "name": "其他家电Ⅱ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.0,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:24:32+08:00",
+        null,
+        "2026-09-24T14:24:33+08:00",
+        null,
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 28.38,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 4,
+      "top3": false
+    },
+    {
+      "code": "002679",
+      "name": "福建金森",
+      "secid": "0.002679",
+      "price": 11.07,
+      "pct": 5.13,
+      "volume": 110238.0,
+      "amount": 116929018.0,
+      "turnover": 4.68,
+      "volume_ratio": 0.81,
+      "high": 11.09,
+      "low": 10.36,
+      "open": 10.47,
+      "prev_close": 10.53,
+      "main_flow": -3805190.0,
+      "super_large_flow": 1121293.0,
+      "source_time": "2026-09-24T14:24:45+08:00",
+      "boards": [
+        {
+          "code": "BK1502",
+          "name": "林业Ⅲ"
+        },
+        {
+          "code": "BK1255",
+          "name": "林业Ⅱ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.5698005698005604,
+        "board_synchrony": false,
+        "core_linkage": true
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:24:45+08:00",
+        null,
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00"
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 30.35,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 5,
+      "top3": false
+    },
+    {
+      "code": "300247",
+      "name": "融捷健康",
+      "secid": "0.300247",
+      "price": 3.75,
+      "pct": 0.0,
+      "volume": 60897.0,
+      "amount": 22878839.0,
+      "turnover": 0.76,
+      "volume_ratio": 0.63,
+      "high": 3.79,
+      "low": 3.73,
+      "open": 3.74,
+      "prev_close": 3.75,
+      "main_flow": -1976441.0,
+      "super_large_flow": 0.0,
+      "source_time": "2026-09-24T14:24:42+08:00",
+      "boards": [
+        {
+          "code": "BK1456",
+          "name": "其他家电Ⅲ"
+        },
+        {
+          "code": "BK1243",
+          "name": "其他家电Ⅱ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.2666666666666595,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:24:42+08:00",
+        null,
+        "2026-09-24T14:24:33+08:00",
+        null,
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 28.38,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 6,
+      "top3": false
+    }
+  ],
+  "top3": [
+    "002614",
+    "000592",
+    "000663"
+  ],
+  "rejected": [
+    {
+      "code": "600265",
+      "name": "*ST景谷",
+      "secid": "1.600265",
+      "price": 23.5,
+      "pct": 0.99,
+      "volume": 14173.0,
+      "amount": 33767893.0,
+      "turnover": 1.09,
+      "volume_ratio": 3.54,
+      "high": 24.46,
+      "low": 23.27,
+      "open": 23.5,
+      "prev_close": 23.27,
+      "main_flow": 3858660.0,
+      "super_large_flow": 0.0,
+      "source_time": "2026-09-24T14:24:41+08:00",
+      "boards": [
+        {
+          "code": "BK1502",
+          "name": "林业Ⅲ"
+        },
+        {
+          "code": "BK1255",
+          "name": "林业Ⅱ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.9883970777825546,
+        "board_synchrony": false,
+        "core_linkage": true
+      },
+      "intraday_status": "rejected",
+      "candidate_status": "rejected",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:24:41+08:00",
+        null,
+        "2026-09-24T14:24:33+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00",
+        "2026-09-24T14:25:00+08:00"
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 30.35,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "special_treatment_or_delisting",
+        "technical_data_incomplete"
+      ]
+    }
+  ],
   "missing": [
     "ETF creation/redemption flows",
     "LHB institutional seats",
     "aggressor-side buy orders",
-    "concept boards",
-    "industry boards",
-    "market trading-day reference",
     "northbound/other institutional ownership flows",
-    "source:concept_boards",
-    "source:industry_boards",
-    "source:market_history",
-    "source:market_quote"
+    "source:board_history:BK1249",
+    "source:board_history:BK1350",
+    "source:board_history:BK1492",
+    "source:board_history:BK1510",
+    "source:board_minutes:BK1243",
+    "source:board_minutes:BK1249",
+    "source:board_minutes:BK1255",
+    "source:board_minutes:BK1350",
+    "source:board_minutes:BK1456",
+    "source:board_minutes:BK1492",
+    "source:board_minutes:BK1510",
+    "source:capital:000592",
+    "source:capital:000663",
+    "source:capital:002614",
+    "source:capital:002679",
+    "source:capital:300247",
+    "source:capital:600265",
+    "source:capital:603579",
+    "source:core_minutes:300247",
+    "source:core_minutes:600265",
+    "source:daily:000592",
+    "source:daily:000663",
+    "source:daily:002614",
+    "source:daily:002679",
+    "source:daily:300247",
+    "source:daily:600265",
+    "source:daily:603579",
+    "source:members:BK1249",
+    "source:members:BK1350",
+    "source:members:BK1492",
+    "source:members:BK1510",
+    "source:minutes:000592",
+    "source:minutes:000663",
+    "source:minutes:002614",
+    "source:minutes:002679",
+    "source:minutes:300247",
+    "source:minutes:600265",
+    "source:minutes:603579"
   ],
   "source_errors": [
     {
-      "source": "market_history",
-      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
+      "source": "board_minutes:BK1243",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: RemoteDisconnected"
     },
     {
-      "source": "industry_boards",
+      "source": "core_minutes:300247",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: RemoteDisconnected"
+    },
+    {
+      "source": "board_minutes:BK1456",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:600265",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: RemoteDisconnected"
+    },
+    {
+      "source": "board_minutes:BK1255",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "members:BK1249",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     },
     {
-      "source": "market_quote",
+      "source": "board_history:BK1249",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1249",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "members:BK1492",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     },
     {
-      "source": "concept_boards",
+      "source": "board_history:BK1492",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1492",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "members:BK1510",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+    },
+    {
+      "source": "board_history:BK1510",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1510",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "members:BK1350",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+    },
+    {
+      "source": "board_history:BK1350",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1350",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:002614",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:002614",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:002614",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:000592",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:000592",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:000592",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:600265",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:600265",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:600265",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:000663",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:000663",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:000663",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:002679",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:002679",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:002679",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603579",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603579",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603579",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300247",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300247",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300247",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
     }
   ],
   "transport_events": [
@@ -67,15 +1611,35 @@
       "source": "Investment OS /emq/",
       "status": "fallback",
       "error": "HTTPError"
+    },
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
+    },
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
+    },
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
+    },
+    {
+      "source": "Investment OS /emq/",
+      "status": "fallback",
+      "error": "HTTPError"
     }
   ],
   "coverage": {
-    "industry_boards": 0,
-    "concept_boards": 0,
-    "positive_price_and_flow_boards": 0,
-    "selected_boards": 0,
-    "unique_constituents": 0,
-    "fully_assessed": 0,
+    "industry_boards": 496,
+    "concept_boards": 504,
+    "positive_price_and_flow_boards": 94,
+    "selected_boards": 8,
+    "unique_constituents": 7,
+    "fully_assessed": 7,
     "board_limit": 8,
     "stock_limit": 100,
     "collection_budget_seconds": 150,
