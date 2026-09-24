@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-09-24T13:18:26+08:00",
-  "last_collection_at": "2026-09-24T13:18:26+08:00",
+  "generated_at": "2026-09-24T13:19:30+08:00",
+  "last_collection_at": "2026-09-24T13:19:30+08:00",
   "last_success_at": null,
-  "last_push_at": null,
-  "current_commit": null,
+  "last_push_at": "2026-09-24T13:19:30+08:00",
+  "current_commit": "e64366bcc1354cfbb1be52c9e4fa121adb08396e",
   "market_source_status": {
-    "investment_os_proxy": "ok",
+    "investment_os_proxy": "failed",
     "eastmoney_public_fallback": "unused",
     "indices_ok": false,
     "boards_ok": false,
@@ -24,15 +24,15 @@
       "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
     },
     {
-      "source": "market_quote",
+      "source": "concept_boards",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
     },
     {
-      "source": "concept_boards",
+      "source": "market_quote",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: AttributeError"
     }
   ],
-  "consecutive_failures": 1,
+  "consecutive_failures": 2,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
