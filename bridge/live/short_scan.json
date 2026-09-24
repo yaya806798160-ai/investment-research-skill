@@ -1,20 +1,37 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-24T14:39:36+08:00",
-  "market_time": null,
+  "generated_at": "2026-09-24T14:45:56+08:00",
+  "market_time": "2026-09-24T14:45:06+08:00",
   "stale": true,
   "stale_after_minutes": 8,
-  "expires_at": "2026-09-24T14:39:36+08:00",
+  "expires_at": "2026-09-24T14:45:56+08:00",
   "data_sources": [
     {
       "source": "Eastmoney market quote",
-      "source_time": null,
-      "stale": true
+      "source_time": "2026-09-24T14:45:06+08:00",
+      "stale": false
     }
   ],
   "market_regime": {
-    "index": null,
-    "return_5d": null,
+    "index": {
+      "code": "000001",
+      "name": "上证指数",
+      "secid": "1.000001",
+      "price": 3894.05,
+      "pct": -1.08,
+      "volume": 405383928.0,
+      "amount": 724741610912.0,
+      "turnover": 0.84,
+      "volume_ratio": 0.89,
+      "high": 3930.5,
+      "low": 3890.62,
+      "open": 3925.32,
+      "prev_close": 3936.52,
+      "main_flow": -30530330624.0,
+      "super_large_flow": -19636477952.0,
+      "source_time": "2026-09-24T14:45:06+08:00"
+    },
+    "return_5d": 0.47605532046650634,
     "label": "mixed_or_defensive"
   },
   "strong_boards": [],
@@ -27,37 +44,21 @@
     "aggressor-side buy orders",
     "concept boards",
     "industry boards",
-    "market trading-day reference",
     "northbound/other institutional ownership flows",
     "source:concept_boards",
-    "source:industry_boards",
-    "source:market_history",
-    "source:market_quote"
+    "source:industry_boards"
   ],
   "source_errors": [
     {
-      "source": "market_history",
-      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
+      "source": "concept_boards",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     },
     {
       "source": "industry_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
-    },
-    {
-      "source": "market_quote",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
-    },
-    {
-      "source": "concept_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "error": "https://push2.eastmoney.com: temporary circuit open after upstream failure"
     }
   ],
   "transport_events": [
-    {
-      "source": "Investment OS /emq/",
-      "status": "fallback",
-      "error": "HTTPError"
-    },
     {
       "source": "Investment OS /emq/",
       "status": "fallback",
