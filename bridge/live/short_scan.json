@@ -1,38 +1,2243 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-24T14:04:43+08:00",
-  "market_time": null,
+  "generated_at": "2026-09-24T14:09:45+08:00",
+  "market_time": "2026-09-24T14:09:33+08:00",
   "stale": true,
   "stale_after_minutes": 8,
-  "expires_at": "2026-09-24T14:04:43+08:00",
+  "expires_at": "2026-09-24T14:17:33+08:00",
   "data_sources": [
     {
       "source": "Eastmoney market quote",
-      "source_time": null,
+      "source_time": "2026-09-24T14:09:33+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1456",
+      "source_time": "2026-09-24T14:09:36+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1243",
+      "source_time": "2026-09-24T14:09:39+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1249",
+      "source_time": "2026-09-24T14:09:39+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1492",
+      "source_time": "2026-09-24T14:09:36+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1510",
+      "source_time": "2026-09-24T14:09:36+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1350",
+      "source_time": "2026-09-24T14:09:36+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1376",
+      "source_time": "2026-09-24T14:09:36+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney board:BK1313",
+      "source_time": "2026-09-24T14:09:39+08:00",
+      "stale": false
+    },
+    {
+      "source": "Eastmoney stock:002321",
+      "source_time": "2026-09-24T14:09:42+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:600792",
+      "source_time": "2026-09-24T14:09:42+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:600156",
+      "source_time": "2026-09-24T14:09:44+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:601011",
+      "source_time": "2026-09-24T14:09:44+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:002614",
+      "source_time": "2026-09-24T14:09:39+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:600527",
+      "source_time": "2026-09-24T14:09:43+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:601015",
+      "source_time": "2026-09-24T14:09:43+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:600740",
+      "source_time": "2026-09-24T14:09:43+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:001312",
+      "source_time": "2026-09-24T14:09:42+08:00",
+      "minute_time": null,
+      "capital_date": null,
+      "stale": true
+    },
+    {
+      "source": "Eastmoney stock:301066",
+      "source_time": "2026-09-24T14:09:42+08:00",
+      "minute_time": null,
+      "capital_date": null,
       "stale": true
     }
   ],
   "market_regime": {
-    "index": null,
+    "index": {
+      "code": "000001",
+      "name": "上证指数",
+      "secid": "1.000001",
+      "price": 3894.65,
+      "pct": -1.06,
+      "volume": 357869037.0,
+      "amount": 640016133319.9,
+      "turnover": 0.74,
+      "volume_ratio": 0.94,
+      "high": 3930.5,
+      "low": 3890.9,
+      "open": 3925.32,
+      "prev_close": 3936.52,
+      "main_flow": -26353434624.0,
+      "super_large_flow": -16605708288.0,
+      "source_time": "2026-09-24T14:09:33+08:00"
+    },
     "return_5d": null,
     "label": "mixed_or_defensive"
   },
-  "strong_boards": [],
-  "candidates": [],
-  "top3": [],
-  "rejected": [],
+  "strong_boards": [
+    {
+      "code": "BK1456",
+      "name": "其他家电Ⅲ",
+      "secid": "90.BK1456",
+      "price": 1330.95,
+      "pct": 3.89,
+      "volume": 652164.0,
+      "amount": 530630452.0,
+      "turnover": 4.51,
+      "volume_ratio": 1.68,
+      "high": 1342.45,
+      "low": 1276.05,
+      "open": 1276.05,
+      "prev_close": 1281.14,
+      "main_flow": 65653796.0,
+      "super_large_flow": 72264622.0,
+      "source_time": "2026-09-24T14:09:36+08:00",
+      "score": 28.04,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 3,
+      "limit_up_count": 1,
+      "large_gain_count": 1,
+      "rising_fraction": 0.6666666666666666,
+      "core_stocks": [
+        {
+          "code": "002614",
+          "name": "奥佳华",
+          "pct": 10.04,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "603579",
+          "name": "荣泰健康",
+          "pct": 1.62,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "300247",
+          "name": "融捷健康",
+          "pct": -0.27,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1243",
+      "name": "其他家电Ⅱ",
+      "secid": "90.BK1243",
+      "price": 1330.95,
+      "pct": 3.89,
+      "volume": 652164.0,
+      "amount": 530630452.0,
+      "turnover": 4.51,
+      "volume_ratio": 1.68,
+      "high": 1342.45,
+      "low": 1276.05,
+      "open": 1276.05,
+      "prev_close": 1281.14,
+      "main_flow": 65653796.0,
+      "super_large_flow": 72264622.0,
+      "source_time": "2026-09-24T14:09:39+08:00",
+      "score": 28.04,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 3,
+      "limit_up_count": 1,
+      "large_gain_count": 1,
+      "rising_fraction": 0.6666666666666666,
+      "core_stocks": [
+        {
+          "code": "002614",
+          "name": "奥佳华",
+          "pct": 10.04,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "603579",
+          "name": "荣泰健康",
+          "pct": 1.62,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "300247",
+          "name": "融捷健康",
+          "pct": -0.27,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1249",
+      "name": "焦炭Ⅱ",
+      "secid": "90.BK1249",
+      "price": 825.28,
+      "pct": 2.27,
+      "volume": 3862473.0,
+      "amount": 1716376893.0,
+      "turnover": 2.64,
+      "volume_ratio": 1.15,
+      "high": 837.24,
+      "low": 799.32,
+      "open": 804.17,
+      "prev_close": 806.98,
+      "main_flow": 456046678.0,
+      "super_large_flow": 439126246.0,
+      "source_time": "2026-09-24T14:09:39+08:00",
+      "score": 25.81,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 7,
+      "limit_up_count": 1,
+      "large_gain_count": 1,
+      "rising_fraction": 1.0,
+      "core_stocks": [
+        {
+          "code": "600792",
+          "name": "云煤能源",
+          "pct": 10.04,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "601015",
+          "name": "陕西黑猫",
+          "pct": 1.71,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "600408",
+          "name": "安泰集团",
+          "pct": 1.68,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1492",
+      "name": "焦炭Ⅲ",
+      "secid": "90.BK1492",
+      "price": 825.13,
+      "pct": 2.25,
+      "volume": 3862373.0,
+      "amount": 1716339164.0,
+      "turnover": 2.64,
+      "volume_ratio": 1.15,
+      "high": 837.24,
+      "low": 799.32,
+      "open": 804.17,
+      "prev_close": 806.98,
+      "main_flow": 456039270.0,
+      "super_large_flow": 439118838.0,
+      "source_time": "2026-09-24T14:09:36+08:00",
+      "score": 25.75,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 7,
+      "limit_up_count": 1,
+      "large_gain_count": 1,
+      "rising_fraction": 1.0,
+      "core_stocks": [
+        {
+          "code": "600792",
+          "name": "云煤能源",
+          "pct": 10.04,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "601015",
+          "name": "陕西黑猫",
+          "pct": 1.71,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "600408",
+          "name": "安泰集团",
+          "pct": 1.68,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1510",
+      "name": "其他养殖",
+      "secid": "90.BK1510",
+      "price": 951.23,
+      "pct": 1.73,
+      "volume": 1188482.0,
+      "amount": 396779616.0,
+      "turnover": 3.78,
+      "volume_ratio": 0.95,
+      "high": 970.12,
+      "low": 949.78,
+      "open": 951.14,
+      "prev_close": 935.03,
+      "main_flow": 107298137.0,
+      "super_large_flow": 140844813.0,
+      "source_time": "2026-09-24T14:09:36+08:00",
+      "score": 24.19,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 3,
+      "limit_up_count": 1,
+      "large_gain_count": 1,
+      "rising_fraction": 0.3333333333333333,
+      "core_stocks": [
+        {
+          "code": "002321",
+          "name": "华英农业",
+          "pct": 10.19,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "300313",
+          "name": "天山生物",
+          "pct": -5.0,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "600965",
+          "name": "*ST福成",
+          "pct": 0.0,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1350",
+      "name": "其他纺织",
+      "secid": "90.BK1350",
+      "price": 1999.49,
+      "pct": 1.27,
+      "volume": 1309488.0,
+      "amount": 1195245158.0,
+      "turnover": 1.8,
+      "volume_ratio": 1.21,
+      "high": 2022.15,
+      "low": 1970.88,
+      "open": 1970.92,
+      "prev_close": 1974.35,
+      "main_flow": 162271928.0,
+      "super_large_flow": 157233277.0,
+      "source_time": "2026-09-24T14:09:36+08:00",
+      "score": 21.39,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 15,
+      "limit_up_count": 1,
+      "large_gain_count": 1,
+      "rising_fraction": 0.6666666666666666,
+      "core_stocks": [
+        {
+          "code": "600156",
+          "name": "华升股份",
+          "pct": 9.99,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "300819",
+          "name": "聚杰微纤",
+          "pct": -2.83,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "605180",
+          "name": "华生科技",
+          "pct": 4.82,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1376",
+      "name": "核力发电",
+      "secid": "90.BK1376",
+      "price": 603.53,
+      "pct": 0.28,
+      "volume": 1147749.0,
+      "amount": 716638684.0,
+      "turnover": 0.18,
+      "volume_ratio": 0.9,
+      "high": 606.19,
+      "low": 600.42,
+      "open": 602.15,
+      "prev_close": 601.83,
+      "main_flow": 149325424.0,
+      "super_large_flow": 91756471.0,
+      "source_time": "2026-09-24T14:09:36+08:00",
+      "score": 19.84,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 3,
+      "limit_up_count": 0,
+      "large_gain_count": 0,
+      "rising_fraction": 0.6666666666666666,
+      "core_stocks": [
+        {
+          "code": "601985",
+          "name": "中国核电",
+          "pct": 0.56,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "003816",
+          "name": "中国广核",
+          "pct": 0.48,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "000958",
+          "name": "电投产融",
+          "pct": -0.2,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    },
+    {
+      "code": "BK1313",
+      "name": "风电零部件",
+      "secid": "90.BK1313",
+      "price": 1996.42,
+      "pct": 2.75,
+      "volume": 6534207.0,
+      "amount": 9042169220.0,
+      "turnover": 4.52,
+      "volume_ratio": 1.13,
+      "high": 2018.68,
+      "low": 1927.31,
+      "open": 1934.4,
+      "prev_close": 1943.02,
+      "main_flow": 678690528.0,
+      "super_large_flow": 365183248.0,
+      "source_time": "2026-09-24T14:09:39+08:00",
+      "score": 19.76,
+      "return_5d": null,
+      "turnover_vs_previous_full_day": null,
+      "turnover_comparison_note": "partial session / prior full day, not same-time growth",
+      "etf_flow": null,
+      "member_count": 26,
+      "limit_up_count": 1,
+      "large_gain_count": 5,
+      "rising_fraction": 0.8076923076923077,
+      "core_stocks": [
+        {
+          "code": "002487",
+          "name": "大金重工",
+          "pct": 4.59,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "002531",
+          "name": "天顺风能",
+          "pct": 3.07,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        },
+        {
+          "code": "601218",
+          "name": "吉鑫科技",
+          "pct": 10.0,
+          "vwap": null,
+          "vwap_status": "unknown",
+          "source_time": null,
+          "fresh": false,
+          "pullback_support": false,
+          "recent_volume_ratio": null,
+          "return_5m": null,
+          "drawdown_from_high_pct": null,
+          "active_buy_orders": null
+        }
+      ],
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null
+      },
+      "history_date": null
+    }
+  ],
+  "candidates": [
+    {
+      "code": "002321",
+      "name": "华英农业",
+      "secid": "0.002321",
+      "price": 2.27,
+      "pct": 10.19,
+      "volume": 1043791.0,
+      "amount": 234529717.35,
+      "turnover": 4.91,
+      "volume_ratio": 1.05,
+      "high": 2.27,
+      "low": 2.11,
+      "open": 2.11,
+      "prev_close": 2.06,
+      "main_flow": 126526579.0,
+      "super_large_flow": 143105873.0,
+      "source_time": "2026-09-24T14:09:42+08:00",
+      "boards": [
+        {
+          "code": "BK1510",
+          "name": "其他养殖"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 2.4271844660194164,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:42+08:00",
+        null,
+        "2026-09-24T14:09:36+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 24.19,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 1,
+      "top3": true
+    },
+    {
+      "code": "600792",
+      "name": "云煤能源",
+      "secid": "1.600792",
+      "price": 5.7,
+      "pct": 10.04,
+      "volume": 1802652.0,
+      "amount": 1009507978.0,
+      "turnover": 16.24,
+      "volume_ratio": 1.5,
+      "high": 5.7,
+      "low": 5.03,
+      "open": 5.1,
+      "prev_close": 5.18,
+      "main_flow": 387689674.0,
+      "super_large_flow": 404686084.0,
+      "source_time": "2026-09-24T14:09:42+08:00",
+      "boards": [
+        {
+          "code": "BK1249",
+          "name": "焦炭Ⅱ"
+        },
+        {
+          "code": "BK1492",
+          "name": "焦炭Ⅲ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -1.5444015444015413,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:42+08:00",
+        null,
+        "2026-09-24T14:09:39+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 25.81,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 2,
+      "top3": true
+    },
+    {
+      "code": "600156",
+      "name": "华升股份",
+      "secid": "1.600156",
+      "price": 9.25,
+      "pct": 9.99,
+      "volume": 461860.0,
+      "amount": 422384678.0,
+      "turnover": 11.49,
+      "volume_ratio": 2.36,
+      "high": 9.25,
+      "low": 8.4,
+      "open": 8.5,
+      "prev_close": 8.41,
+      "main_flow": 135878700.0,
+      "super_large_flow": 155011874.0,
+      "source_time": "2026-09-24T14:09:44+08:00",
+      "boards": [
+        {
+          "code": "BK1350",
+          "name": "其他纺织"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 1.0701545778834642,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:44+08:00",
+        null,
+        "2026-09-24T14:09:36+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 21.39,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 3,
+      "top3": true
+    },
+    {
+      "code": "601011",
+      "name": "宝泰隆",
+      "secid": "1.601011",
+      "price": 2.9,
+      "pct": 0.69,
+      "volume": 285742.0,
+      "amount": 82786838.0,
+      "turnover": 1.49,
+      "volume_ratio": 0.79,
+      "high": 2.95,
+      "low": 2.85,
+      "open": 2.87,
+      "prev_close": 2.88,
+      "main_flow": 18561530.0,
+      "super_large_flow": 4678785.0,
+      "source_time": "2026-09-24T14:09:44+08:00",
+      "boards": [
+        {
+          "code": "BK1249",
+          "name": "焦炭Ⅱ"
+        },
+        {
+          "code": "BK1492",
+          "name": "焦炭Ⅲ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.3472222222222099,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:44+08:00",
+        null,
+        "2026-09-24T14:09:39+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 25.81,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 4,
+      "top3": false
+    },
+    {
+      "code": "002614",
+      "name": "奥佳华",
+      "secid": "0.002614",
+      "price": 8.33,
+      "pct": 10.04,
+      "volume": 565689.0,
+      "amount": 457063395.88,
+      "turnover": 12.82,
+      "volume_ratio": 2.08,
+      "high": 8.33,
+      "low": 7.5,
+      "open": 7.5,
+      "prev_close": 7.57,
+      "main_flow": 68490092.0,
+      "super_large_flow": 72264622.0,
+      "source_time": "2026-09-24T14:09:39+08:00",
+      "boards": [
+        {
+          "code": "BK1456",
+          "name": "其他家电Ⅲ"
+        },
+        {
+          "code": "BK1243",
+          "name": "其他家电Ⅱ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.9247027741083214,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:39+08:00",
+        null,
+        "2026-09-24T14:09:36+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 28.04,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 5,
+      "top3": false
+    },
+    {
+      "code": "600527",
+      "name": "江南高纤",
+      "secid": "1.600527",
+      "price": 2.18,
+      "pct": -0.46,
+      "volume": 214669.0,
+      "amount": 47165498.0,
+      "turnover": 1.24,
+      "volume_ratio": 0.76,
+      "high": 2.22,
+      "low": 2.17,
+      "open": 2.18,
+      "prev_close": 2.19,
+      "main_flow": 6624927.0,
+      "super_large_flow": 3274669.0,
+      "source_time": "2026-09-24T14:09:43+08:00",
+      "boards": [
+        {
+          "code": "BK1350",
+          "name": "其他纺织"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.45662100456620447,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:43+08:00",
+        null,
+        "2026-09-24T14:09:36+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 21.39,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 6,
+      "top3": false
+    },
+    {
+      "code": "601015",
+      "name": "陕西黑猫",
+      "secid": "1.601015",
+      "price": 3.56,
+      "pct": 1.71,
+      "volume": 620845.0,
+      "amount": 223353805.0,
+      "turnover": 3.04,
+      "volume_ratio": 0.91,
+      "high": 3.68,
+      "low": 3.45,
+      "open": 3.5,
+      "prev_close": 3.5,
+      "main_flow": 29755103.0,
+      "super_large_flow": 28798030.0,
+      "source_time": "2026-09-24T14:09:43+08:00",
+      "boards": [
+        {
+          "code": "BK1249",
+          "name": "焦炭Ⅱ"
+        },
+        {
+          "code": "BK1492",
+          "name": "焦炭Ⅲ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.0,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:43+08:00",
+        null,
+        "2026-09-24T14:09:39+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 25.81,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 7,
+      "top3": false
+    },
+    {
+      "code": "600740",
+      "name": "山西焦化",
+      "secid": "1.600740",
+      "price": 3.77,
+      "pct": 1.34,
+      "volume": 239818.0,
+      "amount": 89968246.0,
+      "turnover": 0.94,
+      "volume_ratio": 1.07,
+      "high": 3.79,
+      "low": 3.67,
+      "open": 3.7,
+      "prev_close": 3.72,
+      "main_flow": 10513859.0,
+      "super_large_flow": 947168.0,
+      "source_time": "2026-09-24T14:09:43+08:00",
+      "boards": [
+        {
+          "code": "BK1249",
+          "name": "焦炭Ⅱ"
+        },
+        {
+          "code": "BK1492",
+          "name": "焦炭Ⅲ"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.5376344086021501,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:43+08:00",
+        null,
+        "2026-09-24T14:09:39+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 25.81,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 8,
+      "top3": false
+    },
+    {
+      "code": "001312",
+      "name": "福恩股份",
+      "secid": "0.001312",
+      "price": 18.37,
+      "pct": 1.94,
+      "volume": 32591.0,
+      "amount": 59823106.39,
+      "turnover": 5.7,
+      "volume_ratio": 1.12,
+      "high": 18.47,
+      "low": 17.98,
+      "open": 17.99,
+      "prev_close": 18.02,
+      "main_flow": 6282737.0,
+      "super_large_flow": -1340090.0,
+      "source_time": "2026-09-24T14:09:42+08:00",
+      "boards": [
+        {
+          "code": "BK1350",
+          "name": "其他纺织"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": -0.16648168701443034,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:42+08:00",
+        null,
+        "2026-09-24T14:09:36+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 21.39,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 9,
+      "top3": false
+    },
+    {
+      "code": "301066",
+      "name": "万事利",
+      "secid": "0.301066",
+      "price": 12.68,
+      "pct": 1.6,
+      "volume": 59453.0,
+      "amount": 76701044.14,
+      "turnover": 2.55,
+      "volume_ratio": 1.49,
+      "high": 13.28,
+      "low": 12.43,
+      "open": 12.59,
+      "prev_close": 12.48,
+      "main_flow": 5602588.0,
+      "super_large_flow": 2286916.0,
+      "source_time": "2026-09-24T14:09:42+08:00",
+      "boards": [
+        {
+          "code": "BK1350",
+          "name": "其他纺织"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.8814102564102422,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "waiting",
+      "candidate_status": "candidate",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:42+08:00",
+        null,
+        "2026-09-24T14:09:36+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 21.39,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "technical_data_incomplete"
+      ],
+      "rank": 10,
+      "top3": false
+    }
+  ],
+  "top3": [
+    "002321",
+    "600792",
+    "600156"
+  ],
+  "rejected": [
+    {
+      "code": "600965",
+      "name": "*ST福成",
+      "secid": "1.600965",
+      "price": 2.69,
+      "pct": 0.0,
+      "volume": 21491.0,
+      "amount": 5813353.0,
+      "turnover": 0.26,
+      "volume_ratio": 0.74,
+      "high": 2.72,
+      "low": 2.69,
+      "open": 2.71,
+      "prev_close": 2.69,
+      "main_flow": 1253156.0,
+      "super_large_flow": 1264403.0,
+      "source_time": "2026-09-24T14:09:28+08:00",
+      "boards": [
+        {
+          "code": "BK1510",
+          "name": "其他养殖"
+        }
+      ],
+      "capital_3d_5d": {
+        "main_3d": null,
+        "main_5d": null,
+        "consecutive_inflow_days": 0,
+        "super_large_change": null,
+        "capital_inflow_score": 0,
+        "complete": false,
+        "source_date": null,
+        "institution_verified": false,
+        "basis": "completed trading days; order-size flow is not institutional identity",
+        "evidence": [],
+        "risk_flags": [
+          "missing_or_outdated_5d_capital_history"
+        ]
+      },
+      "capital_inflow_score": 0,
+      "ma5": null,
+      "ma10": null,
+      "ma20": null,
+      "macd": null,
+      "rsi": null,
+      "return_5d": null,
+      "rs": {
+        "market": null,
+        "board": null
+      },
+      "resistance": null,
+      "breakout": null,
+      "volume_pattern": null,
+      "vwap_status": "unknown",
+      "intraday": {
+        "vwap": null,
+        "vwap_status": "unknown",
+        "source_time": null,
+        "fresh": false,
+        "pullback_support": false,
+        "recent_volume_ratio": null,
+        "return_5m": null,
+        "drawdown_from_high_pct": null,
+        "active_buy_orders": null,
+        "opening_gap_pct": 0.743494423791824,
+        "board_synchrony": false,
+        "core_linkage": false
+      },
+      "intraday_status": "rejected",
+      "candidate_status": "rejected",
+      "score": 10,
+      "stale": true,
+      "critical_source_times": [
+        "2026-09-24T14:09:33+08:00",
+        "2026-09-24T14:09:28+08:00",
+        null,
+        "2026-09-24T14:09:36+08:00",
+        null,
+        null,
+        null,
+        null
+      ],
+      "evidence": {
+        "capital": [],
+        "capital_interpretation": "completed trading days; order-size flow is not institutional identity",
+        "technical": "daily adjusted bars + current quote; volume pattern uses completed sessions",
+        "board_strength": 24.19,
+        "institutional_inflow_claim": false,
+        "confirmation_blockers": [
+          "aggressor-side buy orders unavailable",
+          "critical source missing/stale",
+          "technical structure not ready",
+          "VWAP pullback not confirmed",
+          "board synchrony absent",
+          "core linkage absent"
+        ]
+      },
+      "risk_flags": [
+        "active_buy_orders_unavailable",
+        "capital_confirmation_unavailable",
+        "critical_live_data_stale_or_missing",
+        "insufficient_daily_history",
+        "missing_or_outdated_5d_capital_history",
+        "outdated_daily_history",
+        "special_treatment_or_delisting",
+        "technical_data_incomplete"
+      ]
+    }
+  ],
   "missing": [
     "ETF creation/redemption flows",
     "LHB institutional seats",
     "aggressor-side buy orders",
-    "concept boards",
-    "industry boards",
     "market trading-day reference",
     "northbound/other institutional ownership flows",
-    "source:concept_boards",
-    "source:industry_boards",
+    "source:board_history:BK1243",
+    "source:board_history:BK1249",
+    "source:board_history:BK1313",
+    "source:board_history:BK1350",
+    "source:board_history:BK1376",
+    "source:board_history:BK1456",
+    "source:board_history:BK1492",
+    "source:board_history:BK1510",
+    "source:board_minutes:BK1243",
+    "source:board_minutes:BK1249",
+    "source:board_minutes:BK1313",
+    "source:board_minutes:BK1350",
+    "source:board_minutes:BK1376",
+    "source:board_minutes:BK1456",
+    "source:board_minutes:BK1492",
+    "source:board_minutes:BK1510",
+    "source:capital:000723",
+    "source:capital:000809",
+    "source:capital:000955",
+    "source:capital:000958",
+    "source:capital:001312",
+    "source:capital:001390",
+    "source:capital:002144",
+    "source:capital:002321",
+    "source:capital:002487",
+    "source:capital:002531",
+    "source:capital:002614",
+    "source:capital:003816",
+    "source:capital:300129",
+    "source:capital:300185",
+    "source:capital:300247",
+    "source:capital:300313",
+    "source:capital:300443",
+    "source:capital:300569",
+    "source:capital:300690",
+    "source:capital:300819",
+    "source:capital:300850",
+    "source:capital:300877",
+    "source:capital:300904",
+    "source:capital:300918",
+    "source:capital:301040",
+    "source:capital:301066",
+    "source:capital:301155",
+    "source:capital:301163",
+    "source:capital:301232",
+    "source:capital:301456",
+    "source:capital:301557",
+    "source:capital:600072",
+    "source:capital:600156",
+    "source:capital:600408",
+    "source:capital:600527",
+    "source:capital:600740",
+    "source:capital:600792",
+    "source:capital:600965",
+    "source:capital:600997",
+    "source:capital:601011",
+    "source:capital:601015",
+    "source:capital:601026",
+    "source:capital:601218",
+    "source:capital:601599",
+    "source:capital:601985",
+    "source:capital:603055",
+    "source:capital:603063",
+    "source:capital:603092",
+    "source:capital:603130",
+    "source:capital:603218",
+    "source:capital:603248",
+    "source:capital:603507",
+    "source:capital:603579",
+    "source:capital:603889",
+    "source:capital:603985",
+    "source:capital:605180",
+    "source:capital:920200",
+    "source:core_minutes:000958",
+    "source:core_minutes:002321",
+    "source:core_minutes:002487",
+    "source:core_minutes:002531",
+    "source:core_minutes:002614",
+    "source:core_minutes:003816",
+    "source:core_minutes:300247",
+    "source:core_minutes:300313",
+    "source:core_minutes:300819",
+    "source:core_minutes:600156",
+    "source:core_minutes:600408",
+    "source:core_minutes:600792",
+    "source:core_minutes:600965",
+    "source:core_minutes:601015",
+    "source:core_minutes:601218",
+    "source:core_minutes:601985",
+    "source:core_minutes:603579",
+    "source:core_minutes:605180",
+    "source:daily:000723",
+    "source:daily:000809",
+    "source:daily:000955",
+    "source:daily:000958",
+    "source:daily:001312",
+    "source:daily:001390",
+    "source:daily:002144",
+    "source:daily:002321",
+    "source:daily:002487",
+    "source:daily:002531",
+    "source:daily:002614",
+    "source:daily:003816",
+    "source:daily:300129",
+    "source:daily:300185",
+    "source:daily:300247",
+    "source:daily:300313",
+    "source:daily:300443",
+    "source:daily:300569",
+    "source:daily:300690",
+    "source:daily:300819",
+    "source:daily:300850",
+    "source:daily:300877",
+    "source:daily:300904",
+    "source:daily:300918",
+    "source:daily:301040",
+    "source:daily:301066",
+    "source:daily:301155",
+    "source:daily:301163",
+    "source:daily:301232",
+    "source:daily:301456",
+    "source:daily:301557",
+    "source:daily:600072",
+    "source:daily:600156",
+    "source:daily:600408",
+    "source:daily:600527",
+    "source:daily:600740",
+    "source:daily:600792",
+    "source:daily:600965",
+    "source:daily:600997",
+    "source:daily:601011",
+    "source:daily:601015",
+    "source:daily:601026",
+    "source:daily:601218",
+    "source:daily:601599",
+    "source:daily:601985",
+    "source:daily:603055",
+    "source:daily:603063",
+    "source:daily:603092",
+    "source:daily:603130",
+    "source:daily:603218",
+    "source:daily:603248",
+    "source:daily:603507",
+    "source:daily:603579",
+    "source:daily:603889",
+    "source:daily:603985",
+    "source:daily:605180",
+    "source:daily:920200",
     "source:market_history",
-    "source:market_quote"
+    "source:minutes:000723",
+    "source:minutes:000809",
+    "source:minutes:000955",
+    "source:minutes:000958",
+    "source:minutes:001312",
+    "source:minutes:001390",
+    "source:minutes:002144",
+    "source:minutes:002321",
+    "source:minutes:002487",
+    "source:minutes:002531",
+    "source:minutes:002614",
+    "source:minutes:003816",
+    "source:minutes:300129",
+    "source:minutes:300185",
+    "source:minutes:300247",
+    "source:minutes:300313",
+    "source:minutes:300443",
+    "source:minutes:300569",
+    "source:minutes:300690",
+    "source:minutes:300819",
+    "source:minutes:300850",
+    "source:minutes:300877",
+    "source:minutes:300904",
+    "source:minutes:300918",
+    "source:minutes:301040",
+    "source:minutes:301066",
+    "source:minutes:301155",
+    "source:minutes:301163",
+    "source:minutes:301232",
+    "source:minutes:301456",
+    "source:minutes:301557",
+    "source:minutes:600072",
+    "source:minutes:600156",
+    "source:minutes:600408",
+    "source:minutes:600527",
+    "source:minutes:600740",
+    "source:minutes:600792",
+    "source:minutes:600965",
+    "source:minutes:600997",
+    "source:minutes:601011",
+    "source:minutes:601015",
+    "source:minutes:601026",
+    "source:minutes:601218",
+    "source:minutes:601599",
+    "source:minutes:601985",
+    "source:minutes:603055",
+    "source:minutes:603063",
+    "source:minutes:603092",
+    "source:minutes:603130",
+    "source:minutes:603218",
+    "source:minutes:603248",
+    "source:minutes:603507",
+    "source:minutes:603579",
+    "source:minutes:603889",
+    "source:minutes:603985",
+    "source:minutes:605180",
+    "source:minutes:920200"
   ],
   "source_errors": [
     {
@@ -40,16 +2245,848 @@
       "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
     },
     {
-      "source": "industry_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "source": "board_history:BK1492",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
     },
     {
-      "source": "concept_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "source": "core_minutes:600792",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
     },
     {
-      "source": "market_quote",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "source": "core_minutes:601015",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:600408",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1492",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_history:BK1249",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:600792",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:601015",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:600408",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1249",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_history:BK1456",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:002614",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:603579",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:300247",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1456",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_history:BK1243",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:002614",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:603579",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:300247",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1243",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_history:BK1510",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:002321",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:300313",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:600965",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1510",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_history:BK1313",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:002487",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:002531",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:601218",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1313",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_history:BK1376",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:601985",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:003816",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:000958",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1376",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_history:BK1350",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:600156",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:300819",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "core_minutes:605180",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1350",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:002321",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:002321",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:002321",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:600792",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:600792",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:600792",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:600156",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:600156",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:600156",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:601218",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:601218",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:601218",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:601011",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:601011",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:601011",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:601985",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:601985",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:601985",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:600965",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:600965",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:600965",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:600527",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:600527",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:600527",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:003816",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:003816",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:003816",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:002614",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:002614",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:002614",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:601015",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:601015",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:601015",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:600740",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:600740",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:600740",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300129",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300129",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300129",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603218",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603218",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603218",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300569",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300569",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300569",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:000809",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:000809",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:000809",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:301066",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:301066",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:301066",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:001312",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:001312",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:001312",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300850",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300850",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300850",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:301456",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:301456",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:301456",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300690",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300690",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300690",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:600072",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:600072",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:600072",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:002531",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:002531",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:002531",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:601599",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:601599",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:601599",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:301040",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:301040",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:301040",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603248",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603248",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603248",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:000723",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:000723",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:000723",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:000955",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:000955",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:000955",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:002144",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:002144",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:002144",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603055",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603055",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603055",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:601026",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:601026",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:601026",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603579",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603579",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603579",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:600997",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:600997",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:600997",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:301163",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:301163",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:301163",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603889",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603889",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603889",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:001390",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:001390",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:001390",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300877",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300877",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300877",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300247",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300247",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300247",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603985",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603985",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603985",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:000958",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:000958",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:000958",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603063",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603063",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603063",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300313",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300313",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300313",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603507",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603507",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603507",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:920200",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:920200",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:920200",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300904",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300904",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300904",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603092",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603092",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603092",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:301232",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300185",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300185",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300185",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:002487",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:002487",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:002487",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:603130",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:603130",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:603130",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:301557",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:301557",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:301557",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:301155",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:301155",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:301155",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300819",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300819",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300819",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:605180",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:605180",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:605180",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:301232",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:301232",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:600408",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:600408",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:600408",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300918",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300918",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300918",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "daily:300443",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "capital:300443",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "minutes:300443",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
     }
   ],
   "transport_events": [
@@ -57,25 +3094,15 @@
       "source": "Investment OS /emq/",
       "status": "fallback",
       "error": "HTTPError"
-    },
-    {
-      "source": "Investment OS /emq/",
-      "status": "fallback",
-      "error": "HTTPError"
-    },
-    {
-      "source": "Investment OS /emq/",
-      "status": "fallback",
-      "error": "HTTPError"
     }
   ],
   "coverage": {
-    "industry_boards": 0,
-    "concept_boards": 0,
-    "positive_price_and_flow_boards": 0,
-    "selected_boards": 0,
-    "unique_constituents": 0,
-    "fully_assessed": 0,
+    "industry_boards": 496,
+    "concept_boards": 504,
+    "positive_price_and_flow_boards": 63,
+    "selected_boards": 8,
+    "unique_constituents": 57,
+    "fully_assessed": 57,
     "board_limit": 8,
     "stock_limit": 100,
     "collection_budget_seconds": 150,
