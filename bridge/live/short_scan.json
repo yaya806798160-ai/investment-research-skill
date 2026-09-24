@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-24T14:49:32+08:00",
+  "generated_at": "2026-09-24T14:54:43+08:00",
   "market_time": null,
   "stale": true,
   "stale_after_minutes": 8,
-  "expires_at": "2026-09-24T14:49:32+08:00",
+  "expires_at": "2026-09-24T14:54:43+08:00",
   "data_sources": [
     {
       "source": "Eastmoney market quote",
@@ -36,12 +36,12 @@
   ],
   "source_errors": [
     {
-      "source": "industry_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
-    },
-    {
       "source": "market_history",
       "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
+    },
+    {
+      "source": "industry_boards",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     },
     {
       "source": "concept_boards",
