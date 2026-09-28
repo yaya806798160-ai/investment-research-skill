@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-09-28T11:09:34+08:00",
-  "last_collection_at": "2026-09-28T11:09:34+08:00",
+  "generated_at": "2026-09-28T11:14:58+08:00",
+  "last_collection_at": "2026-09-28T11:14:58+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-09-28T11:09:34+08:00",
-  "current_commit": "08b0c805947f1fde75eb7829c0704f69dd8e75a0",
+  "last_push_at": "2026-09-28T11:14:58+08:00",
+  "current_commit": "00f264c65b2423c1c69148fe475ecaa5d071f8f7",
   "market_source_status": {
-    "investment_os_proxy": "failed",
-    "eastmoney_public_fallback": "unused",
+    "investment_os_proxy": "ok",
+    "eastmoney_public_fallback": "ok",
     "indices_ok": false,
-    "boards_ok": false,
+    "boards_ok": true,
     "breadth_ok": false
   },
   "short_scan_status": "stale",
@@ -20,23 +20,19 @@
       "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
     },
     {
-      "source": "board_history:BK1305",
-      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+      "source": "concept_boards",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     },
     {
-      "source": "core_minutes:688339",
-      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+      "source": "market_quote",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     },
     {
-      "source": "board_minutes:BK1305",
-      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
-    },
-    {
-      "source": "board_history:BK1530",
-      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+      "source": "industry_boards",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     }
   ],
-  "consecutive_failures": 47,
+  "consecutive_failures": 48,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
