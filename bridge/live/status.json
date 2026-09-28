@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-09-28T11:19:55+08:00",
-  "last_collection_at": "2026-09-28T11:19:55+08:00",
+  "generated_at": "2026-09-28T11:24:37+08:00",
+  "last_collection_at": "2026-09-28T11:24:37+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-09-28T11:19:55+08:00",
-  "current_commit": "7c30618e9c035b3b1c356d39cc5eb51ded244874",
+  "last_push_at": "2026-09-28T11:24:37+08:00",
+  "current_commit": "a31f9da9912802cdd1a9cd169f279c84c1c2bea9",
   "market_source_status": {
     "investment_os_proxy": "failed",
-    "eastmoney_public_fallback": "ok",
+    "eastmoney_public_fallback": "unused",
     "indices_ok": false,
     "boards_ok": false,
     "breadth_ok": false
@@ -16,23 +16,27 @@
   "short_scan_status": "stale",
   "short_scan_errors": [
     {
-      "source": "market_history",
+      "source": "board_history:BK1305",
       "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
     },
     {
-      "source": "market_quote",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "source": "core_minutes:688339",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
     },
     {
-      "source": "industry_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "source": "board_minutes:BK1305",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
     },
     {
-      "source": "concept_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "source": "board_history:BK1530",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
+    },
+    {
+      "source": "core_minutes:600418",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
     }
   ],
-  "consecutive_failures": 49,
+  "consecutive_failures": 50,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
