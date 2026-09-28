@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-09-24T15:04:28+08:00",
-  "last_collection_at": "2026-09-24T15:04:28+08:00",
+  "generated_at": "2026-09-28T00:31:00+08:00",
+  "last_collection_at": "2026-09-28T00:31:00+08:00",
   "last_success_at": null,
   "last_push_at": "2026-09-24T15:04:28+08:00",
   "current_commit": "e8340599ba43dee73cccde0edfe0940d40696cc4",
   "market_source_status": {
-    "investment_os_proxy": "failed",
+    "investment_os_proxy": "ok",
     "eastmoney_public_fallback": "unused",
     "indices_ok": false,
     "boards_ok": false,
@@ -24,17 +24,17 @@
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     },
     {
-      "source": "concept_boards",
+      "source": "market_quote",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     },
     {
-      "source": "market_quote",
+      "source": "concept_boards",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     }
   ],
-  "consecutive_failures": 23,
+  "consecutive_failures": 24,
   "stale_after_minutes": 8,
-  "market_window": true,
+  "market_window": false,
   "rules": {
     "reader_must_recheck_age_minutes": 8,
     "empty_candidates_means_scanner_failed_not_no_opportunities": true
