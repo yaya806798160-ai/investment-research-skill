@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-09-28T13:05:18+08:00",
-  "last_collection_at": "2026-09-28T13:05:18+08:00",
+  "generated_at": "2026-09-28T13:16:01+08:00",
+  "last_collection_at": "2026-09-28T13:16:01+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-09-28T13:05:18+08:00",
-  "current_commit": "a559f5f28e743d7a57d077d41904d4f53dd2ad52",
+  "last_push_at": "2026-09-28T13:16:01+08:00",
+  "current_commit": "4ad3e29484d475942f536bd5fa2048b098a2cdf9",
   "market_source_status": {
-    "investment_os_proxy": "ok",
+    "investment_os_proxy": "failed",
     "eastmoney_public_fallback": "unused",
-    "indices_ok": true,
+    "indices_ok": false,
     "boards_ok": false,
     "breadth_ok": false
   },
@@ -20,19 +20,15 @@
       "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
     },
     {
-      "source": "industry_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
-    },
-    {
       "source": "concept_boards",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     },
     {
-      "source": "market_quote",
+      "source": "industry_boards",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     }
   ],
-  "consecutive_failures": 52,
+  "consecutive_failures": 53,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
