@@ -1,19 +1,36 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-28T09:30:05+08:00",
-  "market_time": null,
+  "generated_at": "2026-09-28T09:34:39+08:00",
+  "market_time": "2026-09-28T09:34:39+08:00",
   "stale": true,
   "stale_after_minutes": 8,
-  "expires_at": "2026-09-28T09:30:05+08:00",
+  "expires_at": "2026-09-28T09:34:39+08:00",
   "data_sources": [
     {
       "source": "Eastmoney market quote",
-      "source_time": null,
-      "stale": true
+      "source_time": "2026-09-28T09:34:39+08:00",
+      "stale": false
     }
   ],
   "market_regime": {
-    "index": null,
+    "index": {
+      "code": "000001",
+      "name": "上证指数",
+      "secid": "1.000001",
+      "price": 3869.25,
+      "pct": -0.49,
+      "volume": 51341065.0,
+      "amount": 86773533684.9,
+      "turnover": 0.11,
+      "volume_ratio": 5.13,
+      "high": 3878.41,
+      "low": 3867.34,
+      "open": 3878.41,
+      "prev_close": 3888.37,
+      "main_flow": -1859198720.0,
+      "super_large_flow": -929846784.0,
+      "source_time": "2026-09-28T09:34:39+08:00"
+    },
     "return_5d": null,
     "label": "mixed_or_defensive"
   },
@@ -27,23 +44,24 @@
     "aggressor-side buy orders",
     "concept boards",
     "industry boards",
+    "market trading-day reference",
     "northbound/other institutional ownership flows",
     "source:concept_boards",
     "source:industry_boards",
-    "source:market_quote"
+    "source:market_history"
   ],
   "source_errors": [
     {
-      "source": "industry_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
-    },
-    {
-      "source": "market_quote",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "source": "market_history",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
     },
     {
       "source": "concept_boards",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+    },
+    {
+      "source": "industry_boards",
+      "error": "https://push2.eastmoney.com: temporary circuit open after upstream failure"
     }
   ],
   "transport_events": [
