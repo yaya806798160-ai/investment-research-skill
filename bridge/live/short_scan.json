@@ -1,19 +1,36 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-28T13:05:28+08:00",
-  "market_time": null,
+  "generated_at": "2026-09-28T13:16:14+08:00",
+  "market_time": "2026-09-28T13:16:12+08:00",
   "stale": true,
   "stale_after_minutes": 8,
-  "expires_at": "2026-09-28T13:05:28+08:00",
+  "expires_at": "2026-09-28T13:16:14+08:00",
   "data_sources": [
     {
       "source": "Eastmoney market quote",
-      "source_time": null,
-      "stale": true
+      "source_time": "2026-09-28T13:16:12+08:00",
+      "stale": false
     }
   ],
   "market_regime": {
-    "index": null,
+    "index": {
+      "code": "000001",
+      "name": "上证指数",
+      "secid": "1.000001",
+      "price": 3822.94,
+      "pct": -1.68,
+      "volume": 322069710.0,
+      "amount": 583922586043.0,
+      "turnover": 0.66,
+      "volume_ratio": 1.18,
+      "high": 3878.41,
+      "low": 3812.74,
+      "open": 3878.41,
+      "prev_close": 3888.37,
+      "main_flow": -34010340608.0,
+      "super_large_flow": -23859772672.0,
+      "source_time": "2026-09-28T13:16:12+08:00"
+    },
     "return_5d": null,
     "label": "mixed_or_defensive"
   },
@@ -31,8 +48,7 @@
     "northbound/other institutional ownership flows",
     "source:concept_boards",
     "source:industry_boards",
-    "source:market_history",
-    "source:market_quote"
+    "source:market_history"
   ],
   "source_errors": [
     {
@@ -40,15 +56,11 @@
       "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
     },
     {
-      "source": "industry_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
-    },
-    {
       "source": "concept_boards",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     },
     {
-      "source": "market_quote",
+      "source": "industry_boards",
       "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
     }
   ],
@@ -56,17 +68,17 @@
     {
       "source": "Investment OS /emq/",
       "status": "fallback",
-      "error": "HTTPError"
+      "error": "TimeoutError"
     },
     {
       "source": "Investment OS /emq/",
       "status": "fallback",
-      "error": "HTTPError"
+      "error": "TimeoutError"
     },
     {
       "source": "Investment OS /emq/",
       "status": "fallback",
-      "error": "HTTPError"
+      "error": "TimeoutError"
     }
   ],
   "coverage": {
