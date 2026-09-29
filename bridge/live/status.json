@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-09-29T13:24:30+08:00",
-  "last_collection_at": "2026-09-29T13:24:30+08:00",
+  "generated_at": "2026-09-29T13:29:35+08:00",
+  "last_collection_at": "2026-09-29T13:29:35+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-09-29T13:24:30+08:00",
-  "current_commit": "873098533223e12efb25eb1a38659a74219f6cdd",
+  "last_push_at": "2026-09-29T13:29:35+08:00",
+  "current_commit": "1a55e50c87e4e16561776d3d57222531fc86a213",
   "market_source_status": {
     "investment_os_proxy": "failed",
     "eastmoney_public_fallback": "unused",
@@ -16,23 +16,27 @@
   "short_scan_status": "stale",
   "short_scan_errors": [
     {
-      "source": "market_quote",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
-    },
-    {
-      "source": "industry_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
-    },
-    {
-      "source": "concept_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
-    },
-    {
-      "source": "market_history",
+      "source": "board_history:BK1298",
       "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
+    },
+    {
+      "source": "core_minutes:688339",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
+    },
+    {
+      "source": "board_history:BK1342",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
+    },
+    {
+      "source": "board_history:BK1304",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
+    },
+    {
+      "source": "core_minutes:300364",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/trends2/get: RemoteDisconnected: Remote end closed connection without response, TimeoutError: timed out"
     }
   ],
-  "consecutive_failures": 65,
+  "consecutive_failures": 66,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
