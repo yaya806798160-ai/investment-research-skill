@@ -1,38 +1,42 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-09-28T13:54:35+08:00",
-  "last_collection_at": "2026-09-28T13:54:35+08:00",
+  "generated_at": "2026-09-29T13:08:44+08:00",
+  "last_collection_at": "2026-09-29T13:08:44+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-09-28T13:54:35+08:00",
-  "current_commit": "0f113bb416b255997c8ea343e24729d399f22e80",
+  "last_push_at": "2026-09-29T13:08:44+08:00",
+  "current_commit": "1d71e8a57f8899b63a08c5f3957da22fd5415e95",
   "market_source_status": {
-    "investment_os_proxy": "ok",
+    "investment_os_proxy": "failed",
     "eastmoney_public_fallback": "unused",
-    "indices_ok": true,
+    "indices_ok": false,
     "boards_ok": false,
     "breadth_ok": false
   },
   "short_scan_status": "stale",
   "short_scan_errors": [
     {
-      "source": "market_history",
-      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected"
+      "source": "board_history:BK1304",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected, HTTPError"
     },
     {
-      "source": "industry_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "source": "core_minutes:300450",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
     },
     {
-      "source": "market_quote",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "source": "core_minutes:688499",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
     },
     {
-      "source": "concept_boards",
-      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected"
+      "source": "core_minutes:301662",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+    },
+    {
+      "source": "board_minutes:BK1304",
+      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
     }
   ],
-  "consecutive_failures": 60,
+  "consecutive_failures": 61,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
