@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-09-29T13:08:44+08:00",
-  "last_collection_at": "2026-09-29T13:08:44+08:00",
+  "generated_at": "2026-09-29T13:09:52+08:00",
+  "last_collection_at": "2026-09-29T13:09:52+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-09-29T13:08:44+08:00",
-  "current_commit": "1d71e8a57f8899b63a08c5f3957da22fd5415e95",
+  "last_push_at": "2026-09-29T13:09:52+08:00",
+  "current_commit": "9b11871f0f22d09e1cdcb8b9b2693563fbbc36d4",
   "market_source_status": {
     "investment_os_proxy": "failed",
     "eastmoney_public_fallback": "unused",
@@ -16,27 +16,19 @@
   "short_scan_status": "stale",
   "short_scan_errors": [
     {
-      "source": "board_history:BK1304",
-      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected, HTTPError"
+      "source": "industry_boards",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected, HTTPError"
     },
     {
-      "source": "core_minutes:300450",
-      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+      "source": "market_quote",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected, HTTPError"
     },
     {
-      "source": "core_minutes:688499",
-      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
-    },
-    {
-      "source": "core_minutes:301662",
-      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
-    },
-    {
-      "source": "board_minutes:BK1304",
-      "error": "https://push2his.eastmoney.com: temporary circuit open after upstream failure"
+      "source": "concept_boards",
+      "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected, HTTPError"
     }
   ],
-  "consecutive_failures": 61,
+  "consecutive_failures": 62,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
