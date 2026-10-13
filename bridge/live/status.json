@@ -1,90 +1,29 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-10-12T14:30:48+08:00",
-  "last_collection_at": "2026-10-12T14:30:48+08:00",
+  "generated_at": "2026-10-13T11:00:51+08:00",
+  "last_collection_at": "2026-10-13T11:00:51+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-10-12T14:30:48+08:00",
-  "current_commit": "0963f469a59a9c0e3fd18280da748808f212d2ca",
-  "snapshot_commit": "0963f469a59a9c0e3fd18280da748808f212d2ca",
+  "last_push_at": "2026-10-13T11:00:51+08:00",
+  "current_commit": "ad36904284a81a673cf194a0c5331b80c1127f69",
+  "snapshot_commit": "ad36904284a81a673cf194a0c5331b80c1127f69",
   "current_commit_scope": "snapshot commit preceding status publication",
   "market_source_status": {
     "investment_os_proxy": "failed",
     "eastmoney_public_fallback": "ok",
-    "tencent_backup": "ok",
+    "tencent_backup": "unused",
     "indices_ok": true,
-    "boards_ok": false,
-    "breadth_ok": false
+    "boards_ok": true,
+    "breadth_ok": true
   },
-  "short_scan_status": "stale",
-  "short_scan_errors": [
-    {
-      "source": "board_history:BK1032",
-      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: TimeoutError: The read operation timed out"
-    },
-    {
-      "source": "daily:300251",
-      "error": "scan collection budget exhausted before daily fallback"
-    },
-    {
-      "source": "daily:601858",
-      "error": "scan collection budget exhausted before daily fallback"
-    },
-    {
-      "source": "daily:001330",
-      "error": "scan collection budget exhausted before daily fallback"
-    },
-    {
-      "source": "daily:603533",
-      "error": "scan collection budget exhausted before daily fallback"
-    }
-  ],
+  "short_scan_status": "ok",
+  "short_scan_errors": [],
   "partial": true,
-  "successful_pages": 6,
-  "cached_pages": 5,
-  "proxy_health": "ok",
-  "proxy_errors": [
-    {
-      "tested_at": "2026-10-12T14:32:46+08:00",
-      "source": "Investment OS /emhis/",
-      "route": "Investment OS /emhis/",
-      "url": "http://127.0.0.1:8080/emhis/api/qt/stock/trends2/get?secid=90.BK1298&ndays=1&iscr=0&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58",
-      "http_status": null,
-      "first_200_bytes": null,
-      "exception_type": "TimeoutError",
-      "success": false,
-      "error": "timed out",
-      "elapsed_seconds": 4.129,
-      "round": 2
-    },
-    {
-      "tested_at": "2026-10-12T14:33:05+08:00",
-      "source": "Investment OS /emhis/",
-      "route": "Investment OS /emhis/",
-      "url": "http://127.0.0.1:8080/emhis/api/qt/stock/trends2/get?secid=1.601595&ndays=1&iscr=0&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58",
-      "http_status": null,
-      "first_200_bytes": null,
-      "exception_type": "TimeoutError",
-      "success": false,
-      "error": "timed out",
-      "elapsed_seconds": 7.617,
-      "round": 1
-    },
-    {
-      "tested_at": "2026-10-12T14:33:05+08:00",
-      "source": "Investment OS /emhis/",
-      "route": "Investment OS /emhis/",
-      "url": "http://127.0.0.1:8080/emhis/api/qt/stock/trends2/get?secid=0.002343&ndays=1&iscr=0&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58",
-      "http_status": null,
-      "first_200_bytes": null,
-      "exception_type": "TimeoutError",
-      "success": false,
-      "error": "timed out",
-      "elapsed_seconds": 8.021,
-      "round": 1
-    }
-  ],
-  "failed_pages": 5,
+  "successful_pages": 11,
+  "cached_pages": 0,
+  "proxy_health": "not_checked",
+  "proxy_errors": [],
+  "failed_pages": 0,
   "pagination": {
     "industry": {
       "fs": "m:90+t:2",
@@ -104,15 +43,15 @@
         },
         {
           "page": 3,
-          "route": "cache"
+          "route": "live"
         },
         {
           "page": 4,
-          "route": "cache"
+          "route": "live"
         },
         {
           "page": 5,
-          "route": "cache"
+          "route": "live"
         }
       ],
       "pages_succeeded": [
@@ -126,62 +65,24 @@
         },
         {
           "page": 3,
-          "route": "cache"
+          "route": "live"
         },
         {
           "page": 4,
-          "route": "cache"
+          "route": "live"
         },
         {
           "page": 5,
-          "route": "cache"
+          "route": "live"
         }
       ],
-      "failed_pages": [
-        {
-          "fs": "m:90+t:2",
-          "page": 3,
-          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, TimeoutError: timed out",
-          "cache_used": true
-        },
-        {
-          "fs": "m:90+t:2",
-          "page": 4,
-          "error": "scan collection budget exhausted",
-          "cache_used": true
-        },
-        {
-          "fs": "m:90+t:2",
-          "page": 5,
-          "error": "scan collection budget exhausted",
-          "cache_used": true
-        }
-      ],
-      "partial": true,
-      "cache_used": true,
+      "failed_pages": [],
+      "partial": false,
+      "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-10-12T11:00:54+08:00",
-      "stale": true,
-      "source_errors": [
-        {
-          "fs": "m:90+t:2",
-          "page": 3,
-          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, TimeoutError: timed out",
-          "cache_used": true
-        },
-        {
-          "fs": "m:90+t:2",
-          "page": 4,
-          "error": "scan collection budget exhausted",
-          "cache_used": true
-        },
-        {
-          "fs": "m:90+t:2",
-          "page": 5,
-          "error": "scan collection budget exhausted",
-          "cache_used": true
-        }
-      ]
+      "source_time": "2026-10-13T11:00:54+08:00",
+      "stale": false,
+      "source_errors": []
     },
     "concept": {
       "fs": "m:90+t:3",
@@ -209,11 +110,11 @@
         },
         {
           "page": 5,
-          "route": "cache"
+          "route": "live"
         },
         {
           "page": 6,
-          "route": "cache"
+          "route": "live"
         }
       ],
       "pages_succeeded": [
@@ -235,57 +136,30 @@
         },
         {
           "page": 5,
-          "route": "cache"
+          "route": "live"
         },
         {
           "page": 6,
-          "route": "cache"
+          "route": "live"
         }
       ],
-      "failed_pages": [
-        {
-          "fs": "m:90+t:3",
-          "page": 5,
-          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, TimeoutError: timed out",
-          "cache_used": true
-        },
-        {
-          "fs": "m:90+t:3",
-          "page": 6,
-          "error": "scan collection budget exhausted",
-          "cache_used": true
-        }
-      ],
-      "partial": true,
-      "cache_used": true,
+      "failed_pages": [],
+      "partial": false,
+      "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-10-12T11:01:03+08:00",
-      "stale": true,
-      "source_errors": [
-        {
-          "fs": "m:90+t:3",
-          "page": 5,
-          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, TimeoutError: timed out",
-          "cache_used": true
-        },
-        {
-          "fs": "m:90+t:3",
-          "page": 6,
-          "error": "scan collection budget exhausted",
-          "cache_used": true
-        }
-      ]
+      "source_time": "2026-10-13T11:00:54+08:00",
+      "stale": false,
+      "source_errors": []
     }
   },
-  "last_data_success_at": "2026-10-12T14:32:56+08:00",
+  "last_data_success_at": "2026-10-13T11:03:05+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-10-12T14:33:13+08:00",
-  "consecutive_failures": 127,
+  "scan_generated_at": "2026-10-13T11:03:07+08:00",
+  "consecutive_failures": 128,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
     "reader_must_recheck_age_minutes": 8,
     "empty_candidates_means_scanner_failed_not_no_opportunities": true
-  },
-  "status_publication_error": "TimeoutExpired: Command '['git', 'push']' timed out after 6.482156899990514 seconds"
+  }
 }
