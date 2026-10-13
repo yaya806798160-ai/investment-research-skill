@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-12T14:46:33+08:00",
+  "source_time": "2026-10-12T14:45:24+08:00",
+  "expires_at": "2026-10-12T14:53:24+08:00",
+  "trade_date": "2026-10-12",
+  "market_time": "14:45:24",
+  "data_sources": [
+    {
+      "source": "index:上证",
+      "via": "Eastmoney direct",
+      "source_time": "2026-10-12T14:45:24+08:00",
+      "fallback_used": false,
+      "stale": false
+    },
+    {
+      "source": "index:创业板",
+      "via": "Eastmoney direct",
+      "source_time": "2026-10-12T14:45:24+08:00",
+      "fallback_used": false,
+      "stale": false
+    },
+    {
+      "source": "index:科创50",
+      "via": "Eastmoney direct",
+      "source_time": "2026-10-12T14:45:30+08:00",
+      "fallback_used": false,
+      "stale": false
+    },
+    {
+      "source": "clist:m:90+t:2,m:90+t:3",
+      "rows": 0,
+      "pages": 0,
+      "partial": false,
+      "failed_page": 1,
+      "failure": "request failed"
+    },
+    {
+      "source": "clist:m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23",
+      "rows": 0,
+      "pages": 0,
+      "partial": false,
+      "failed_page": 1,
+      "failure": "request failed"
+    }
+  ],
+  "source_errors": [
+    {
+      "tested_at": "2026-10-12T14:45:29+08:00",
+      "source": "Eastmoney direct",
+      "route": "Eastmoney direct",
+      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=1&pz=100&fid=f12",
+      "http_status": null,
+      "first_200_bytes": null,
+      "exception_type": "RemoteDisconnected",
+      "success": false,
+      "error": "Remote end closed connection without response",
+      "elapsed_seconds": 1.236,
+      "round": 1
+    },
+    {
+      "tested_at": "2026-10-12T14:45:31+08:00",
+      "source": "Investment OS /emq/",
+      "route": "Investment OS /emq/",
+      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=1&pz=100&fid=f12",
+      "http_status": 502,
+      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
+      "exception_type": "HTTPError",
+      "success": false,
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 9.614,
+      "round": 1
+    },
+    {
+      "tested_at": "2026-10-12T14:45:45+08:00",
+      "source": "Eastmoney direct",
+      "route": "Eastmoney direct",
+      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=1&pz=100&fid=f12",
+      "http_status": null,
+      "first_200_bytes": null,
+      "exception_type": "RemoteDisconnected",
+      "success": false,
+      "error": "Remote end closed connection without response",
+      "elapsed_seconds": 1.66,
+      "round": 2
+    },
+    {
+      "tested_at": "2026-10-12T14:45:47+08:00",
+      "source": "Investment OS /emq/",
+      "route": "Investment OS /emq/",
+      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=1&pz=100&fid=f12",
+      "http_status": null,
+      "first_200_bytes": null,
+      "exception_type": "TimeoutError",
+      "success": false,
+      "error": "timed out",
+      "elapsed_seconds": 25.258,
+      "round": 2
+    },
+    {
+      "source": "boards",
+      "error": "ValueError: page 1 failed: ['Remote end closed connection without response', 'HTTP Error 502: Bad Gateway', 'Remote end closed connection without response', 'timed out']"
+    },
+    {
+      "source": "breadth",
+      "error": "ValueError: page 1 failed: []"
+    }
+  ],
+  "source": [
+    "Investment OS local proxy",
+    "Eastmoney push2 via /emq/",
+    "Eastmoney public push2 IPv4 fallback"
+  ],
+  "stale": true,
+  "partial": true,
+  "stale_after_minutes": 8,
+  "stale_sources": [
+    "breadth"
+  ],
+  "missing": [
+    "boards",
+    "breadth",
+    "theme:AI算力",
+    "theme:CPO/光模块",
+    "theme:PCB",
+    "theme:半导体设备",
+    "theme:国产GPU/AI芯片"
+  ],
+  "indices": {
+    "上证": {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3797.37,
+      "pct": -0.43,
+      "turnover": 662298302055.3,
+      "volume": 428416733,
+      "source_time": "2026-10-12T14:45:24+08:00"
+    },
+    "创业板": {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 2970.04,
+      "pct": -2.41,
+      "turnover": 365328789617.64,
+      "volume": 154284229,
+      "source_time": "2026-10-12T14:45:24+08:00"
+    },
+    "科创50": {
+      "code": "000688",
+      "name": "科创50",
+      "price": 1429.71,
+      "pct": -1.89,
+      "turnover": 59623430868.0,
+      "volume": 6074217,
+      "source_time": "2026-10-12T14:45:30+08:00"
+    }
+  },
+  "breadth": {},
+  "themes": {},
+  "fund_mapping": {
+    "021528": {
+      "name": "财通成长C",
+      "themes": [
+        "CPO/光模块",
+        "PCB",
+        "AI算力"
+      ],
+      "theme_pct_avg": null,
+      "theme_main_flow_sum": null
+    },
+    "017811": {
+      "name": "东方人工智能",
+      "themes": [
+        "半导体设备"
+      ],
+      "theme_pct_avg": null,
+      "theme_main_flow_sum": null
+    },
+    "018123": {
+      "name": "永赢数字经济智选C",
+      "themes": [
+        "国产GPU/AI芯片",
+        "AI算力"
+      ],
+      "theme_pct_avg": null,
+      "theme_main_flow_sum": null
+    },
+    "008888": {
+      "name": "华夏国证半导体",
+      "themes": [
+        "半导体设备",
+        "国产GPU/AI芯片"
+      ],
+      "theme_pct_avg": null,
+      "theme_main_flow_sum": null
+    }
+  },
+  "rules": {
+    "local_strength_independent_confirmation": true,
+    "note": "PCB/CPO/etc can be locally strong even when broad communication/semiconductor flow is negative; do not require whole-tech confirmation.",
+    "empty_themes_breadth_means_source_failure_not_no_activity": true,
+    "reader_must_recheck_age_minutes": 8
+  }
+}
