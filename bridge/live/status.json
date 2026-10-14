@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-10-13T14:45:45+08:00",
-  "last_collection_at": "2026-10-13T14:45:45+08:00",
+  "generated_at": "2026-10-14T11:00:45+08:00",
+  "last_collection_at": "2026-10-14T11:00:45+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-10-13T14:45:45+08:00",
-  "current_commit": "04233606c5085163af763e91170ff69c0d875cf3",
-  "snapshot_commit": "04233606c5085163af763e91170ff69c0d875cf3",
+  "last_push_at": "2026-10-14T11:00:45+08:00",
+  "current_commit": "b9c98a61581885b6f6fe4fe9220538a02e7ce3d4",
+  "snapshot_commit": "b9c98a61581885b6f6fe4fe9220538a02e7ce3d4",
   "current_commit_scope": "snapshot commit preceding status publication",
   "market_source_status": {
     "investment_os_proxy": "failed",
@@ -16,35 +16,75 @@
     "boards_ok": true,
     "breadth_ok": true
   },
-  "short_scan_status": "ok",
+  "short_scan_status": "stale",
   "short_scan_errors": [
     {
-      "source": "capital:603268",
-      "error": "scan collection budget exhausted"
+      "source": "board_history:BK1230",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
     },
     {
-      "source": "minutes:603268",
-      "error": "scan collection budget exhausted"
+      "source": "board_history:BK1513",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
     },
     {
-      "source": "capital:002916",
-      "error": "scan collection budget exhausted"
+      "source": "board_history:BK1361",
+      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
     },
     {
-      "source": "minutes:002916",
-      "error": "scan collection budget exhausted"
+      "source": "daily:600685",
+      "error": "scan collection budget exhausted before daily fallback"
     },
     {
-      "source": "capital:002463",
-      "error": "scan collection budget exhausted"
+      "source": "daily:000968",
+      "error": "scan collection budget exhausted before daily fallback"
     }
   ],
   "partial": true,
-  "successful_pages": 11,
-  "cached_pages": 0,
-  "proxy_health": "not_checked",
-  "proxy_errors": [],
-  "failed_pages": 0,
+  "successful_pages": 5,
+  "cached_pages": 6,
+  "proxy_health": "ok",
+  "proxy_errors": [
+    {
+      "tested_at": "2026-10-14T11:02:15+08:00",
+      "source": "Investment OS /emhis/",
+      "route": "Investment OS /emhis/",
+      "url": "http://127.0.0.1:8080/emhis/api/qt/stock/kline/get?secid=1.600759&klt=101&fqt=1&end=20500101&lmt=90&fields1=f1%2Cf2%2Cf3&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61",
+      "http_status": 502,
+      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
+      "exception_type": "HTTPError",
+      "success": false,
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 3.976,
+      "round": 1
+    },
+    {
+      "tested_at": "2026-10-14T11:02:26+08:00",
+      "source": "Investment OS /emhis/",
+      "route": "Investment OS /emhis/",
+      "url": "http://127.0.0.1:8080/emhis/api/qt/stock/kline/get?secid=1.600759&klt=101&fqt=1&end=20500101&lmt=90&fields1=f1%2Cf2%2Cf3&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61",
+      "http_status": null,
+      "first_200_bytes": null,
+      "exception_type": "TimeoutError",
+      "success": false,
+      "error": "timed out",
+      "elapsed_seconds": 3.059,
+      "round": 2
+    },
+    {
+      "tested_at": "2026-10-14T11:02:24+08:00",
+      "source": "Investment OS /emhis/",
+      "route": "Investment OS /emhis/",
+      "url": "http://127.0.0.1:8080/emhis/api/qt/stock/kline/get?secid=1.600685&klt=101&fqt=1&end=20500101&lmt=90&fields1=f1%2Cf2%2Cf3&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61",
+      "http_status": 502,
+      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
+      "exception_type": "HTTPError",
+      "success": false,
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 5.272,
+      "round": 1
+    }
+  ],
+  "failed_pages": 6,
   "pagination": {
     "industry": {
       "fs": "m:90+t:2",
@@ -64,15 +104,15 @@
         },
         {
           "page": 3,
-          "route": "live"
+          "route": "cache"
         },
         {
           "page": 4,
-          "route": "live"
+          "route": "cache"
         },
         {
           "page": 5,
-          "route": "live"
+          "route": "cache"
         }
       ],
       "pages_succeeded": [
@@ -86,24 +126,62 @@
         },
         {
           "page": 3,
-          "route": "live"
+          "route": "cache"
         },
         {
           "page": 4,
-          "route": "live"
+          "route": "cache"
         },
         {
           "page": 5,
-          "route": "live"
+          "route": "cache"
         }
       ],
-      "failed_pages": [],
-      "partial": false,
-      "cache_used": false,
+      "failed_pages": [
+        {
+          "fs": "m:90+t:2",
+          "page": 3,
+          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+          "cache_used": true
+        },
+        {
+          "fs": "m:90+t:2",
+          "page": 4,
+          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, TimeoutError: timed out",
+          "cache_used": true
+        },
+        {
+          "fs": "m:90+t:2",
+          "page": 5,
+          "error": "scan collection budget exhausted",
+          "cache_used": true
+        }
+      ],
+      "partial": true,
+      "cache_used": true,
       "route": "Eastmoney",
       "source_time": "2026-10-13T14:45:48+08:00",
-      "stale": false,
-      "source_errors": []
+      "stale": true,
+      "source_errors": [
+        {
+          "fs": "m:90+t:2",
+          "page": 3,
+          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+          "cache_used": true
+        },
+        {
+          "fs": "m:90+t:2",
+          "page": 4,
+          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, TimeoutError: timed out",
+          "cache_used": true
+        },
+        {
+          "fs": "m:90+t:2",
+          "page": 5,
+          "error": "scan collection budget exhausted",
+          "cache_used": true
+        }
+      ]
     },
     "concept": {
       "fs": "m:90+t:3",
@@ -127,15 +205,15 @@
         },
         {
           "page": 4,
-          "route": "live"
+          "route": "cache"
         },
         {
           "page": 5,
-          "route": "live"
+          "route": "cache"
         },
         {
           "page": 6,
-          "route": "live"
+          "route": "cache"
         }
       ],
       "pages_succeeded": [
@@ -153,30 +231,68 @@
         },
         {
           "page": 4,
-          "route": "live"
+          "route": "cache"
         },
         {
           "page": 5,
-          "route": "live"
+          "route": "cache"
         },
         {
           "page": 6,
-          "route": "live"
+          "route": "cache"
         }
       ],
-      "failed_pages": [],
-      "partial": false,
-      "cache_used": false,
+      "failed_pages": [
+        {
+          "fs": "m:90+t:3",
+          "page": 4,
+          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+          "cache_used": true
+        },
+        {
+          "fs": "m:90+t:3",
+          "page": 5,
+          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, TimeoutError: timed out",
+          "cache_used": true
+        },
+        {
+          "fs": "m:90+t:3",
+          "page": 6,
+          "error": "scan collection budget exhausted",
+          "cache_used": true
+        }
+      ],
+      "partial": true,
+      "cache_used": true,
       "route": "Eastmoney",
-      "source_time": "2026-10-13T14:45:48+08:00",
-      "stale": false,
-      "source_errors": []
+      "source_time": "2026-10-13T14:45:51+08:00",
+      "stale": true,
+      "source_errors": [
+        {
+          "fs": "m:90+t:3",
+          "page": 4,
+          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+          "cache_used": true
+        },
+        {
+          "fs": "m:90+t:3",
+          "page": 5,
+          "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, TimeoutError: timed out",
+          "cache_used": true
+        },
+        {
+          "fs": "m:90+t:3",
+          "page": 6,
+          "error": "scan collection budget exhausted",
+          "cache_used": true
+        }
+      ]
     }
   },
-  "last_data_success_at": "2026-10-13T14:48:04+08:00",
+  "last_data_success_at": "2026-10-14T11:03:06+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-10-13T14:48:06+08:00",
-  "consecutive_failures": 131,
+  "scan_generated_at": "2026-10-14T11:03:12+08:00",
+  "consecutive_failures": 132,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
