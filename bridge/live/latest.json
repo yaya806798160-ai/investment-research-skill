@@ -1,29 +1,29 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-15T13:30:27+08:00",
-  "source_time": "2026-10-15T13:30:09+08:00",
-  "expires_at": "2026-10-15T13:38:09+08:00",
+  "generated_at": "2026-10-15T14:30:22+08:00",
+  "source_time": "2026-10-15T08:00:00+08:00",
+  "expires_at": "2026-10-15T08:08:00+08:00",
   "trade_date": "2026-10-15",
-  "market_time": "13:30:09",
+  "market_time": "08:00:00",
   "data_sources": [
     {
       "source": "index:上证",
       "via": "Eastmoney direct",
-      "source_time": "2026-10-15T13:30:09+08:00",
+      "source_time": "2026-10-15T14:30:03+08:00",
       "fallback_used": false,
       "stale": false
     },
     {
       "source": "index:创业板",
       "via": "Eastmoney direct",
-      "source_time": "2026-10-15T13:30:09+08:00",
+      "source_time": "2026-10-15T14:30:00+08:00",
       "fallback_used": false,
       "stale": false
     },
     {
       "source": "index:科创50",
       "via": "Eastmoney direct",
-      "source_time": "2026-10-15T13:30:12+08:00",
+      "source_time": "2026-10-15T14:30:03+08:00",
       "fallback_used": false,
       "stale": false
     },
@@ -36,69 +36,83 @@
     },
     {
       "source": "clist:m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23",
-      "rows": 0,
-      "pages": 0,
-      "partial": false,
-      "failed_page": 1,
+      "rows": 200,
+      "pages": 2,
+      "partial": true,
+      "failed_page": 3,
       "failure": "request failed"
     }
   ],
   "source_errors": [
     {
-      "tested_at": "2026-10-15T13:30:19+08:00",
+      "tested_at": "2026-10-15T14:30:12+08:00",
       "source": "Eastmoney direct",
       "route": "Eastmoney direct",
-      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
+      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=2&pz=100",
       "http_status": null,
       "first_200_bytes": null,
       "exception_type": "RemoteDisconnected",
       "success": false,
       "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.531,
+      "elapsed_seconds": 0.547,
       "round": 1
     },
     {
-      "tested_at": "2026-10-15T13:30:19+08:00",
+      "tested_at": "2026-10-15T14:30:14+08:00",
+      "source": "Eastmoney direct",
+      "route": "Eastmoney direct",
+      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=3&pz=100",
+      "http_status": null,
+      "first_200_bytes": null,
+      "exception_type": "RemoteDisconnected",
+      "success": false,
+      "error": "Remote end closed connection without response",
+      "elapsed_seconds": 0.478,
+      "round": 1
+    },
+    {
+      "tested_at": "2026-10-15T14:30:15+08:00",
       "source": "Investment OS /emq/",
       "route": "Investment OS /emq/",
-      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
+      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=3&pz=100",
       "http_status": 502,
       "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
       "exception_type": "HTTPError",
       "success": false,
       "error": "HTTP Error 502: Bad Gateway",
-      "elapsed_seconds": 1.837,
+      "elapsed_seconds": 1.421,
       "round": 1
     },
     {
-      "tested_at": "2026-10-15T13:30:25+08:00",
+      "tested_at": "2026-10-15T14:30:20+08:00",
       "source": "Eastmoney direct",
       "route": "Eastmoney direct",
-      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
+      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=3&pz=100",
       "http_status": null,
       "first_200_bytes": null,
       "exception_type": "RemoteDisconnected",
       "success": false,
       "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.44,
+      "elapsed_seconds": 0.424,
       "round": 2
     },
     {
-      "tested_at": "2026-10-15T13:30:26+08:00",
+      "tested_at": "2026-10-15T14:30:21+08:00",
       "source": "Investment OS /emq/",
       "route": "Investment OS /emq/",
-      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
+      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=3&pz=100",
       "http_status": 502,
       "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
       "exception_type": "HTTPError",
       "success": false,
       "error": "HTTP Error 502: Bad Gateway",
-      "elapsed_seconds": 1.534,
+      "elapsed_seconds": 1.517,
       "round": 2
     },
     {
       "source": "breadth",
-      "error": "ValueError: page 1 failed: ['Remote end closed connection without response', 'HTTP Error 502: Bad Gateway', 'Remote end closed connection without response', 'HTTP Error 502: Bad Gateway']"
+      "error": "page 3 failed",
+      "partial": true
     }
   ],
   "source": [
@@ -113,50 +127,61 @@
     "breadth"
   ],
   "missing": [
-    "breadth"
+    "breadth:partial"
   ],
   "indices": {
     "上证": {
       "code": "000001",
       "name": "上证指数",
-      "price": 3677.52,
-      "pct": -2.38,
-      "turnover": 529505283490.8,
-      "volume": 353861803,
-      "source_time": "2026-10-15T13:30:09+08:00"
+      "price": 3687.87,
+      "pct": -2.11,
+      "turnover": 662589552037.3,
+      "volume": 441301957,
+      "source_time": "2026-10-15T14:30:03+08:00"
     },
     "创业板": {
       "code": "399006",
       "name": "创业板指",
-      "price": 2756.94,
-      "pct": -3.83,
-      "turnover": 292429575216.44,
-      "volume": 122854114,
-      "source_time": "2026-10-15T13:30:09+08:00"
+      "price": 2763.97,
+      "pct": -3.59,
+      "turnover": 362806117955.38,
+      "volume": 151015415,
+      "source_time": "2026-10-15T14:30:00+08:00"
     },
     "科创50": {
       "code": "000688",
       "name": "科创50",
-      "price": 1330.44,
-      "pct": -3.61,
-      "turnover": 51139967677.3,
-      "volume": 5329158,
-      "source_time": "2026-10-15T13:30:12+08:00"
+      "price": 1344.53,
+      "pct": -2.59,
+      "turnover": 66881561924.9,
+      "volume": 7147350,
+      "source_time": "2026-10-15T14:30:03+08:00"
     }
   },
-  "breadth": {},
+  "breadth": {
+    "source_time": "2026-10-15T08:00:00+08:00",
+    "oldest_quote_time": "2026-10-15T08:00:00+08:00",
+    "stock_count": 200,
+    "up": 13,
+    "down": 186,
+    "flat": 1,
+    "limit_up_20cm_count": 0,
+    "limit_up_10cm_count": 0,
+    "limit_up_20cm": [],
+    "limit_up_10cm": []
+  },
   "themes": {
     "PCB": {
       "board_code": "BK1340",
       "board_name": "印制电路板",
-      "pct": 0.43,
-      "main_flow": -620473344.0,
-      "super_large_flow": 182478080.0,
-      "large_flow": -802951424.0,
-      "medium_flow": -184411136.0,
-      "small_flow": 813942272.0,
-      "main_flow_ratio": -0.95,
-      "source_time": "2026-10-15T13:30:12+08:00",
+      "pct": -0.22,
+      "main_flow": -1294602496.0,
+      "super_large_flow": -283851008.0,
+      "large_flow": -1010751488.0,
+      "medium_flow": -50428416.0,
+      "small_flow": 1365496576.0,
+      "main_flow_ratio": -1.65,
+      "source_time": "2026-10-15T14:30:06+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -167,14 +192,14 @@
     "CPO/光模块": {
       "board_code": "BK1136",
       "board_name": "光通信模块",
-      "pct": -3.48,
-      "main_flow": -7395109120.0,
-      "super_large_flow": -4237799424.0,
-      "large_flow": -3157309696.0,
-      "medium_flow": 2550192384.0,
-      "small_flow": 4734224896.0,
-      "main_flow_ratio": -6.1,
-      "source_time": "2026-10-15T13:30:15+08:00",
+      "pct": -3.82,
+      "main_flow": -9549997312.0,
+      "super_large_flow": -6101634560.0,
+      "large_flow": -3448362752.0,
+      "medium_flow": 3172150272.0,
+      "small_flow": 6273915648.0,
+      "main_flow_ratio": -6.35,
+      "source_time": "2026-10-15T14:30:06+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -185,14 +210,14 @@
     "AI算力": {
       "board_code": "BK1138",
       "board_name": "液冷服务器",
-      "pct": -3.85,
-      "main_flow": -4637886464.0,
-      "super_large_flow": -2457380352.0,
-      "large_flow": -2180506112.0,
-      "medium_flow": 66148096.0,
-      "small_flow": 4544847360.0,
-      "main_flow_ratio": -6.48,
-      "source_time": "2026-10-15T13:30:15+08:00",
+      "pct": -4.07,
+      "main_flow": -5839719936.0,
+      "super_large_flow": -3390648576.0,
+      "large_flow": -2449071360.0,
+      "medium_flow": 73829632.0,
+      "small_flow": 5740875776.0,
+      "main_flow_ratio": -6.42,
+      "source_time": "2026-10-15T14:30:06+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -203,14 +228,14 @@
     "半导体设备": {
       "board_code": "BK1326",
       "board_name": "半导体设备",
-      "pct": -2.59,
-      "main_flow": 142210272.0,
-      "super_large_flow": 168717024.0,
-      "large_flow": -26506752.0,
-      "medium_flow": -80647424.0,
-      "small_flow": -61823408.0,
-      "main_flow_ratio": 0.57,
-      "source_time": "2026-10-15T13:30:12+08:00",
+      "pct": -1.96,
+      "main_flow": 515690672.0,
+      "super_large_flow": 225539760.0,
+      "large_flow": 290150912.0,
+      "medium_flow": -273855232.0,
+      "small_flow": -242138864.0,
+      "main_flow_ratio": 1.58,
+      "source_time": "2026-10-15T14:30:06+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -221,14 +246,14 @@
     "国产GPU/AI芯片": {
       "board_code": "BK1127",
       "board_name": "AI芯片",
-      "pct": -4.4,
-      "main_flow": -1753741056.0,
-      "super_large_flow": -1530008064.0,
-      "large_flow": -223732992.0,
-      "medium_flow": 1624411392.0,
-      "small_flow": 123448064.0,
-      "main_flow_ratio": -5.7,
-      "source_time": "2026-10-15T13:30:15+08:00",
+      "pct": -4.36,
+      "main_flow": -1778438144.0,
+      "super_large_flow": -1776389120.0,
+      "large_flow": -2049024.0,
+      "medium_flow": 1679793408.0,
+      "small_flow": 91433216.0,
+      "main_flow_ratio": -4.62,
+      "source_time": "2026-10-15T14:30:06+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -245,16 +270,16 @@
         "PCB",
         "AI算力"
       ],
-      "theme_pct_avg": -2.3,
-      "theme_main_flow_sum": -12653468928.0
+      "theme_pct_avg": -2.703,
+      "theme_main_flow_sum": -16684319744.0
     },
     "017811": {
       "name": "东方人工智能",
       "themes": [
         "半导体设备"
       ],
-      "theme_pct_avg": -2.59,
-      "theme_main_flow_sum": 142210272.0
+      "theme_pct_avg": -1.96,
+      "theme_main_flow_sum": 515690672.0
     },
     "018123": {
       "name": "永赢数字经济智选C",
@@ -262,8 +287,8 @@
         "国产GPU/AI芯片",
         "AI算力"
       ],
-      "theme_pct_avg": -4.125,
-      "theme_main_flow_sum": -6391627520.0
+      "theme_pct_avg": -4.215,
+      "theme_main_flow_sum": -7618158080.0
     },
     "008888": {
       "name": "华夏国证半导体",
@@ -271,8 +296,8 @@
         "半导体设备",
         "国产GPU/AI芯片"
       ],
-      "theme_pct_avg": -3.495,
-      "theme_main_flow_sum": -1611530784.0
+      "theme_pct_avg": -3.16,
+      "theme_main_flow_sum": -1262747472.0
     }
   },
   "rules": {
@@ -282,8 +307,8 @@
     "reader_must_recheck_age_minutes": 8
   },
   "short_scan": {
-    "generated_at": "2026-10-15T13:32:55+08:00",
-    "market_time": "2026-10-15T13:30:39+08:00",
+    "generated_at": "2026-10-15T14:32:48+08:00",
+    "market_time": "2026-10-15T14:30:33+08:00",
     "stale": true,
     "partial": true,
     "coverage": {
@@ -345,7 +370,7 @@
           "partial": false,
           "cache_used": false,
           "route": "Eastmoney",
-          "source_time": "2026-10-15T13:30:36+08:00",
+          "source_time": "2026-10-15T14:30:27+08:00",
           "stale": false,
           "source_errors": []
         },
@@ -412,18 +437,18 @@
           "partial": false,
           "cache_used": false,
           "route": "Eastmoney",
-          "source_time": "2026-10-15T13:30:36+08:00",
+          "source_time": "2026-10-15T14:30:30+08:00",
           "stale": false,
           "source_errors": []
         }
       },
       "partial": true,
-      "positive_price_and_flow_boards": 9,
+      "positive_price_and_flow_boards": 15,
       "selected_boards": 8,
-      "unique_constituents": 61,
-      "fully_assessed": 5,
-      "assessed_records": 61,
-      "daily_histories": 61,
+      "unique_constituents": 58,
+      "fully_assessed": 13,
+      "assessed_records": 58,
+      "daily_histories": 58,
       "board_limit": 8,
       "stock_limit": 100,
       "collection_budget_seconds": 145,
@@ -431,21 +456,21 @@
     },
     "strong_boards": 8,
     "candidates": [
-      "300703",
-      "603366",
       "002543",
+      "603366",
       "002103",
-      "603230",
-      "600199",
-      "601801",
       "603999",
-      "601949",
-      "300654"
+      "603369",
+      "603230",
+      "601225",
+      "601988",
+      "601728",
+      "600229"
     ],
     "top3": [
-      "300703",
+      "002543",
       "603366",
-      "002543"
+      "002103"
     ]
   }
 }
