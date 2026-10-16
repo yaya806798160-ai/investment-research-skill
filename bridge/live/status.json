@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-10-16T13:30:39+08:00",
-  "last_collection_at": "2026-10-16T13:30:39+08:00",
+  "generated_at": "2026-10-16T14:30:44+08:00",
+  "last_collection_at": "2026-10-16T14:30:44+08:00",
   "last_success_at": null,
   "last_push_at": "2026-10-16T13:30:39+08:00",
   "current_commit": "ca84520c417116c2fac5a3f7a33f62ec368f5277",
@@ -17,8 +17,29 @@
     "breadth_ok": true
   },
   "short_scan_status": "ok",
-  "short_scan_errors": [],
-  "partial": false,
+  "short_scan_errors": [
+    {
+      "source": "minutes:302132",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "capital:688685",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "minutes:688685",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "capital:688239",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "minutes:688239",
+      "error": "scan collection budget exhausted"
+    }
+  ],
+  "partial": true,
   "successful_pages": 11,
   "cached_pages": 0,
   "proxy_health": "not_checked",
@@ -80,7 +101,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-10-16T13:30:39+08:00",
+      "source_time": "2026-10-16T14:30:45+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -147,19 +168,20 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-10-16T13:30:39+08:00",
+      "source_time": "2026-10-16T14:30:42+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-10-16T13:32:43+08:00",
+  "last_data_success_at": "2026-10-16T14:33:03+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-10-16T13:32:43+08:00",
-  "consecutive_failures": 141,
+  "scan_generated_at": "2026-10-16T14:33:04+08:00",
+  "consecutive_failures": 142,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
     "reader_must_recheck_age_minutes": 8,
     "empty_candidates_means_scanner_failed_not_no_opportunities": true
-  }
+  },
+  "status_publication_error": "TimeoutExpired: Command '['git', 'commit', '-m', 'status: worker health 2026-10-16 14:30']' timed out after 0.6495906000491232 seconds"
 }
