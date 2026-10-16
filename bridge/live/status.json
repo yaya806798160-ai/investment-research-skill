@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-10-16T11:00:44+08:00",
-  "last_collection_at": "2026-10-16T11:00:44+08:00",
+  "generated_at": "2026-10-16T13:30:39+08:00",
+  "last_collection_at": "2026-10-16T13:30:39+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-10-16T11:00:44+08:00",
-  "current_commit": "544632752c95c745b1eaf40af6cb55558ff1367e",
-  "snapshot_commit": "544632752c95c745b1eaf40af6cb55558ff1367e",
+  "last_push_at": "2026-10-16T13:30:39+08:00",
+  "current_commit": "ca84520c417116c2fac5a3f7a33f62ec368f5277",
+  "snapshot_commit": "ca84520c417116c2fac5a3f7a33f62ec368f5277",
   "current_commit_scope": "snapshot commit preceding status publication",
   "market_source_status": {
     "investment_os_proxy": "failed",
@@ -80,7 +80,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-10-16T11:00:45+08:00",
+      "source_time": "2026-10-16T13:30:39+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -147,15 +147,15 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-10-16T11:00:45+08:00",
+      "source_time": "2026-10-16T13:30:39+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-10-16T11:02:16+08:00",
+  "last_data_success_at": "2026-10-16T13:32:43+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-10-16T11:02:16+08:00",
-  "consecutive_failures": 140,
+  "scan_generated_at": "2026-10-16T13:32:43+08:00",
+  "consecutive_failures": 141,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
