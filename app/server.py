@@ -13,15 +13,37 @@ ROUTES = {
 EXTRA = {"/em/": {"Referer": "https://fundf10.eastmoney.com/"}, "/qz/": {"Referer": "https://gu.qq.com/"}, "/emq/": {"Referer": "https://quote.eastmoney.com/"}}
 BASE = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) investment-os/1.0", "X-Client-Name": "ft-claw"}
 ROOT = os.path.dirname(os.path.abspath(__file__))
+LIVE_ROOT = os.path.abspath(os.path.join(ROOT, "..", "bridge", "live"))
+SNAPSHOT_PATHS = {
+    "/os/live/latest.json": "latest.json",
+    "/os/live/short_scan.json": "short_scan.json",
+}
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *a, **k): super().__init__(*a, directory=ROOT, **k)
     def do_GET(self):
         p = self.path
+        snapshot_name = SNAPSHOT_PATHS.get(p.split("?", 1)[0])
+        if snapshot_name:
+            self._snapshot(snapshot_name); return
         for prefix, base in ROUTES.items():
             if p.startswith(prefix):
                 self._proxy(base, p[len(prefix):], EXTRA.get(prefix)); return
         super().do_GET()
+    def _snapshot(self, filename):
+        try:
+            with open(os.path.join(LIVE_ROOT, filename), "rb") as f:
+                body = f.read()
+        except FileNotFoundError:
+            self.send_error(404, "Investment OS snapshot missing")
+            return
+        self.send_response(200)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
     def _proxy(self, base, rest, extra=None):
         try:
             hdrs = dict(BASE)
