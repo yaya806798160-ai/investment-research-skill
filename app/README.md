@@ -57,3 +57,12 @@ python server.py                # 静态托管 + 数据代理，打开 http://12
 - 维度：趋势/动量/资金(量能)/波动率/拥挤度 = 腾讯日K真实计算；估值/盈利/催化剂 = 规则假设(已标注)；重合度 = 基于 portfolio-data.json 的 类别/地区暴露。
 - 约束：类别暴露 >40% → 回避；>25% → 小仓试探；已持有(如建信纳指) → “回避（已持有）”，避免追高已有暴露方向。
 - 运行：`python server.py`（含 /qz 腾讯日K 代理）。K线维度需本机可访问 qt.gtimg.cn/web.ifzq.gtimg.cn；失败时该行显示“数据不足”，不伪造。
+
+## 市场全景 · TickFlow 风格信息布局（试运行）
+- 新增 `#/market` 页面（侧边栏“市场全景”）。页面只依赖 `bridge/live/latest.json` 与 `bridge/live/short_scan.json`，不复制 TickFlow 源码，也不需要 TickFlow API Key。
+- **请运行** `cd app && python server.py`，然后打开 `http://127.0.0.1:8080/#/market`。普通 `python -m http.server` 和直接打开 `file://` 不提供 `/os/live/` 路由。
+- 本地服务新增两个**只读且白名单固定**的地址：`/os/live/latest.json`、`/os/live/short_scan.json`。点击“刷新快照”只重新读取已生成数据，**不会触发新采集**；采集由原 bridge 任务负责。
+- 页内展示 A 股主要指数、已采集市场宽度、板块热度/资金、强势板块、短线候选评分/VWAP，以及时间戳、过期判定、部分采集/缺失字段；候选**不是**买入建议。
+- “实时/有效”必须同时满足 JSON 的 `stale=false` 且生成时间与 `expires_at` 未过期；旧数据仅供历史回顾。某数据源标记部分采集时，不可以把覆盖样本说成全市场。
+- 前端校验：`node app/tests/market-terminal.test.js`（从仓库根目录运行）。暂未实现 TickFlow 策略/回测/AI 的源码集成，也没有产生可直接交易的信号。
+- 原创信息布局受到 [TickFlow Stock Panel](https://github.com/shy3130/tick-stock-panel) 启发，遵守上游版权声明；如未来实际拷贝代码或资源，需一并包含其 MIT LICENSE 与原作者署名。
