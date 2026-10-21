@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-21T13:30:43+08:00",
+  "generated_at": "2026-10-21T14:30:51+08:00",
   "source_time": "2026-10-21T08:00:00+08:00",
   "expires_at": "2026-10-21T08:08:00+08:00",
   "trade_date": "2026-10-21",
@@ -9,21 +9,21 @@
     {
       "source": "index:上证",
       "via": "Eastmoney direct",
-      "source_time": "2026-10-21T13:30:03+08:00",
+      "source_time": "2026-10-21T14:30:12+08:00",
       "fallback_used": false,
       "stale": false
     },
     {
       "source": "index:创业板",
       "via": "Eastmoney direct",
-      "source_time": "2026-10-21T13:30:03+08:00",
+      "source_time": "2026-10-21T14:30:12+08:00",
       "fallback_used": false,
       "stale": false
     },
     {
       "source": "index:科创50",
       "via": "Eastmoney direct",
-      "source_time": "2026-10-21T13:30:06+08:00",
+      "source_time": "2026-10-21T14:30:15+08:00",
       "fallback_used": false,
       "stale": false
     },
@@ -36,17 +36,17 @@
     },
     {
       "source": "clist:m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23",
-      "rows": 5200,
-      "pages": 52,
+      "rows": 4000,
+      "pages": 40,
       "partial": true,
-      "failed_page": 53,
+      "failed_page": 41,
       "failure": "request failed"
     }
   ],
   "source_errors": [
     {
       "source": "breadth",
-      "error": "page 53 failed",
+      "error": "page 41 failed",
       "partial": true
     }
   ],
@@ -68,70 +68,70 @@
     "上证": {
       "code": "000001",
       "name": "上证指数",
-      "price": 3724.84,
-      "pct": -0.28,
-      "turnover": 471807048560.9,
-      "volume": 271435931,
-      "source_time": "2026-10-21T13:30:03+08:00"
+      "price": 3715.18,
+      "pct": -0.54,
+      "turnover": 558399675934.9,
+      "volume": 325297953,
+      "source_time": "2026-10-21T14:30:12+08:00"
     },
     "创业板": {
       "code": "399006",
       "name": "创业板指",
-      "price": 2715.29,
-      "pct": -0.87,
-      "turnover": 302603091968.48,
-      "volume": 115815109,
-      "source_time": "2026-10-21T13:30:03+08:00"
+      "price": 2702.11,
+      "pct": -1.35,
+      "turnover": 352660373608.51,
+      "volume": 135311289,
+      "source_time": "2026-10-21T14:30:12+08:00"
     },
     "科创50": {
       "code": "000688",
       "name": "科创50",
-      "price": 1354.57,
-      "pct": 0.91,
-      "turnover": 45823445053.2,
-      "volume": 4664474,
-      "source_time": "2026-10-21T13:30:06+08:00"
+      "price": 1346.64,
+      "pct": 0.31,
+      "turnover": 54488513915.4,
+      "volume": 5696353,
+      "source_time": "2026-10-21T14:30:15+08:00"
     }
   },
   "breadth": {
     "source_time": "2026-10-21T08:00:00+08:00",
     "oldest_quote_time": "2026-10-21T08:00:00+08:00",
-    "stock_count": 5200,
-    "up": 2618,
-    "down": 2132,
-    "flat": 450,
+    "stock_count": 4000,
+    "up": 1620,
+    "down": 2047,
+    "flat": 333,
     "limit_up_20cm_count": 5,
-    "limit_up_10cm_count": 43,
+    "limit_up_10cm_count": 20,
     "limit_up_20cm": [
       {
         "code": "688500",
         "name": "慧辰股份",
         "pct": 20.0,
-        "main_flow": 18770042.0
+        "main_flow": 21181353.0
       },
       {
         "code": "688286",
         "name": "敏芯股份",
         "pct": 20.0,
-        "main_flow": 29821435.0
+        "main_flow": 58157407.0
       },
       {
         "code": "301159",
         "name": "三维天地",
         "pct": 20.0,
-        "main_flow": 45430148.0
+        "main_flow": 50837168.0
       },
       {
         "code": "300296",
         "name": "利亚德",
         "pct": 20.04,
-        "main_flow": 458938321.0
+        "main_flow": 503286998.0
       },
       {
         "code": "300006",
         "name": "莱美药业",
         "pct": 20.0,
-        "main_flow": 300117472.0
+        "main_flow": 307012352.0
       }
     ],
     "limit_up_10cm": [
@@ -139,259 +139,121 @@
         "code": "605388",
         "name": "均瑶健康",
         "pct": 10.08,
-        "main_flow": 41954046.0
+        "main_flow": 43518916.0
       },
       {
         "code": "603999",
         "name": "读者传媒",
         "pct": 10.01,
-        "main_flow": 52053701.0
+        "main_flow": 57815312.0
       },
       {
         "code": "603696",
         "name": "安记食品",
         "pct": 10.0,
-        "main_flow": 59767473.0
+        "main_flow": 62405788.0
       },
       {
         "code": "603636",
         "name": "南威软件",
         "pct": 10.01,
-        "main_flow": 33190057.0
+        "main_flow": 47205775.0
       },
       {
         "code": "603629",
         "name": "利通电子",
         "pct": 10.0,
-        "main_flow": 632422832.0
+        "main_flow": 812465584.0
       },
       {
         "code": "603332",
         "name": "苏州龙杰",
         "pct": 9.97,
-        "main_flow": 22083116.0
+        "main_flow": 23627996.0
       },
       {
         "code": "603330",
         "name": "天洋新材",
         "pct": 10.03,
-        "main_flow": 227433134.0
+        "main_flow": 229251346.0
       },
       {
         "code": "603278",
         "name": "大业股份",
         "pct": 10.01,
-        "main_flow": 35312268.0
+        "main_flow": 36884516.0
       },
       {
         "code": "603236",
         "name": "移远通信",
         "pct": 10.0,
-        "main_flow": -126926000.0
-      },
-      {
-        "code": "603171",
-        "name": "税友股份",
-        "pct": 10.0,
-        "main_flow": 98729928.0
+        "main_flow": -126555856.0
       },
       {
         "code": "603138",
         "name": "海量数据",
         "pct": 10.01,
-        "main_flow": 96647535.0
+        "main_flow": 99731225.0
       },
       {
         "code": "601999",
         "name": "出版传媒",
         "pct": 10.01,
-        "main_flow": 76751580.0
+        "main_flow": 79639015.0
       },
       {
         "code": "601566",
         "name": "九牧王",
         "pct": 9.99,
-        "main_flow": 69695972.0
+        "main_flow": 73108964.0
       },
       {
         "code": "600838",
         "name": "上海九百",
         "pct": 10.05,
-        "main_flow": 67530113.0
+        "main_flow": 84090196.0
       },
       {
         "code": "600802",
         "name": "福建水泥",
         "pct": 10.0,
-        "main_flow": 145742865.0
+        "main_flow": 151008785.0
       },
       {
         "code": "600715",
         "name": "文投控股",
         "pct": 10.0,
-        "main_flow": 78449800.0
-      },
-      {
-        "code": "600319",
-        "name": "亚星化学",
-        "pct": 10.06,
-        "main_flow": 48737076.0
+        "main_flow": 82278812.0
       },
       {
         "code": "600293",
         "name": "三峡新材",
         "pct": 9.95,
-        "main_flow": 7891536.0
+        "main_flow": 8535161.0
       },
       {
         "code": "600271",
         "name": "航天信息",
         "pct": 9.96,
-        "main_flow": 76005477.0
+        "main_flow": 93404423.0
       },
       {
         "code": "600252",
         "name": "中恒集团",
         "pct": 10.19,
-        "main_flow": 178838153.0
+        "main_flow": 184483989.0
       },
       {
         "code": "600202",
         "name": "哈空调",
         "pct": 10.08,
-        "main_flow": 59594117.0
+        "main_flow": 62780157.0
       },
       {
         "code": "600178",
         "name": "东安动力",
         "pct": 9.99,
-        "main_flow": -43891755.0
-      },
-      {
-        "code": "002929",
-        "name": "润建股份",
-        "pct": 9.99,
-        "main_flow": 257462855.0
-      },
-      {
-        "code": "002835",
-        "name": "同为股份",
-        "pct": 10.03,
-        "main_flow": 41097323.0
-      },
-      {
-        "code": "002811",
-        "name": "郑中设计",
-        "pct": 10.02,
-        "main_flow": 64409049.0
-      },
-      {
-        "code": "002792",
-        "name": "通宇通讯",
-        "pct": 10.01,
-        "main_flow": 322072997.0
-      },
-      {
-        "code": "002777",
-        "name": "久远银海",
-        "pct": 10.01,
-        "main_flow": 104710316.0
-      },
-      {
-        "code": "002724",
-        "name": "海洋王",
-        "pct": 10.04,
-        "main_flow": 23594822.0
-      },
-      {
-        "code": "002696",
-        "name": "百洋股份",
-        "pct": 10.04,
-        "main_flow": 123860765.0
-      },
-      {
-        "code": "002639",
-        "name": "雪人集团",
-        "pct": 10.0,
-        "main_flow": 372732108.0
-      },
-      {
-        "code": "002591",
-        "name": "恒大高新",
-        "pct": 10.08,
-        "main_flow": 79770677.0
-      },
-      {
-        "code": "002581",
-        "name": "*ST未名",
-        "pct": 9.68,
-        "main_flow": 6234673.0
-      },
-      {
-        "code": "002565",
-        "name": "顺灏股份",
-        "pct": 9.99,
-        "main_flow": 195044959.0
-      },
-      {
-        "code": "002368",
-        "name": "太极股份",
-        "pct": 9.97,
-        "main_flow": 66022241.0
-      },
-      {
-        "code": "002347",
-        "name": "泰尔股份",
-        "pct": 9.98,
-        "main_flow": 3277316.0
-      },
-      {
-        "code": "002313",
-        "name": "日海智能",
-        "pct": 10.0,
-        "main_flow": 24120624.0
-      },
-      {
-        "code": "002238",
-        "name": "天威视讯",
-        "pct": 9.97,
-        "main_flow": 37920697.0
-      },
-      {
-        "code": "002181",
-        "name": "粤 传 媒",
-        "pct": 9.97,
-        "main_flow": 95871119.0
-      },
-      {
-        "code": "002086",
-        "name": "东方海洋",
-        "pct": 10.14,
-        "main_flow": 126690648.0
-      },
-      {
-        "code": "002076",
-        "name": "星光股份",
-        "pct": 9.87,
-        "main_flow": 53824872.0
-      },
-      {
-        "code": "001239",
-        "name": "永达股份",
-        "pct": 10.0,
-        "main_flow": -34611009.0
-      },
-      {
-        "code": "001216",
-        "name": "华瓷股份",
-        "pct": 10.0,
-        "main_flow": 203445208.0
-      },
-      {
-        "code": "001201",
-        "name": "东瑞股份",
-        "pct": 9.99,
-        "main_flow": 57817362.0
+        "main_flow": -41275050.0
       }
     ]
   },
@@ -399,14 +261,14 @@
     "PCB": {
       "board_code": "BK0877",
       "board_name": "PCB",
-      "pct": 0.2,
-      "main_flow": 2385638912.0,
-      "super_large_flow": 1468445440.0,
-      "large_flow": 917193472.0,
-      "medium_flow": -1516342272.0,
-      "small_flow": -934496768.0,
-      "main_flow_ratio": 2.29,
-      "source_time": "2026-10-21T13:30:12+08:00",
+      "pct": -0.03,
+      "main_flow": 2518544896.0,
+      "super_large_flow": 1429534720.0,
+      "large_flow": 1089010176.0,
+      "medium_flow": -1549484800.0,
+      "small_flow": -1035365632.0,
+      "main_flow_ratio": 2.13,
+      "source_time": "2026-10-21T14:30:15+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -417,14 +279,14 @@
     "CPO/光模块": {
       "board_code": "BK1128",
       "board_name": "CPO概念",
-      "pct": 1.86,
-      "main_flow": 3014946560.0,
-      "super_large_flow": 2224822272.0,
-      "large_flow": 790124288.0,
-      "medium_flow": -1775787264.0,
-      "small_flow": -1206447872.0,
-      "main_flow_ratio": 2.52,
-      "source_time": "2026-10-21T13:30:09+08:00",
+      "pct": 1.52,
+      "main_flow": 2870597632.0,
+      "super_large_flow": 2184590848.0,
+      "large_flow": 686006784.0,
+      "medium_flow": -1401576960.0,
+      "small_flow": -1448105216.0,
+      "main_flow_ratio": 2.12,
+      "source_time": "2026-10-21T14:30:18+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -435,14 +297,14 @@
     "AI算力": {
       "board_code": "BK1134",
       "board_name": "算力概念",
-      "pct": 1.74,
-      "main_flow": 2963187712.0,
-      "super_large_flow": 3222979840.0,
-      "large_flow": -259792128.0,
-      "medium_flow": -2081385984.0,
-      "small_flow": -904837120.0,
-      "main_flow_ratio": 2.47,
-      "source_time": "2026-10-21T13:30:09+08:00",
+      "pct": 1.41,
+      "main_flow": 2454872832.0,
+      "super_large_flow": 3219637248.0,
+      "large_flow": -764764416.0,
+      "medium_flow": -1767639808.0,
+      "small_flow": -731185408.0,
+      "main_flow_ratio": 1.78,
+      "source_time": "2026-10-21T14:30:18+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -453,14 +315,14 @@
     "半导体设备": {
       "board_code": "BK1326",
       "board_name": "半导体设备",
-      "pct": -0.16,
-      "main_flow": -945501504.0,
-      "super_large_flow": -258903824.0,
-      "large_flow": -686597680.0,
-      "medium_flow": 897402624.0,
-      "small_flow": 48103920.0,
-      "main_flow_ratio": -5.52,
-      "source_time": "2026-10-21T13:30:09+08:00",
+      "pct": -0.58,
+      "main_flow": -1097560016.0,
+      "super_large_flow": -288856272.0,
+      "large_flow": -808703744.0,
+      "medium_flow": 1060656640.0,
+      "small_flow": 36707056.0,
+      "main_flow_ratio": -5.48,
+      "source_time": "2026-10-21T14:30:15+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -471,14 +333,14 @@
     "国产GPU/AI芯片": {
       "board_code": "BK1127",
       "board_name": "AI芯片",
-      "pct": 1.13,
-      "main_flow": 877300128.0,
-      "super_large_flow": 711749792.0,
-      "large_flow": 165550336.0,
-      "medium_flow": -688280064.0,
-      "small_flow": -200611072.0,
-      "main_flow_ratio": 3.2,
-      "source_time": "2026-10-21T13:30:09+08:00",
+      "pct": 0.67,
+      "main_flow": 625569280.0,
+      "super_large_flow": 565976064.0,
+      "large_flow": 59593216.0,
+      "medium_flow": -576317184.0,
+      "small_flow": -62960384.0,
+      "main_flow_ratio": 1.95,
+      "source_time": "2026-10-21T14:30:18+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -495,16 +357,16 @@
         "PCB",
         "AI算力"
       ],
-      "theme_pct_avg": 1.267,
-      "theme_main_flow_sum": 8363773184.0
+      "theme_pct_avg": 0.967,
+      "theme_main_flow_sum": 7844015360.0
     },
     "017811": {
       "name": "东方人工智能",
       "themes": [
         "半导体设备"
       ],
-      "theme_pct_avg": -0.16,
-      "theme_main_flow_sum": -945501504.0
+      "theme_pct_avg": -0.58,
+      "theme_main_flow_sum": -1097560016.0
     },
     "018123": {
       "name": "永赢数字经济智选C",
@@ -512,8 +374,8 @@
         "国产GPU/AI芯片",
         "AI算力"
       ],
-      "theme_pct_avg": 1.435,
-      "theme_main_flow_sum": 3840487840.0
+      "theme_pct_avg": 1.04,
+      "theme_main_flow_sum": 3080442112.0
     },
     "008888": {
       "name": "华夏国证半导体",
@@ -521,8 +383,8 @@
         "半导体设备",
         "国产GPU/AI芯片"
       ],
-      "theme_pct_avg": 0.485,
-      "theme_main_flow_sum": -68201376.0
+      "theme_pct_avg": 0.045,
+      "theme_main_flow_sum": -471990736.0
     }
   },
   "rules": {
@@ -532,8 +394,8 @@
     "reader_must_recheck_age_minutes": 8
   },
   "short_scan": {
-    "generated_at": "2026-10-21T13:33:03+08:00",
-    "market_time": "2026-10-21T13:30:45+08:00",
+    "generated_at": "2026-10-21T14:33:11+08:00",
+    "market_time": "2026-10-21T14:30:57+08:00",
     "stale": false,
     "partial": true,
     "coverage": {
@@ -595,7 +457,7 @@
           "partial": false,
           "cache_used": false,
           "route": "Eastmoney",
-          "source_time": "2026-10-21T13:30:45+08:00",
+          "source_time": "2026-10-21T14:30:57+08:00",
           "stale": false,
           "source_errors": []
         },
@@ -662,21 +524,21 @@
           "partial": false,
           "cache_used": false,
           "route": "Eastmoney",
-          "source_time": "2026-10-21T13:30:45+08:00",
+          "source_time": "2026-10-21T14:30:57+08:00",
           "stale": false,
           "source_errors": []
         }
       },
       "partial": true,
-      "positive_price_and_flow_boards": 417,
+      "positive_price_and_flow_boards": 302,
       "selected_boards": 8,
-      "unique_constituents": 97,
-      "fully_assessed": 56,
-      "assessed_records": 97,
-      "daily_histories": 97,
+      "unique_constituents": 95,
+      "fully_assessed": 61,
+      "assessed_records": 95,
+      "daily_histories": 95,
       "board_limit": 8,
       "stock_limit": 100,
-      "collection_budget_seconds": 139.2280546000111,
+      "collection_budget_seconds": 135.55341199995019,
       "preselection": "price <=30 preferred, positive main flow and flow/turnover; overlapping boards deduplicated"
     },
     "strong_boards": 8,
@@ -685,12 +547,12 @@
       "300715",
       "300582",
       "001313",
+      "603685",
       "002449",
-      "002831",
+      "300498",
       "001201",
-      "300980",
-      "002587",
-      "300498"
+      "603206",
+      "300980"
     ],
     "top3": [
       "002100",
