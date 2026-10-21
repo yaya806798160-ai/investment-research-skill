@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-10-21T14:30:51+08:00",
-  "last_collection_at": "2026-10-21T14:30:51+08:00",
+  "generated_at": "2026-10-21T14:45:49+08:00",
+  "last_collection_at": "2026-10-21T14:45:49+08:00",
   "last_success_at": null,
   "last_push_at": "2026-10-16T14:45:44+08:00",
   "current_commit": "a3f719fee8b53c5132166598e5d75cf22418a14c",
@@ -19,23 +19,23 @@
   "short_scan_status": "ok",
   "short_scan_errors": [
     {
-      "source": "minutes:300162",
+      "source": "minutes:300889",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "capital:600265",
+      "source": "capital:002137",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "minutes:600265",
+      "source": "minutes:002137",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "capital:300597",
+      "source": "capital:600458",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "minutes:300597",
+      "source": "minutes:600458",
       "error": "scan collection budget exhausted"
     }
   ],
@@ -101,7 +101,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-10-21T14:30:57+08:00",
+      "source_time": "2026-10-21T14:45:51+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -168,20 +168,19 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-10-21T14:30:57+08:00",
+      "source_time": "2026-10-21T14:45:51+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-10-21T14:33:09+08:00",
+  "last_data_success_at": "2026-10-21T14:48:07+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-10-21T14:33:11+08:00",
-  "consecutive_failures": 153,
+  "scan_generated_at": "2026-10-21T14:48:09+08:00",
+  "consecutive_failures": 154,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
     "reader_must_recheck_age_minutes": 8,
     "empty_candidates_means_scanner_failed_not_no_opportunities": true
-  },
-  "status_publication_error": "CalledProcessError: Command '['git', 'push']' returned non-zero exit status 1."
+  }
 }
