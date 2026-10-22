@@ -73,7 +73,10 @@ async function renderTradingLab(content){
     el.textContent='正在读取历史K线...';
     try{
       if(typeof fetchKlineSeries!=='function'){el.textContent='OS历史行情接口不可用';return;}
-      const bars=await fetchKlineSeries(symbol),r=labBacktestSma(bars,5,20,10);
+      const bars=await fetchKlineSeries(symbol);
+      const cnToday=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+      const completed=Array.isArray(bars)?bars.filter(x=>String(x.date||'').slice(0,10)<cnToday):null;
+      const r=labBacktestSma(completed,5,20,10);
       if(r.status!=='ok'){el.textContent='回测不可用：'+r.reason;return;}
       el.innerHTML='<div class="tl-kpis"><div><small>已平仓次数</small><strong>'+tlFmt(r.trades,0)+'</strong></div>'+
         '<div><small>胜率</small><strong>'+tlPer(r.winRate)+'</strong></div>'+
