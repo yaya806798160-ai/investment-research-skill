@@ -32,8 +32,9 @@ function labProposals(snapshot,scan,now) {
 
 function labTechnical(candidate) {
   if(!candidate)return {signal:'数据不足',reason:'未找到标的当日扫描指标',weekly:'周线数据未接入'};
+  if([candidate.price,candidate.ma20,candidate.ma5,candidate.ma10,candidate.rsi].some(v=>v==null||v===''))return {signal:'数据不足',reason:'日线指标缺失',weekly:'周线数据未接入'};
   const price=Number(candidate.price),ma20=Number(candidate.ma20),ma5=Number(candidate.ma5),ma10=Number(candidate.ma10),rsi=Number(candidate.rsi);
-  if(![price,ma20,ma5,ma10,rsi].every(Number.isFinite)||[price,ma20].some(v=>v<=0))return {signal:'数据不足',reason:'日线移动平均或 RSI 缺失',weekly:'周线数据未接入'};
+  if(![price,ma20,ma5,ma10,rsi].every(Number.isFinite)||[price,ma20].some(v=>v<=0)||rsi<0||rsi>100)return {signal:'数据不足',reason:'日线移动平均或 RSI 缺失',weekly:'周线数据未接入'};
   let signal='持有/观察',reason='价格围绕均线，等待趋势确认';
   if(price<ma20 && ma5<ma10){signal='减仓观察';reason='价格在MA20下方且MA5弱于MA10，关注已有仓位风险';}
   else if(price>ma20 && ma5>ma10 && rsi>=50 && rsi<=70){signal='候选观察';reason='价格在MA20上方且短均线占优，仍需确认板块、资金和分时支撑';}
