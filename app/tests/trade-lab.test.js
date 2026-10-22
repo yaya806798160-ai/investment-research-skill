@@ -1,0 +1,55 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const core = require('../js/trade-lab-core.js');
+
+const clock = new Date('2026-10-22T07:30:00+08:00');
+const fresh = {generated_at:'2026-10-22T07:25:00+08:00',expires_at:'2026-10-22T07:35:00+08:00',stale:false,partial:false,missing:[]};
+const candidate = {code:'600435',name:'<script>test</script>',price:11.84,resistance:12.06,low:11.2,
+  intraday:{vwap:11.75,fresh:true},ma5:11.68,ma10:11.5,ma20:11.2,rsi:61,score:80};
+assert.equal(core.labValidSnapshot(fresh,clock,false).ok,true);
+assert.equal(core.labValidSnapshot({...fresh,stale:true},clock,false).ok,false);
+assert.equal(core.labValidSnapshot({...fresh,partial:true},clock,false).ok,false);
+assert.equal(core.labValidSnapshot({...fresh,missing:['breadth']},clock,false).ok,false);
+assert.equal(core.labValidSnapshot({...fresh,expires_at:'2026-10-22T07:26:00+08:00'},clock,false).ok,false);
+assert.equal(core.labValidSnapshot(null,clock,false).ok,false);
+assert.equal(core.labProposals({...fresh,stale:true},{...fresh,candidates:[candidate]},clock).rows.length,0);
+const setup = core.labProposals(fresh,{...fresh,candidates:[candidate]},clock);
+assert.equal(setup.rows.length,1);
+assert.ok(setup.rows[0].stop<setup.rows[0].entry && setup.rows[0].target>setup.rows[0].entry);
+assert.equal(setup.rows[0].rr,2);
+assert.equal(setup.rows[0].observationOnly,true);
+assert.equal(core.labTechnical(null).signal,'数据不足');
+assert.equal(core.labTechnical({...candidate,rsi:null}).signal,'数据不足');
+assert.equal(core.labTechnical(candidate).signal,'候选观察');
+assert.equal(core.labBacktestSma([],5,20,10).status,'insufficient');
+assert.throws(()=>core.labBacktestSma([],20,5,10));
+const bars=Array.from({length:90},(_,i)=>{
+  const close=100+Math.sin(i/4)*12+i/10;
+  const date = new Date(Date.UTC(2026,0,1+i)).toISOString().slice(0,10);
+  return {date,open:close*0.999,close,high:close*1.01,low:close*0.99};
+});
+const bt=core.labBacktestSma(bars,5,20,10);
+assert.equal(bt.status,'ok');
+assert.equal(bt.sampleBars,90);
+assert.ok(bt.maxDrawdown<=0);
+assert.equal(bt.feeBps,10);
+assert.equal(core.labBacktestSma([...bars,bars[89]],5,20,10).status,'insufficient');
+const stress=core.labPortfolioStress([{name:'A',amount:1000,category:'科技'},{name:'B',amount:3000,category:'红利'}]);
+assert.equal(stress.loss20,-800);
+assert.equal(stress.largest.weight,0.75);
+assert.equal(core.labPortfolioStress([]).status,'insufficient');
+assert.equal(core.labJournalCheck([]).status,'insufficient');
+assert.equal(core.labJournalCheck([{date:'2026-10-22',price:0,reviewStatus:'Pending Review'}]).missingStop,1);
+assert.equal(core.labDailyChecklist().length,7);
+const source=fs.readFileSync(path.join(__dirname,'../js/trade-lab.js'),'utf-8');
+const sandbox=vm.createContext({...core});
+vm.runInContext(source,sandbox);
+const html=sandbox.tlHtml({snapshot:fresh,scan:{...fresh,candidates:[candidate]},now:clock,
+  portfolio:{updatedAt:'2026-10-22',holdings:[{name:'A',amount:1000,category:'科技'}]},journal:[]});
+assert.match(html,/七步交易研究台/);
+assert.equal(html.includes('<script>test</script>'),false);
+assert.match(html,/交易日志/);
+console.log('Seven-step trading lab: all assertions passed');
