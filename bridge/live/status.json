@@ -250,5 +250,6 @@
   "rules": {
     "reader_must_recheck_age_minutes": 8,
     "empty_candidates_means_scanner_failed_not_no_opportunities": true
-  }
+  },
+  "status_publication_error": "CalledProcessError: Command '['git', 'push']' returned non-zero exit status 128."
 }
