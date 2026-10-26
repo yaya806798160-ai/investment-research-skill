@@ -1,89 +1,28 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-10-23T14:45:43+08:00",
-  "last_collection_at": "2026-10-23T14:45:43+08:00",
+  "generated_at": "2026-10-26T11:00:43+08:00",
+  "last_collection_at": "2026-10-26T11:00:43+08:00",
   "last_success_at": null,
   "last_push_at": "2026-10-16T14:45:44+08:00",
   "current_commit": "a3f719fee8b53c5132166598e5d75cf22418a14c",
   "snapshot_commit": "a3f719fee8b53c5132166598e5d75cf22418a14c",
   "current_commit_scope": "snapshot commit preceding status publication",
   "market_source_status": {
-    "investment_os_proxy": "ok",
+    "investment_os_proxy": "failed",
     "eastmoney_public_fallback": "ok",
     "tencent_backup": "unused",
     "indices_ok": true,
     "boards_ok": true,
-    "breadth_ok": false
+    "breadth_ok": true
   },
-  "short_scan_status": "stale",
-  "short_scan_errors": [
-    {
-      "source": "board_history:BK1454",
-      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
-    },
-    {
-      "source": "board_history:BK1408",
-      "error": "https://push2his.eastmoney.com/api/qt/stock/kline/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway"
-    },
-    {
-      "source": "daily:300709",
-      "error": "scan collection budget exhausted before daily fallback"
-    },
-    {
-      "source": "daily:603501",
-      "error": "scan collection budget exhausted before daily fallback"
-    },
-    {
-      "source": "daily:300496",
-      "error": "scan collection budget exhausted before daily fallback"
-    }
-  ],
-  "partial": true,
+  "short_scan_status": "ok",
+  "short_scan_errors": [],
+  "partial": false,
   "successful_pages": 11,
   "cached_pages": 0,
-  "proxy_health": "ok",
-  "proxy_errors": [
-    {
-      "tested_at": "2026-10-23T14:47:52+08:00",
-      "source": "Investment OS /emhis/",
-      "route": "Investment OS /emhis/",
-      "url": "http://127.0.0.1:8080/emhis/api/qt/stock/fflow/daykline/get?secid=0.300276&klt=101&lmt=12&fields1=f1%2Cf2%2Cf3&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56",
-      "http_status": 502,
-      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
-      "exception_type": "HTTPError",
-      "success": false,
-      "error": "HTTP Error 502: Bad Gateway",
-      "elapsed_seconds": 4.614,
-      "round": 1
-    },
-    {
-      "tested_at": "2026-10-23T14:48:02+08:00",
-      "source": "Investment OS /emhis/",
-      "route": "Investment OS /emhis/",
-      "url": "http://127.0.0.1:8080/emhis/api/qt/stock/fflow/daykline/get?secid=0.300276&klt=101&lmt=12&fields1=f1%2Cf2%2Cf3&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56",
-      "http_status": null,
-      "first_200_bytes": null,
-      "exception_type": "TimeoutError",
-      "success": false,
-      "error": "timed out",
-      "elapsed_seconds": 2.769,
-      "round": 2
-    },
-    {
-      "tested_at": "2026-10-23T14:47:53+08:00",
-      "source": "Investment OS /emhis/",
-      "route": "Investment OS /emhis/",
-      "url": "http://127.0.0.1:8080/emhis/api/qt/stock/fflow/daykline/get?secid=0.002747&klt=101&lmt=12&fields1=f1%2Cf2%2Cf3&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56",
-      "http_status": 502,
-      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
-      "exception_type": "HTTPError",
-      "success": false,
-      "error": "HTTP Error 502: Bad Gateway",
-      "elapsed_seconds": 5.57,
-      "round": 1
-    }
-  ],
+  "proxy_health": "not_checked",
+  "proxy_errors": [],
   "failed_pages": 0,
   "pagination": {
     "industry": {
@@ -141,7 +80,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-10-23T14:45:51+08:00",
+      "source_time": "2026-10-26T11:00:45+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -208,20 +147,19 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-10-23T14:45:45+08:00",
+      "source_time": "2026-10-26T11:00:45+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-10-23T14:47:49+08:00",
+  "last_data_success_at": "2026-10-26T11:02:04+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-10-23T14:48:05+08:00",
-  "consecutive_failures": 162,
+  "scan_generated_at": "2026-10-26T11:02:04+08:00",
+  "consecutive_failures": 163,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
     "reader_must_recheck_age_minutes": 8,
     "empty_candidates_means_scanner_failed_not_no_opportunities": true
-  },
-  "status_publication_error": "CalledProcessError: Command '['git', 'push']' returned non-zero exit status 1."
+  }
 }
