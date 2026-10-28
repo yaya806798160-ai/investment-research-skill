@@ -1,29 +1,29 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-28T11:00:51+08:00",
-  "source_time": "2026-10-28T08:00:00+08:00",
-  "expires_at": "2026-10-28T08:08:00+08:00",
+  "generated_at": "2026-10-28T13:30:40+08:00",
+  "source_time": "2026-10-28T13:30:12+08:00",
+  "expires_at": "2026-10-28T13:38:12+08:00",
   "trade_date": "2026-10-28",
-  "market_time": "08:00:00",
+  "market_time": "13:30:12",
   "data_sources": [
     {
       "source": "index:上证",
       "via": "Eastmoney direct",
-      "source_time": "2026-10-28T11:00:12+08:00",
+      "source_time": "2026-10-28T13:30:12+08:00",
       "fallback_used": false,
       "stale": false
     },
     {
       "source": "index:创业板",
       "via": "Eastmoney direct",
-      "source_time": "2026-10-28T11:00:09+08:00",
+      "source_time": "2026-10-28T13:30:12+08:00",
       "fallback_used": false,
       "stale": false
     },
     {
       "source": "index:科创50",
       "via": "Eastmoney direct",
-      "source_time": "2026-10-28T11:00:12+08:00",
+      "source_time": "2026-10-28T13:30:15+08:00",
       "fallback_used": false,
       "stale": false
     },
@@ -36,57 +36,95 @@
     },
     {
       "source": "clist:m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23",
-      "rows": 2900,
-      "pages": 29,
-      "partial": true,
-      "failed_page": 30,
+      "rows": 0,
+      "pages": 0,
+      "partial": false,
+      "failed_page": 1,
       "failure": "request failed"
     }
   ],
   "source_errors": [
     {
-      "tested_at": "2026-10-28T11:00:42+08:00",
+      "tested_at": "2026-10-28T13:30:15+08:00",
       "source": "Eastmoney direct",
       "route": "Eastmoney direct",
-      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=28&pz=100",
+      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=1&pz=100&fid=f12",
       "http_status": null,
       "first_200_bytes": null,
       "exception_type": "RemoteDisconnected",
       "success": false,
       "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.734,
+      "elapsed_seconds": 0.708,
       "round": 1
     },
     {
-      "tested_at": "2026-10-28T11:00:43+08:00",
+      "tested_at": "2026-10-28T13:30:16+08:00",
       "source": "Investment OS /emq/",
       "route": "Investment OS /emq/",
-      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=28&pz=100",
+      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=1&pz=100&fid=f12",
       "http_status": 502,
       "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
       "exception_type": "HTTPError",
       "success": false,
       "error": "HTTP Error 502: Bad Gateway",
-      "elapsed_seconds": 2.172,
+      "elapsed_seconds": 2.395,
       "round": 1
     },
     {
-      "tested_at": "2026-10-28T11:00:51+08:00",
+      "tested_at": "2026-10-28T13:30:30+08:00",
       "source": "Eastmoney direct",
       "route": "Eastmoney direct",
-      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=30&pz=100",
+      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
       "http_status": null,
       "first_200_bytes": null,
-      "exception_type": "URLError",
+      "exception_type": "RemoteDisconnected",
       "success": false,
-      "error": "<urlopen error _ssl.c:1063: The handshake operation timed out>",
-      "elapsed_seconds": 0.685,
+      "error": "Remote end closed connection without response",
+      "elapsed_seconds": 0.641,
       "round": 1
+    },
+    {
+      "tested_at": "2026-10-28T13:30:31+08:00",
+      "source": "Investment OS /emq/",
+      "route": "Investment OS /emq/",
+      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
+      "http_status": 502,
+      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
+      "exception_type": "HTTPError",
+      "success": false,
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 2.022,
+      "round": 1
+    },
+    {
+      "tested_at": "2026-10-28T13:30:38+08:00",
+      "source": "Eastmoney direct",
+      "route": "Eastmoney direct",
+      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
+      "http_status": null,
+      "first_200_bytes": null,
+      "exception_type": "RemoteDisconnected",
+      "success": false,
+      "error": "Remote end closed connection without response",
+      "elapsed_seconds": 0.58,
+      "round": 2
+    },
+    {
+      "tested_at": "2026-10-28T13:30:38+08:00",
+      "source": "Investment OS /emq/",
+      "route": "Investment OS /emq/",
+      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
+      "http_status": 502,
+      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
+      "exception_type": "HTTPError",
+      "success": false,
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 1.882,
+      "round": 2
     },
     {
       "source": "breadth",
-      "error": "page 30 failed",
-      "partial": true
+      "error": "ValueError: page 1 failed: ['Remote end closed connection without response', 'HTTP Error 502: Bad Gateway', 'Remote end closed connection without response', 'HTTP Error 502: Bad Gateway']"
     }
   ],
   "source": [
@@ -101,279 +139,50 @@
     "breadth"
   ],
   "missing": [
-    "breadth:partial"
+    "breadth"
   ],
   "indices": {
     "上证": {
       "code": "000001",
       "name": "上证指数",
-      "price": 3658.87,
-      "pct": 0.29,
-      "turnover": 391776157960.9,
-      "volume": 229142731,
-      "source_time": "2026-10-28T11:00:12+08:00"
+      "price": 3674.47,
+      "pct": 0.72,
+      "turnover": 552080033897.2,
+      "volume": 313310995,
+      "source_time": "2026-10-28T13:30:12+08:00"
     },
     "创业板": {
       "code": "399006",
       "name": "创业板指",
-      "price": 2596.57,
-      "pct": 1.9,
-      "turnover": 237780358801.2,
-      "volume": 98974496,
-      "source_time": "2026-10-28T11:00:09+08:00"
+      "price": 2630.94,
+      "pct": 3.25,
+      "turnover": 336918725426.73,
+      "volume": 137381238,
+      "source_time": "2026-10-28T13:30:12+08:00"
     },
     "科创50": {
       "code": "000688",
       "name": "科创50",
-      "price": 1266.5,
-      "pct": 1.14,
-      "turnover": 37586922869.8,
-      "volume": 3842615,
-      "source_time": "2026-10-28T11:00:12+08:00"
+      "price": 1287.19,
+      "pct": 2.79,
+      "turnover": 55567560613.0,
+      "volume": 5542374,
+      "source_time": "2026-10-28T13:30:15+08:00"
     }
   },
-  "breadth": {
-    "source_time": "2026-10-28T08:00:00+08:00",
-    "oldest_quote_time": "2026-10-28T08:00:00+08:00",
-    "stock_count": 2900,
-    "up": 2010,
-    "down": 652,
-    "flat": 238,
-    "limit_up_20cm_count": 7,
-    "limit_up_10cm_count": 29,
-    "limit_up_20cm": [
-      {
-        "code": "688698",
-        "name": "伟创电气",
-        "pct": 20.0,
-        "main_flow": 61289808.0
-      },
-      {
-        "code": "688039",
-        "name": "当虹科技",
-        "pct": 19.99,
-        "main_flow": 60910723.0
-      },
-      {
-        "code": "301529",
-        "name": "福赛科技",
-        "pct": 20.0,
-        "main_flow": -3190800.0
-      },
-      {
-        "code": "301488",
-        "name": "豪恩汽电",
-        "pct": 20.0,
-        "main_flow": 77229860.0
-      },
-      {
-        "code": "301413",
-        "name": "安培龙",
-        "pct": 20.0,
-        "main_flow": 142921754.0
-      },
-      {
-        "code": "301359",
-        "name": "东南电子",
-        "pct": 20.0,
-        "main_flow": 15539597.0
-      },
-      {
-        "code": "301261",
-        "name": "恒工精密",
-        "pct": 20.0,
-        "main_flow": 103083918.0
-      }
-    ],
-    "limit_up_10cm": [
-      {
-        "code": "605566",
-        "name": "福莱蒽特",
-        "pct": 10.0,
-        "main_flow": 18895721.0
-      },
-      {
-        "code": "605488",
-        "name": "福莱新材",
-        "pct": 10.0,
-        "main_flow": 76470208.0
-      },
-      {
-        "code": "605366",
-        "name": "宏柏新材",
-        "pct": 9.94,
-        "main_flow": 33225399.0
-      },
-      {
-        "code": "605288",
-        "name": "凯迪股份",
-        "pct": 10.01,
-        "main_flow": 26923614.0
-      },
-      {
-        "code": "603992",
-        "name": "松霖科技",
-        "pct": 10.0,
-        "main_flow": 22008458.0
-      },
-      {
-        "code": "603920",
-        "name": "世运电路",
-        "pct": 10.0,
-        "main_flow": 201526251.0
-      },
-      {
-        "code": "603897",
-        "name": "长城科技",
-        "pct": 9.99,
-        "main_flow": 50197044.0
-      },
-      {
-        "code": "603868",
-        "name": "飞科电器",
-        "pct": 10.0,
-        "main_flow": 14901877.0
-      },
-      {
-        "code": "603667",
-        "name": "五洲新春",
-        "pct": 9.99,
-        "main_flow": 227251831.0
-      },
-      {
-        "code": "603633",
-        "name": "徕木股份",
-        "pct": 10.03,
-        "main_flow": 41265893.0
-      },
-      {
-        "code": "603626",
-        "name": "科森科技",
-        "pct": 10.0,
-        "main_flow": 191881600.0
-      },
-      {
-        "code": "603612",
-        "name": "索通发展",
-        "pct": 9.97,
-        "main_flow": 65792103.0
-      },
-      {
-        "code": "603533",
-        "name": "掌阅科技",
-        "pct": 10.01,
-        "main_flow": 203017838.0
-      },
-      {
-        "code": "603337",
-        "name": "杰克科技",
-        "pct": 10.0,
-        "main_flow": 26594457.0
-      },
-      {
-        "code": "603226",
-        "name": "菲林格尔",
-        "pct": 10.02,
-        "main_flow": 5327220.0
-      },
-      {
-        "code": "603219",
-        "name": "富佳股份",
-        "pct": 9.99,
-        "main_flow": 21060289.0
-      },
-      {
-        "code": "603179",
-        "name": "新泉股份",
-        "pct": 10.0,
-        "main_flow": 120359072.0
-      },
-      {
-        "code": "603119",
-        "name": "浙江荣泰",
-        "pct": 9.99,
-        "main_flow": 109567612.0
-      },
-      {
-        "code": "603109",
-        "name": "神驰机电",
-        "pct": 10.0,
-        "main_flow": 24612700.0
-      },
-      {
-        "code": "603081",
-        "name": "大丰实业",
-        "pct": 10.02,
-        "main_flow": 96933140.0
-      },
-      {
-        "code": "603040",
-        "name": "新坐标",
-        "pct": 9.99,
-        "main_flow": 26957591.0
-      },
-      {
-        "code": "603037",
-        "name": "凯众股份",
-        "pct": 10.03,
-        "main_flow": 43114988.0
-      },
-      {
-        "code": "603015",
-        "name": "弘讯科技",
-        "pct": 9.99,
-        "main_flow": 31692376.0
-      },
-      {
-        "code": "603006",
-        "name": "联明股份",
-        "pct": 10.04,
-        "main_flow": 14137335.0
-      },
-      {
-        "code": "601956",
-        "name": "东贝集团",
-        "pct": 9.93,
-        "main_flow": -25257067.0
-      },
-      {
-        "code": "600715",
-        "name": "文投控股",
-        "pct": 10.16,
-        "main_flow": 5429029.0
-      },
-      {
-        "code": "600229",
-        "name": "城市传媒",
-        "pct": 9.98,
-        "main_flow": 40550448.0
-      },
-      {
-        "code": "600173",
-        "name": "卧龙新能",
-        "pct": 10.1,
-        "main_flow": 16869437.0
-      },
-      {
-        "code": "600078",
-        "name": "澄星股份",
-        "pct": 10.05,
-        "main_flow": 75494346.0
-      }
-    ]
-  },
+  "breadth": {},
   "themes": {
     "PCB": {
       "board_code": "BK0877",
       "board_name": "PCB",
-      "pct": 2.57,
-      "main_flow": 3141394688.0,
-      "super_large_flow": 2541435904.0,
-      "large_flow": 599958784.0,
-      "medium_flow": -1172326144.0,
-      "small_flow": -1996829696.0,
-      "main_flow_ratio": 3.98,
-      "source_time": "2026-10-28T11:00:18+08:00",
+      "pct": 3.92,
+      "main_flow": 6311212288.0,
+      "super_large_flow": 4793657088.0,
+      "large_flow": 1517555200.0,
+      "medium_flow": -2143589376.0,
+      "small_flow": -4140516864.0,
+      "main_flow_ratio": 5.73,
+      "source_time": "2026-10-28T13:30:27+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -384,14 +193,14 @@
     "CPO/光模块": {
       "board_code": "BK1128",
       "board_name": "CPO概念",
-      "pct": 1.93,
-      "main_flow": 2219998464.0,
-      "super_large_flow": 2173063424.0,
-      "large_flow": 46935040.0,
-      "medium_flow": -2018514688.0,
-      "small_flow": -163447296.0,
-      "main_flow_ratio": 2.69,
-      "source_time": "2026-10-28T11:00:18+08:00",
+      "pct": 3.52,
+      "main_flow": 7677674496.0,
+      "super_large_flow": 6316818432.0,
+      "large_flow": 1360856064.0,
+      "medium_flow": -4815171840.0,
+      "small_flow": -2760719616.0,
+      "main_flow_ratio": 6.15,
+      "source_time": "2026-10-28T13:30:27+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -402,14 +211,14 @@
     "AI算力": {
       "board_code": "BK1134",
       "board_name": "算力概念",
-      "pct": 1.49,
-      "main_flow": 2013179904.0,
-      "super_large_flow": 1682891008.0,
-      "large_flow": 330288896.0,
-      "medium_flow": -1824630016.0,
-      "small_flow": -187426816.0,
-      "main_flow_ratio": 2.51,
-      "source_time": "2026-10-28T11:00:18+08:00",
+      "pct": 2.44,
+      "main_flow": 6326088192.0,
+      "super_large_flow": 4931589120.0,
+      "large_flow": 1394499072.0,
+      "medium_flow": -4470004480.0,
+      "small_flow": -1851920128.0,
+      "main_flow_ratio": 5.34,
+      "source_time": "2026-10-28T13:30:27+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -420,14 +229,14 @@
     "半导体设备": {
       "board_code": "BK1326",
       "board_name": "半导体设备",
-      "pct": 2.07,
-      "main_flow": -189174448.0,
-      "super_large_flow": 21475360.0,
-      "large_flow": -210649808.0,
-      "medium_flow": 68221696.0,
-      "small_flow": 120551632.0,
-      "main_flow_ratio": -1.06,
-      "source_time": "2026-10-28T11:00:15+08:00",
+      "pct": 4.93,
+      "main_flow": 468650480.0,
+      "super_large_flow": 564618736.0,
+      "large_flow": -95968256.0,
+      "medium_flow": -487151360.0,
+      "small_flow": 18640720.0,
+      "main_flow_ratio": 1.81,
+      "source_time": "2026-10-28T13:30:24+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -436,21 +245,21 @@
       }
     },
     "国产GPU/AI芯片": {
-      "board_code": "BK1127",
-      "board_name": "AI芯片",
-      "pct": 2.4,
-      "main_flow": 860890256.0,
-      "super_large_flow": 356957584.0,
-      "large_flow": 503932672.0,
-      "medium_flow": -440562944.0,
-      "small_flow": -420649024.0,
-      "main_flow_ratio": 3.9,
-      "source_time": "2026-10-28T11:00:18+08:00",
+      "board_code": "BK1101",
+      "board_name": "先进封装",
+      "pct": 4.1,
+      "main_flow": 3415250688.0,
+      "super_large_flow": 2839800832.0,
+      "large_flow": 575449856.0,
+      "medium_flow": -2049925632.0,
+      "small_flow": -1323854848.0,
+      "main_flow_ratio": 4.26,
+      "source_time": "2026-10-28T13:30:27+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
         "note": "name-keyword approximation; board-level limit-up diffusion still preserved separately",
-        "board_name": "AI芯片"
+        "board_name": "先进封装"
       }
     }
   },
@@ -462,16 +271,16 @@
         "PCB",
         "AI算力"
       ],
-      "theme_pct_avg": 1.997,
-      "theme_main_flow_sum": 7374573056.0
+      "theme_pct_avg": 3.293,
+      "theme_main_flow_sum": 20314974976.0
     },
     "017811": {
       "name": "东方人工智能",
       "themes": [
         "半导体设备"
       ],
-      "theme_pct_avg": 2.07,
-      "theme_main_flow_sum": -189174448.0
+      "theme_pct_avg": 4.93,
+      "theme_main_flow_sum": 468650480.0
     },
     "018123": {
       "name": "永赢数字经济智选C",
@@ -479,8 +288,8 @@
         "国产GPU/AI芯片",
         "AI算力"
       ],
-      "theme_pct_avg": 1.945,
-      "theme_main_flow_sum": 2874070160.0
+      "theme_pct_avg": 3.27,
+      "theme_main_flow_sum": 9741338880.0
     },
     "008888": {
       "name": "华夏国证半导体",
@@ -488,8 +297,8 @@
         "半导体设备",
         "国产GPU/AI芯片"
       ],
-      "theme_pct_avg": 2.235,
-      "theme_main_flow_sum": 671715808.0
+      "theme_pct_avg": 4.515,
+      "theme_main_flow_sum": 3883901168.0
     }
   },
   "rules": {
@@ -499,8 +308,8 @@
     "reader_must_recheck_age_minutes": 8
   },
   "short_scan": {
-    "generated_at": "2026-10-28T11:03:12+08:00",
-    "market_time": "2026-10-28T11:01:06+08:00",
+    "generated_at": "2026-10-28T13:33:07+08:00",
+    "market_time": "2026-10-28T13:30:57+08:00",
     "stale": true,
     "partial": true,
     "coverage": {
@@ -517,7 +326,7 @@
           "succeeded_pages": [
             {
               "page": 1,
-              "route": "live"
+              "route": "cache"
             },
             {
               "page": 2,
@@ -539,7 +348,7 @@
           "pages_succeeded": [
             {
               "page": 1,
-              "route": "live"
+              "route": "cache"
             },
             {
               "page": 2,
@@ -558,13 +367,27 @@
               "route": "live"
             }
           ],
-          "failed_pages": [],
-          "partial": false,
-          "cache_used": false,
+          "failed_pages": [
+            {
+              "fs": "m:90+t:2",
+              "page": 1,
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "cache_used": true
+            }
+          ],
+          "partial": true,
+          "cache_used": true,
           "route": "Eastmoney",
           "source_time": "2026-10-28T11:01:03+08:00",
-          "stale": false,
-          "source_errors": []
+          "stale": true,
+          "source_errors": [
+            {
+              "fs": "m:90+t:2",
+              "page": 1,
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "cache_used": true
+            }
+          ]
         },
         "concept": {
           "fs": "m:90+t:3",
@@ -576,7 +399,7 @@
           "succeeded_pages": [
             {
               "page": 1,
-              "route": "live"
+              "route": "cache"
             },
             {
               "page": 2,
@@ -602,7 +425,7 @@
           "pages_succeeded": [
             {
               "page": 1,
-              "route": "live"
+              "route": "cache"
             },
             {
               "page": 2,
@@ -625,44 +448,58 @@
               "route": "live"
             }
           ],
-          "failed_pages": [],
-          "partial": false,
-          "cache_used": false,
+          "failed_pages": [
+            {
+              "fs": "m:90+t:3",
+              "page": 1,
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "cache_used": true
+            }
+          ],
+          "partial": true,
+          "cache_used": true,
           "route": "Eastmoney",
           "source_time": "2026-10-28T11:00:51+08:00",
-          "stale": false,
-          "source_errors": []
+          "stale": true,
+          "source_errors": [
+            {
+              "fs": "m:90+t:3",
+              "page": 1,
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "cache_used": true
+            }
+          ]
         }
       },
       "partial": true,
-      "positive_price_and_flow_boards": 389,
+      "positive_price_and_flow_boards": 508,
       "selected_boards": 8,
-      "unique_constituents": 140,
-      "fully_assessed": 10,
+      "unique_constituents": 143,
+      "fully_assessed": 0,
       "assessed_records": 100,
-      "daily_histories": 38,
+      "daily_histories": 33,
       "board_limit": 8,
       "stock_limit": 100,
-      "collection_budget_seconds": 138.25893040001392,
+      "collection_budget_seconds": 145,
       "preselection": "price <=30 preferred, positive main flow and flow/turnover; overlapping boards deduplicated"
     },
     "strong_boards": 8,
     "candidates": [
-      "300403",
       "002526",
-      "002031",
-      "300879",
       "002611",
-      "920510",
-      "300549",
-      "920418",
       "002164",
-      "002265"
+      "002265",
+      "603533",
+      "300403",
+      "300258",
+      "920720",
+      "603809",
+      "603166"
     ],
     "top3": [
-      "300403",
       "002526",
-      "002031"
+      "002611",
+      "002164"
     ]
   }
 }
