@@ -57,3 +57,26 @@ python server.py                # 静态托管 + 数据代理，打开 http://12
 - 维度：趋势/动量/资金(量能)/波动率/拥挤度 = 腾讯日K真实计算；估值/盈利/催化剂 = 规则假设(已标注)；重合度 = 基于 portfolio-data.json 的 类别/地区暴露。
 - 约束：类别暴露 >40% → 回避；>25% → 小仓试探；已持有(如建信纳指) → “回避（已持有）”，避免追高已有暴露方向。
 - 运行：`python server.py`（含 /qz 腾讯日K 代理）。K线维度需本机可访问 qt.gtimg.cn/web.ifzq.gtimg.cn；失败时该行显示“数据不足”，不伪造。
+
+## 市场全景 · TickFlow 风格信息布局（试运行）
+- 新增 `#/market` 页面（侧边栏“市场全景”）。页面只依赖 `bridge/live/latest.json` 与 `bridge/live/short_scan.json`，不复制 TickFlow 源码，也不需要 TickFlow API Key。
+- **请运行** `cd app && python server.py`，然后打开 `http://127.0.0.1:8080/#/market`。普通 `python -m http.server` 和直接打开 `file://` 不提供 `/os/live/` 路由。
+- 本地服务新增两个**只读且白名单固定**的地址：`/os/live/latest.json`、`/os/live/short_scan.json`。点击“刷新快照”只重新读取已生成数据，**不会触发新采集**；采集由原 bridge 任务负责。
+- 页内展示 A 股主要指数、已采集市场宽度、板块热度/资金、强势板块、短线候选评分/VWAP，以及时间戳、过期判定、部分采集/缺失字段；候选**不是**买入建议。
+- “实时/有效”必须同时满足 JSON 的 `stale=false` 且生成时间与 `expires_at` 未过期；旧数据仅供历史回顾。某数据源标记部分采集时，不可以把覆盖样本说成全市场。
+- 前端校验：`node app/tests/market-terminal.test.js`（从仓库根目录运行）。暂未实现 TickFlow 策略/回测/AI 的源码集成，也没有产生可直接交易的信号。
+- 原创信息布局受到 [TickFlow Stock Panel](https://github.com/shy3130/tick-stock-panel) 启发，遵守上游版权声明；如未来实际拷贝代码或资源，需一并包含其 MIT LICENSE 与原作者署名。
+
+## 七步交易研究台（研究辅助，非自动委托）
+新路由：`http://127.0.0.1:8080/#/trading-lab`。启动仍用原来的 `cd app && python server.py`。页面读取原始 `/os/live/latest.json` 与 `/os/live/short_scan.json`，以及原有 `loadPortfolio`、`fetchKlineSeries`、`ios_journal_v3`；没有额外的行情提供商、交易账户或新的本地数据仓库。
+
+七项功能与支持状态：
+1. **交易机会**：只有市场和短线扫描均未过期、未标记不完整且候选标的具备价格/阻力/VWAP/日内低点时，才计算最多 5 个 **2R 假设场景**。并非高胜率证明或可下单指令。
+2. **技术分析**：读取已有短线扫描 MA5/MA10/MA20、RSI、MACD、VWAP；独立周线尚未接入，故不生成日周线联合信号。
+3. **新闻影响**：可信事件新闻流、市场预期差及价格影响模型尚未接入；清楚标记缺失，不预测涨跌幅。
+4. **回测**：借用已有 `fetchKlineSeries`，使用最近可获取的复权日 K，MA5/MA20、前一日收盘产生信号、次日开盘执行、单边成本 10bp。输出已平仓笔数、胜率、盈利因子、最大回撤；若不足 20 笔单独标警告，样本为空时不输出伪指标；不代表真实成交。
+5. **组合风险**：读取 `portfolio-data.json` 资产金额与类别，统一 -20% 情景只做压力试算；缺汇率、Beta、期权价格时不计算精确对冲手数。
+6. **交易日志**：仅审阅用户浏览器真实保存的 `ios_journal_v3`；拒绝把 `MockDB.journalDefaults` 作为用户真实交易。
+7. **盘前至盘后计划**：固定北京时间检查节点，供实际执行及现有定时任务复用；网页不会自动触发日程、交易或全天盯盘。
+
+**运行验证：** `node app/tests/trade-lab.test.js` 与原 `node app/tests/market-terminal.test.js`。需要人工检查浏览器中的导航、过期提示、回测输入、错误状态、移动端布局和旧路由。所有数据源/版本/账户彼此隔离；美股新模拟账户和 Martin Luk $1,000 模拟盘不会被本页合并。

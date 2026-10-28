@@ -4,6 +4,8 @@
 'use strict';
 const VIEWS = {
   dashboard: { title: '仪表盘', render: renderDashboard },
+  market: { title: '市场全景', render: renderMarketTerminal },
+  'trading-lab': { title: '七步交易研究台', render: renderTradingLab },
   decision: { title: '决策中心', render: renderDecision },
   action: { title: '行动中心', render: renderAction },
   portfolio: { title: '组合', render: renderPortfolio },

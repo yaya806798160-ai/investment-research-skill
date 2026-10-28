@@ -1,0 +1,22 @@
+/* Investment OS market terminal: namespaced styles only. */
+.mt-terminal { min-width: 0; }
+.mt-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.mt-header h2 { font-size: 19px; }
+.mt-muted { color: var(--text-dim); font-size: 12px; }
+.mt-status { display: flex; flex-wrap: wrap; gap: 18px; padding: 12px; margin-bottom: 6px; background: var(--panel); border: 1px solid var(--border); border-radius: 9px; }
+.mt-warning { color: var(--warn); }
+.mt-blocked { margin: 12px 0; color: var(--warn); border-left: 3px solid var(--warn); padding: 8px 12px; background: var(--panel); }
+.mt-up { color: var(--up); } .mt-down { color: var(--down); }
+.mt-index-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+.mt-stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 10px; }
+.mt-stat { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.mt-stat strong { font-size: 21px; font-variant-numeric: tabular-nums; }
+.mt-section { margin-top: 14px; }
+.mt-bar { height: 9px; background: var(--down); border-radius: 8px; overflow: hidden; margin: 15px 0 8px; }
+.mt-bar span { display: block; height: 100%; background: var(--up); }
+.mt-terminal .card { overflow-x: auto; }
+.mt-terminal table { width: 100%; }
+.mt-terminal td { white-space: nowrap; }
+.mt-credit { margin: 18px 0; }
+.mt-credit a { color: var(--accent-2); }
+@media (max-width: 720px) { .mt-index-grid, .mt-stat-grid { grid-template-columns: 1fr; } }
