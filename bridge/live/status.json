@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-11-04T13:30:40+08:00",
-  "last_collection_at": "2026-11-04T13:30:40+08:00",
+  "generated_at": "2026-11-04T14:30:39+08:00",
+  "last_collection_at": "2026-11-04T14:30:39+08:00",
   "last_success_at": null,
   "last_push_at": "2026-11-04T13:30:40+08:00",
   "current_commit": "880c759cbdc42e330a5b65b17a4a08bc68a06d0e",
@@ -17,8 +17,29 @@
     "breadth_ok": true
   },
   "short_scan_status": "ok",
-  "short_scan_errors": [],
-  "partial": false,
+  "short_scan_errors": [
+    {
+      "source": "minutes:688478",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "capital:301678",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "minutes:301678",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "capital:688727",
+      "error": "scan collection budget exhausted"
+    },
+    {
+      "source": "minutes:688727",
+      "error": "scan collection budget exhausted"
+    }
+  ],
+  "partial": true,
   "successful_pages": 11,
   "cached_pages": 0,
   "proxy_health": "not_checked",
@@ -80,7 +101,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-04T13:30:42+08:00",
+      "source_time": "2026-11-04T14:30:39+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -147,15 +168,15 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-04T13:30:39+08:00",
+      "source_time": "2026-11-04T14:30:39+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-11-04T13:32:16+08:00",
+  "last_data_success_at": "2026-11-04T14:33:01+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-11-04T13:32:17+08:00",
-  "consecutive_failures": 188,
+  "scan_generated_at": "2026-11-04T14:33:02+08:00",
+  "consecutive_failures": 189,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
