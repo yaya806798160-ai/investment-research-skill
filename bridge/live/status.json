@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-11-04T14:30:39+08:00",
-  "last_collection_at": "2026-11-04T14:30:39+08:00",
+  "generated_at": "2026-11-04T14:45:43+08:00",
+  "last_collection_at": "2026-11-04T14:45:43+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-11-04T13:30:40+08:00",
-  "current_commit": "880c759cbdc42e330a5b65b17a4a08bc68a06d0e",
-  "snapshot_commit": "880c759cbdc42e330a5b65b17a4a08bc68a06d0e",
+  "last_push_at": "2026-11-04T14:45:43+08:00",
+  "current_commit": "98acd566ab79cce548a5941a84b38db4402de1e5",
+  "snapshot_commit": "98acd566ab79cce548a5941a84b38db4402de1e5",
   "current_commit_scope": "snapshot commit preceding status publication",
   "market_source_status": {
     "investment_os_proxy": "failed",
@@ -19,15 +19,15 @@
   "short_scan_status": "ok",
   "short_scan_errors": [
     {
-      "source": "minutes:688478",
+      "source": "minutes:301629",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "capital:301678",
+      "source": "capital:688525",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "minutes:301678",
+      "source": "minutes:688525",
       "error": "scan collection budget exhausted"
     },
     {
@@ -101,7 +101,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-04T14:30:39+08:00",
+      "source_time": "2026-11-04T14:45:45+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -168,15 +168,15 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-04T14:30:39+08:00",
+      "source_time": "2026-11-04T14:45:45+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-11-04T14:33:01+08:00",
+  "last_data_success_at": "2026-11-04T14:48:03+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-11-04T14:33:02+08:00",
-  "consecutive_failures": 189,
+  "scan_generated_at": "2026-11-04T14:48:04+08:00",
+  "consecutive_failures": 190,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
