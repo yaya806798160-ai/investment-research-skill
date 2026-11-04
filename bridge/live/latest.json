@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-04T14:30:39+08:00",
+  "generated_at": "2026-11-04T14:45:43+08:00",
   "source_time": "2026-11-04T08:00:00+08:00",
   "expires_at": "2026-11-04T08:08:00+08:00",
   "trade_date": "2026-11-04",
@@ -9,21 +9,21 @@
     {
       "source": "index:上证",
       "via": "Eastmoney direct",
-      "source_time": "2026-11-04T14:30:03+08:00",
+      "source_time": "2026-11-04T14:45:03+08:00",
       "fallback_used": false,
       "stale": false
     },
     {
       "source": "index:创业板",
       "via": "Eastmoney direct",
-      "source_time": "2026-11-04T14:30:03+08:00",
+      "source_time": "2026-11-04T14:45:03+08:00",
       "fallback_used": false,
       "stale": false
     },
     {
       "source": "index:科创50",
       "via": "Eastmoney direct",
-      "source_time": "2026-11-04T14:30:03+08:00",
+      "source_time": "2026-11-04T14:45:06+08:00",
       "fallback_used": false,
       "stale": false
     },
@@ -36,159 +36,186 @@
     },
     {
       "source": "clist:m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23",
-      "via": "Eastmoney direct",
-      "fallback_used": false,
-      "rows": 5563,
-      "pages": 56
+      "rows": 5500,
+      "pages": 55,
+      "partial": true,
+      "failed_page": 56,
+      "failure": "request failed"
     }
   ],
-  "source_errors": [],
+  "source_errors": [
+    {
+      "source": "breadth",
+      "error": "page 56 failed",
+      "partial": true
+    }
+  ],
   "source": [
     "Investment OS local proxy",
     "Eastmoney push2 via /emq/",
     "Eastmoney public push2 IPv4 fallback"
   ],
   "stale": true,
-  "partial": false,
+  "partial": true,
   "stale_after_minutes": 8,
   "stale_sources": [
     "breadth"
   ],
-  "missing": [],
+  "missing": [
+    "breadth:partial"
+  ],
   "indices": {
     "上证": {
       "code": "000001",
       "name": "上证指数",
-      "price": 3680.23,
-      "pct": 2.0,
-      "turnover": 827466979144.6,
-      "volume": 519294028,
-      "source_time": "2026-11-04T14:30:03+08:00"
+      "price": 3674.02,
+      "pct": 1.83,
+      "turnover": 889409027048.3,
+      "volume": 557923690,
+      "source_time": "2026-11-04T14:45:03+08:00"
     },
     "创业板": {
       "code": "399006",
       "name": "创业板指",
-      "price": 2550.18,
-      "pct": 6.63,
-      "turnover": 478703413817.54,
-      "volume": 199240119,
-      "source_time": "2026-11-04T14:30:03+08:00"
+      "price": 2535.21,
+      "pct": 6.0,
+      "turnover": 512834167899.58,
+      "volume": 213070218,
+      "source_time": "2026-11-04T14:45:03+08:00"
     },
     "科创50": {
       "code": "000688",
       "name": "科创50",
-      "price": 1263.03,
-      "pct": 9.71,
-      "turnover": 90330854255.1,
-      "volume": 11641376,
-      "source_time": "2026-11-04T14:30:03+08:00"
+      "price": 1258.86,
+      "pct": 9.34,
+      "turnover": 97991103099.6,
+      "volume": 12544289,
+      "source_time": "2026-11-04T14:45:06+08:00"
     }
   },
   "breadth": {
     "source_time": "2026-11-04T08:00:00+08:00",
     "oldest_quote_time": "2026-11-04T08:00:00+08:00",
-    "stock_count": 5563,
-    "up": 4375,
-    "down": 734,
-    "flat": 454,
-    "limit_up_20cm_count": 16,
-    "limit_up_10cm_count": 100,
+    "stock_count": 5500,
+    "up": 4047,
+    "down": 973,
+    "flat": 480,
+    "limit_up_20cm_count": 19,
+    "limit_up_10cm_count": 95,
     "limit_up_20cm": [
+      {
+        "code": "688835",
+        "name": "高凯技术",
+        "pct": 20.0,
+        "main_flow": 21063383.0
+      },
       {
         "code": "688809",
         "name": "强一股份",
         "pct": 20.0,
-        "main_flow": 48748255.0
+        "main_flow": 50309579.0
       },
       {
         "code": "688652",
         "name": "京仪装备",
         "pct": 20.0,
-        "main_flow": 41549824.0
+        "main_flow": 42643614.0
+      },
+      {
+        "code": "688596",
+        "name": "正帆科技",
+        "pct": 20.0,
+        "main_flow": 243046662.0
       },
       {
         "code": "688536",
         "name": "思瑞浦",
         "pct": 20.0,
-        "main_flow": 43058865.0
+        "main_flow": 50045100.0
       },
       {
         "code": "688517",
         "name": "金冠电气",
         "pct": 20.02,
-        "main_flow": 10428164.0
+        "main_flow": 12062687.0
       },
       {
         "code": "688507",
         "name": "索辰科技",
         "pct": 20.0,
-        "main_flow": 386643418.0
+        "main_flow": 390320430.0
       },
       {
         "code": "688409",
         "name": "富创精密",
         "pct": 20.0,
-        "main_flow": 78028751.0
+        "main_flow": 85886240.0
       },
       {
         "code": "688361",
         "name": "中科飞测",
         "pct": 20.0,
-        "main_flow": 237265040.0
+        "main_flow": 247260224.0
       },
       {
         "code": "688200",
         "name": "华峰测控",
         "pct": 20.0,
-        "main_flow": 134258031.0
+        "main_flow": 140050606.0
+      },
+      {
+        "code": "688072",
+        "name": "拓荆科技",
+        "pct": 20.0,
+        "main_flow": 466344272.0
       },
       {
         "code": "688037",
         "name": "芯源微",
         "pct": 20.0,
-        "main_flow": 100663152.0
+        "main_flow": 103338250.0
       },
       {
         "code": "301697",
         "name": "贝特利",
         "pct": 20.02,
-        "main_flow": 157227068.0
+        "main_flow": 157865110.0
       },
       {
         "code": "301583",
         "name": "托伦斯",
         "pct": 20.0,
-        "main_flow": 226064462.0
+        "main_flow": 227718916.0
       },
       {
         "code": "301070",
         "name": "开勒股份",
         "pct": 20.0,
-        "main_flow": 25905321.0
+        "main_flow": 26443287.0
       },
       {
         "code": "300788",
         "name": "中信出版",
         "pct": 20.0,
-        "main_flow": 89961484.0
+        "main_flow": 91933966.0
       },
       {
         "code": "300666",
         "name": "江丰电子",
         "pct": 20.0,
-        "main_flow": 400583184.0
+        "main_flow": 416418752.0
       },
       {
         "code": "300489",
         "name": "光智科技",
         "pct": 20.0,
-        "main_flow": 355842256.0
+        "main_flow": 361988944.0
       },
       {
         "code": "300139",
         "name": "晓程科技",
         "pct": 19.99,
-        "main_flow": 315016953.0
+        "main_flow": 319684841.0
       }
     ],
     "limit_up_10cm": [
@@ -196,481 +223,481 @@
         "code": "605577",
         "name": "龙版传媒",
         "pct": 10.0,
-        "main_flow": 5639699.0
+        "main_flow": 5918120.0
       },
       {
         "code": "605488",
         "name": "福莱新材",
         "pct": 10.0,
-        "main_flow": 88211536.0
-      },
-      {
-        "code": "605376",
-        "name": "博迁新材",
-        "pct": 9.59,
-        "main_flow": 25333448.0
+        "main_flow": 89434304.0
       },
       {
         "code": "605358",
         "name": "立昂微",
-        "pct": 9.72,
-        "main_flow": 95636478.0
+        "pct": 10.0,
+        "main_flow": 152878658.0
       },
       {
         "code": "605288",
         "name": "凯迪股份",
         "pct": 10.0,
-        "main_flow": 31243454.0
+        "main_flow": 31534254.0
       },
       {
         "code": "605287",
         "name": "德才股份",
         "pct": 9.99,
-        "main_flow": 80324836.0
+        "main_flow": 82013215.0
       },
       {
         "code": "605111",
         "name": "新洁能",
         "pct": 9.99,
-        "main_flow": 291380879.0
+        "main_flow": 293127407.0
       },
       {
         "code": "603955",
         "name": "大千生态",
         "pct": 10.01,
-        "main_flow": 44945977.0
+        "main_flow": 45498158.0
       },
       {
         "code": "603950",
         "name": "长源东谷",
         "pct": 9.99,
-        "main_flow": 14110213.0
+        "main_flow": 16868802.0
       },
       {
         "code": "603893",
         "name": "瑞芯微",
         "pct": 10.0,
-        "main_flow": 343158640.0
+        "main_flow": 350988720.0
       },
       {
         "code": "603777",
         "name": "来伊份",
         "pct": 10.02,
-        "main_flow": 77154794.0
+        "main_flow": 78708324.0
       },
       {
         "code": "603773",
         "name": "沃格光电",
-        "pct": 9.86,
-        "main_flow": 3950203.0
+        "pct": 10.01,
+        "main_flow": 33952377.0
       },
       {
         "code": "603767",
         "name": "中马传动",
         "pct": 10.01,
-        "main_flow": 71515752.0
+        "main_flow": 72457035.0
       },
       {
         "code": "603662",
         "name": "柯力传感",
         "pct": 10.0,
-        "main_flow": 124965743.0
+        "main_flow": 128521969.0
       },
       {
         "code": "603657",
         "name": "春光科技",
-        "pct": 9.63,
-        "main_flow": 33400466.0
+        "pct": 10.02,
+        "main_flow": 39795277.0
       },
       {
         "code": "603598",
         "name": "引力传媒",
         "pct": 10.0,
-        "main_flow": 189266641.0
+        "main_flow": 191212013.0
       },
       {
         "code": "603595",
         "name": "ST东尼",
         "pct": 10.01,
-        "main_flow": 6883565.0
+        "main_flow": 6409573.0
       },
       {
         "code": "603381",
         "name": "永臻股份",
         "pct": 10.01,
-        "main_flow": 34632170.0
+        "main_flow": 34872130.0
       },
       {
         "code": "603283",
         "name": "赛腾股份",
         "pct": 10.0,
-        "main_flow": 28887218.0
+        "main_flow": 46027282.0
       },
       {
         "code": "603259",
         "name": "药明康德",
         "pct": 10.0,
-        "main_flow": 829257968.0
+        "main_flow": 859094384.0
       },
       {
         "code": "603256",
         "name": "宏和科技",
-        "pct": 9.64,
-        "main_flow": 34085857.0
+        "pct": 10.01,
+        "main_flow": 77562756.0
       },
       {
         "code": "603248",
         "name": "锡华科技",
         "pct": 10.02,
-        "main_flow": 35268093.0
-      },
-      {
-        "code": "603236",
-        "name": "移远通信",
-        "pct": 9.69,
-        "main_flow": 105144199.0
+        "main_flow": 36299493.0
       },
       {
         "code": "603203",
         "name": "快克智能",
         "pct": 10.0,
-        "main_flow": 26650643.0
+        "main_flow": 32606955.0
       },
       {
         "code": "603186",
         "name": "华正新材",
         "pct": 10.0,
-        "main_flow": 298981904.0
+        "main_flow": 305211856.0
       },
       {
         "code": "603127",
         "name": "昭衍新药",
-        "pct": 10.0,
-        "main_flow": 316382612.0
+        "pct": 9.98,
+        "main_flow": 332086852.0
       },
       {
         "code": "603115",
         "name": "海星股份",
         "pct": 10.01,
-        "main_flow": 35703817.0
+        "main_flow": 39686237.0
       },
       {
         "code": "603067",
         "name": "振华股份",
         "pct": 9.98,
-        "main_flow": 107725477.0
+        "main_flow": 112190357.0
       },
       {
         "code": "603061",
         "name": "金海通",
         "pct": 10.0,
-        "main_flow": 45448588.0
+        "main_flow": 49404911.0
       },
       {
         "code": "603048",
         "name": "浙江黎明",
         "pct": 10.01,
-        "main_flow": 1694022.0
+        "main_flow": 2102850.0
       },
       {
         "code": "601599",
         "name": "浙文影业",
         "pct": 9.95,
-        "main_flow": -15307435.0
+        "main_flow": -18301179.0
       },
       {
         "code": "601208",
         "name": "东材科技",
         "pct": 10.01,
-        "main_flow": 175997832.0
+        "main_flow": 199358133.0
       },
       {
         "code": "601123",
         "name": "马矿股份",
         "pct": 10.02,
-        "main_flow": 138668269.0
+        "main_flow": 139097693.0
       },
       {
         "code": "601069",
         "name": "西部黄金",
         "pct": 10.0,
-        "main_flow": 55928271.0
+        "main_flow": 56783101.0
       },
       {
         "code": "600988",
         "name": "赤峰黄金",
         "pct": 10.0,
-        "main_flow": 169450863.0
+        "main_flow": 172460219.0
       },
       {
         "code": "600892",
         "name": "大晟文化",
         "pct": 9.98,
-        "main_flow": 38153067.0
+        "main_flow": 38885203.0
       },
       {
         "code": "600699",
         "name": "均胜电子",
         "pct": 10.01,
-        "main_flow": 120094627.0
+        "main_flow": 129029840.0
       },
       {
         "code": "600641",
         "name": "先导基电",
         "pct": 9.98,
-        "main_flow": 210919914.0
+        "main_flow": 213308446.0
       },
       {
         "code": "600605",
         "name": "汇通能源",
-        "pct": 10.02,
-        "main_flow": 22440182.0
+        "pct": 9.86,
+        "main_flow": 19528011.0
       },
       {
         "code": "600584",
         "name": "长电科技",
         "pct": 9.99,
-        "main_flow": 990629040.0
+        "main_flow": 1033231776.0
       },
       {
         "code": "600547",
         "name": "山东黄金",
         "pct": 10.0,
-        "main_flow": 351745760.0
+        "main_flow": 371487952.0
       },
       {
         "code": "600537",
         "name": "*ST亿晶",
         "pct": 9.74,
-        "main_flow": 5140875.0
-      },
-      {
-        "code": "600489",
-        "name": "中金黄金",
-        "pct": 9.55,
-        "main_flow": 252302960.0
+        "main_flow": 5145607.0
       },
       {
         "code": "600391",
         "name": "航发科技",
         "pct": 10.0,
-        "main_flow": 98955920.0
+        "main_flow": 102259220.0
       },
       {
         "code": "600371",
         "name": "万向德农",
         "pct": 10.04,
-        "main_flow": 96427707.0
-      },
-      {
-        "code": "600327",
-        "name": "大东方",
-        "pct": 10.11,
-        "main_flow": -3375148.0
+        "main_flow": 96984312.0
       },
       {
         "code": "600206",
         "name": "有研新材",
         "pct": 9.99,
-        "main_flow": 483208534.0
+        "main_flow": 497636198.0
       },
       {
         "code": "600180",
         "name": "*ST瑞茂",
         "pct": 9.57,
-        "main_flow": 4943223.0
+        "main_flow": 5114821.0
       },
       {
         "code": "003033",
         "name": "征和工业",
         "pct": 10.0,
-        "main_flow": 30499261.0
+        "main_flow": 30855071.0
       },
       {
         "code": "003021",
         "name": "兆威机电",
         "pct": 10.01,
-        "main_flow": 110802971.0
+        "main_flow": 112190347.0
       },
       {
         "code": "002992",
         "name": "宝明科技",
         "pct": 10.01,
-        "main_flow": 28723115.0
+        "main_flow": 28057119.0
       },
       {
         "code": "002980",
         "name": "华盛昌",
         "pct": 10.0,
-        "main_flow": 87819529.0
+        "main_flow": 91219108.0
       },
       {
         "code": "002975",
         "name": "博杰股份",
         "pct": 10.0,
-        "main_flow": 81540105.0
+        "main_flow": 85236479.0
       },
       {
         "code": "002971",
         "name": "和远气体",
         "pct": 10.0,
-        "main_flow": 63342226.0
+        "main_flow": 68152255.0
       },
       {
         "code": "002916",
         "name": "深南电路",
         "pct": 10.0,
-        "main_flow": -109870608.0
+        "main_flow": -94349328.0
       },
       {
         "code": "002876",
         "name": "三利谱",
         "pct": 10.0,
-        "main_flow": 32334822.0
+        "main_flow": 33370236.0
       },
       {
         "code": "002827",
         "name": "高争民爆",
         "pct": 10.0,
-        "main_flow": 16389415.0
+        "main_flow": 16878960.0
       },
       {
         "code": "002821",
         "name": "凯莱英",
         "pct": 10.0,
-        "main_flow": 218658366.0
+        "main_flow": 222156104.0
       },
       {
         "code": "002811",
         "name": "郑中设计",
         "pct": 9.99,
-        "main_flow": 33487389.0
+        "main_flow": 33797013.0
       },
       {
         "code": "002741",
         "name": "光华科技",
         "pct": 9.98,
-        "main_flow": 94484248.0
+        "main_flow": 104713735.0
       },
       {
         "code": "002716",
         "name": "湖南白银",
         "pct": 9.99,
-        "main_flow": 190907384.0
+        "main_flow": 207558976.0
       },
       {
         "code": "002674",
         "name": "兴业科技",
         "pct": 10.02,
-        "main_flow": 23669229.0
+        "main_flow": 24886341.0
       },
       {
         "code": "002652",
         "name": "扬子新材",
         "pct": 10.07,
-        "main_flow": 67247735.0
+        "main_flow": 71405816.0
       },
       {
         "code": "002636",
         "name": "金安国纪",
         "pct": 10.01,
-        "main_flow": 254382672.0
+        "main_flow": 280297696.0
       },
       {
         "code": "002578",
         "name": "闽发铝业",
         "pct": 10.11,
-        "main_flow": 79706692.0
+        "main_flow": 79819300.0
       },
       {
         "code": "002565",
         "name": "顺灏股份",
         "pct": 9.98,
-        "main_flow": 351710440.0
+        "main_flow": 354669832.0
       },
       {
         "code": "002529",
         "name": "海源复材",
         "pct": 10.09,
-        "main_flow": 15370327.0
+        "main_flow": 21657517.0
       },
       {
         "code": "002463",
         "name": "沪电股份",
-        "pct": 9.67,
-        "main_flow": 349547104.0
+        "pct": 9.99,
+        "main_flow": 545430160.0
       },
       {
         "code": "002428",
         "name": "云南锗业",
         "pct": 10.0,
-        "main_flow": 1501688544.0
+        "main_flow": 1510334784.0
       },
       {
         "code": "002409",
         "name": "雅克科技",
         "pct": 10.01,
-        "main_flow": 151803258.0
+        "main_flow": 159441409.0
       },
       {
         "code": "002388",
         "name": "新亚制程",
         "pct": 9.98,
-        "main_flow": 72038406.0
+        "main_flow": 72381128.0
       },
       {
         "code": "002371",
         "name": "北方华创",
         "pct": 10.0,
-        "main_flow": 753964256.0
+        "main_flow": 783451040.0
       },
       {
         "code": "002353",
         "name": "杰瑞股份",
         "pct": 10.0,
-        "main_flow": 600713.0
+        "main_flow": 5946697.0
       },
       {
         "code": "002317",
         "name": "众生药业",
         "pct": 9.99,
-        "main_flow": 127170250.0
+        "main_flow": 132925870.0
       },
       {
         "code": "002309",
         "name": "中利集团",
         "pct": 9.96,
-        "main_flow": 77789707.0
+        "main_flow": 82411307.0
       },
       {
         "code": "002275",
         "name": "桂林三金",
         "pct": 10.0,
-        "main_flow": 145271859.0
+        "main_flow": 146424211.0
       },
       {
         "code": "002222",
         "name": "福晶科技",
         "pct": 10.0,
-        "main_flow": 83669965.0
+        "main_flow": 97955943.0
       },
       {
         "code": "002156",
         "name": "通富微电",
         "pct": 10.01,
-        "main_flow": 828852192.0
-      },
-      {
-        "code": "002155",
-        "name": "湖南黄金",
-        "pct": 9.91,
-        "main_flow": 116647091.0
+        "main_flow": 844628576.0
       },
       {
         "code": "002088",
         "name": "鲁阳节能",
         "pct": 9.96,
-        "main_flow": -5378210.0
+        "main_flow": -5145546.0
+      },
+      {
+        "code": "002081",
+        "name": "金 螳 螂",
+        "pct": 9.97,
+        "main_flow": 164480446.0
+      },
+      {
+        "code": "002058",
+        "name": "紫竹高科",
+        "pct": 9.99,
+        "main_flow": -37488192.0
+      },
+      {
+        "code": "002008",
+        "name": "大族激光",
+        "pct": 10.0,
+        "main_flow": 407563888.0
+      },
+      {
+        "code": "001389",
+        "name": "广合科技",
+        "pct": 10.0,
+        "main_flow": 97226787.0
+      },
+      {
+        "code": "001360",
+        "name": "南矿集团",
+        "pct": 10.01,
+        "main_flow": 26355659.0
       }
     ]
   },
@@ -678,14 +705,14 @@
     "PCB": {
       "board_code": "BK0877",
       "board_name": "PCB",
-      "pct": 6.86,
-      "main_flow": 7333790720.0,
-      "super_large_flow": 6043911936.0,
-      "large_flow": 1289878784.0,
-      "medium_flow": -3209282560.0,
-      "small_flow": -4033536256.0,
-      "main_flow_ratio": 4.26,
-      "source_time": "2026-11-04T14:30:09+08:00",
+      "pct": 6.34,
+      "main_flow": 8784911104.0,
+      "super_large_flow": 7397787392.0,
+      "large_flow": 1387123712.0,
+      "medium_flow": -3914005504.0,
+      "small_flow": -4787673856.0,
+      "main_flow_ratio": 4.74,
+      "source_time": "2026-11-04T14:45:12+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -696,14 +723,14 @@
     "CPO/光模块": {
       "board_code": "BK1128",
       "board_name": "CPO概念",
-      "pct": 8.0,
-      "main_flow": 11560103680.0,
-      "super_large_flow": 10824689920.0,
-      "large_flow": 735413760.0,
-      "medium_flow": -6451876608.0,
-      "small_flow": -4948976896.0,
-      "main_flow_ratio": 5.97,
-      "source_time": "2026-11-04T14:30:09+08:00",
+      "pct": 7.43,
+      "main_flow": 13044875008.0,
+      "super_large_flow": 11997942784.0,
+      "large_flow": 1046932224.0,
+      "medium_flow": -7185100544.0,
+      "small_flow": -5695960320.0,
+      "main_flow_ratio": 6.23,
+      "source_time": "2026-11-04T14:45:09+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -714,14 +741,14 @@
     "AI算力": {
       "board_code": "BK1134",
       "board_name": "算力概念",
-      "pct": 3.86,
-      "main_flow": 8912122624.0,
-      "super_large_flow": 8781636096.0,
-      "large_flow": 130486528.0,
-      "medium_flow": -6357691904.0,
-      "small_flow": -2541938688.0,
-      "main_flow_ratio": 4.97,
-      "source_time": "2026-11-04T14:30:09+08:00",
+      "pct": 3.35,
+      "main_flow": 9721026304.0,
+      "super_large_flow": 9260935168.0,
+      "large_flow": 460091136.0,
+      "medium_flow": -6989080320.0,
+      "small_flow": -2722728960.0,
+      "main_flow_ratio": 5.02,
+      "source_time": "2026-11-04T14:45:09+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -732,14 +759,14 @@
     "半导体设备": {
       "board_code": "BK1326",
       "board_name": "半导体设备",
-      "pct": 15.03,
-      "main_flow": 3619061152.0,
-      "super_large_flow": 2831818400.0,
-      "large_flow": 787242752.0,
-      "medium_flow": -2550024704.0,
-      "small_flow": -1070145280.0,
-      "main_flow_ratio": 8.42,
-      "source_time": "2026-11-04T14:30:09+08:00",
+      "pct": 14.53,
+      "main_flow": 3983405824.0,
+      "super_large_flow": 3081651712.0,
+      "large_flow": 901754112.0,
+      "medium_flow": -2817926912.0,
+      "small_flow": -1165059072.0,
+      "main_flow_ratio": 8.75,
+      "source_time": "2026-11-04T14:45:09+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -750,14 +777,14 @@
     "国产GPU/AI芯片": {
       "board_code": "BK1101",
       "board_name": "先进封装",
-      "pct": 9.43,
-      "main_flow": 9431371264.0,
-      "super_large_flow": 8503316224.0,
-      "large_flow": 928055040.0,
-      "medium_flow": -6168714240.0,
-      "small_flow": -3184383744.0,
-      "main_flow_ratio": 7.39,
-      "source_time": "2026-11-04T14:30:09+08:00",
+      "pct": 8.94,
+      "main_flow": 10347968000.0,
+      "super_large_flow": 9268362496.0,
+      "large_flow": 1079605504.0,
+      "medium_flow": -6782927360.0,
+      "small_flow": -3492896768.0,
+      "main_flow_ratio": 7.56,
+      "source_time": "2026-11-04T14:45:09+08:00",
       "limit_up_diffusion": {
         "count": 0,
         "stocks": [],
@@ -774,16 +801,16 @@
         "PCB",
         "AI算力"
       ],
-      "theme_pct_avg": 6.24,
-      "theme_main_flow_sum": 27806017024.0
+      "theme_pct_avg": 5.707,
+      "theme_main_flow_sum": 31550812416.0
     },
     "017811": {
       "name": "东方人工智能",
       "themes": [
         "半导体设备"
       ],
-      "theme_pct_avg": 15.03,
-      "theme_main_flow_sum": 3619061152.0
+      "theme_pct_avg": 14.53,
+      "theme_main_flow_sum": 3983405824.0
     },
     "018123": {
       "name": "永赢数字经济智选C",
@@ -791,8 +818,8 @@
         "国产GPU/AI芯片",
         "AI算力"
       ],
-      "theme_pct_avg": 6.645,
-      "theme_main_flow_sum": 18343493888.0
+      "theme_pct_avg": 6.145,
+      "theme_main_flow_sum": 20068994304.0
     },
     "008888": {
       "name": "华夏国证半导体",
@@ -800,8 +827,8 @@
         "半导体设备",
         "国产GPU/AI芯片"
       ],
-      "theme_pct_avg": 12.23,
-      "theme_main_flow_sum": 13050432416.0
+      "theme_pct_avg": 11.735,
+      "theme_main_flow_sum": 14331373824.0
     }
   },
   "rules": {
@@ -811,8 +838,8 @@
     "reader_must_recheck_age_minutes": 8
   },
   "short_scan": {
-    "generated_at": "2026-11-04T14:33:02+08:00",
-    "market_time": "2026-11-04T14:30:39+08:00",
+    "generated_at": "2026-11-04T14:48:04+08:00",
+    "market_time": "2026-11-04T14:45:45+08:00",
     "stale": false,
     "partial": true,
     "coverage": {
@@ -874,7 +901,7 @@
           "partial": false,
           "cache_used": false,
           "route": "Eastmoney",
-          "source_time": "2026-11-04T14:30:39+08:00",
+          "source_time": "2026-11-04T14:45:45+08:00",
           "stale": false,
           "source_errors": []
         },
@@ -941,40 +968,40 @@
           "partial": false,
           "cache_used": false,
           "route": "Eastmoney",
-          "source_time": "2026-11-04T14:30:39+08:00",
+          "source_time": "2026-11-04T14:45:45+08:00",
           "stale": false,
           "source_errors": []
         }
       },
       "partial": true,
-      "positive_price_and_flow_boards": 591,
+      "positive_price_and_flow_boards": 594,
       "selected_boards": 8,
       "unique_constituents": 107,
-      "fully_assessed": 93,
+      "fully_assessed": 88,
       "assessed_records": 100,
       "daily_histories": 100,
       "board_limit": 8,
       "stock_limit": 100,
-      "collection_budget_seconds": 143.31001349998405,
+      "collection_budget_seconds": 139.24074909999035,
       "preselection": "price <=30 preferred, positive main flow and flow/turnover; overlapping boards deduplicated"
     },
     "strong_boards": 8,
     "candidates": [
+      "920181",
       "688138",
       "688107",
       "000975",
       "001287",
       "688352",
       "600520",
-      "920181",
-      "688135",
       "688591",
-      "301717"
+      "600549",
+      "002237"
     ],
     "top3": [
+      "920181",
       "688138",
-      "688107",
-      "000975"
+      "688107"
     ]
   }
 }
