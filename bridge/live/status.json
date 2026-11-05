@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-11-04T14:45:43+08:00",
-  "last_collection_at": "2026-11-04T14:45:43+08:00",
+  "generated_at": "2026-11-05T11:00:44+08:00",
+  "last_collection_at": "2026-11-05T11:00:44+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-11-04T14:45:43+08:00",
-  "current_commit": "98acd566ab79cce548a5941a84b38db4402de1e5",
-  "snapshot_commit": "98acd566ab79cce548a5941a84b38db4402de1e5",
+  "last_push_at": "2026-11-05T11:00:44+08:00",
+  "current_commit": "4d1410c477d17b75cff39cc2f5bef21e3452629d",
+  "snapshot_commit": "4d1410c477d17b75cff39cc2f5bef21e3452629d",
   "current_commit_scope": "snapshot commit preceding status publication",
   "market_source_status": {
     "investment_os_proxy": "failed",
@@ -17,29 +17,8 @@
     "breadth_ok": true
   },
   "short_scan_status": "ok",
-  "short_scan_errors": [
-    {
-      "source": "minutes:301629",
-      "error": "scan collection budget exhausted"
-    },
-    {
-      "source": "capital:688525",
-      "error": "scan collection budget exhausted"
-    },
-    {
-      "source": "minutes:688525",
-      "error": "scan collection budget exhausted"
-    },
-    {
-      "source": "capital:688727",
-      "error": "scan collection budget exhausted"
-    },
-    {
-      "source": "minutes:688727",
-      "error": "scan collection budget exhausted"
-    }
-  ],
-  "partial": true,
+  "short_scan_errors": [],
+  "partial": false,
   "successful_pages": 11,
   "cached_pages": 0,
   "proxy_health": "not_checked",
@@ -101,7 +80,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-04T14:45:45+08:00",
+      "source_time": "2026-11-05T11:00:45+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -168,15 +147,15 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-04T14:45:45+08:00",
+      "source_time": "2026-11-05T11:00:45+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-11-04T14:48:03+08:00",
+  "last_data_success_at": "2026-11-05T11:02:47+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-11-04T14:48:04+08:00",
-  "consecutive_failures": 190,
+  "scan_generated_at": "2026-11-05T11:02:48+08:00",
+  "consecutive_failures": 191,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
