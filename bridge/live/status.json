@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-11-06T14:30:52+08:00",
-  "last_collection_at": "2026-11-06T14:30:52+08:00",
+  "generated_at": "2026-11-06T14:45:48+08:00",
+  "last_collection_at": "2026-11-06T14:45:48+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-11-06T14:30:52+08:00",
-  "current_commit": "8829fad7658f1ccd050d6c00ea75877bfc43be25",
-  "snapshot_commit": "8829fad7658f1ccd050d6c00ea75877bfc43be25",
+  "last_push_at": "2026-11-06T14:45:48+08:00",
+  "current_commit": "cd36cb503a3d3901b7ae4352ede9879aa125df0d",
+  "snapshot_commit": "cd36cb503a3d3901b7ae4352ede9879aa125df0d",
   "current_commit_scope": "snapshot commit preceding status publication",
   "market_source_status": {
     "investment_os_proxy": "failed",
@@ -16,26 +16,26 @@
     "boards_ok": true,
     "breadth_ok": true
   },
-  "short_scan_status": "stale",
+  "short_scan_status": "ok",
   "short_scan_errors": [
     {
-      "source": "minutes:000713",
+      "source": "capital:601518",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "capital:000998",
+      "source": "minutes:601518",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "minutes:000998",
+      "source": "capital:000828",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "capital:000615",
+      "source": "minutes:000828",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "minutes:000615",
+      "source": "capital:600012",
       "error": "scan collection budget exhausted"
     }
   ],
@@ -101,7 +101,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-06T14:30:54+08:00",
+      "source_time": "2026-11-06T14:45:51+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -168,20 +168,19 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-06T14:30:51+08:00",
+      "source_time": "2026-11-06T14:45:51+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-11-06T14:33:09+08:00",
+  "last_data_success_at": "2026-11-06T14:48:07+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-11-06T14:33:13+08:00",
-  "consecutive_failures": 197,
+  "scan_generated_at": "2026-11-06T14:48:09+08:00",
+  "consecutive_failures": 198,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
     "reader_must_recheck_age_minutes": 8,
     "empty_candidates_means_scanner_failed_not_no_opportunities": true
-  },
-  "status_publication_error": "TimeoutExpired: Command '['git', 'push']' timed out after 2.192746000015177 seconds"
+  }
 }
