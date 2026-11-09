@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-11-09T13:30:44+08:00",
-  "last_collection_at": "2026-11-09T13:30:44+08:00",
+  "generated_at": "2026-11-09T14:30:44+08:00",
+  "last_collection_at": "2026-11-09T14:30:44+08:00",
   "last_success_at": null,
   "last_push_at": "2026-11-09T11:00:48+08:00",
   "current_commit": "02cb7f8dbc4fde109debec0e996848ba38e0be4c",
@@ -19,23 +19,23 @@
   "short_scan_status": "stale",
   "short_scan_errors": [
     {
-      "source": "core_minutes:601015",
+      "source": "minutes:300353",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "board_minutes:BK1249",
+      "source": "capital:603912",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "core_minutes:600792",
+      "source": "minutes:603912",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "core_minutes:600408",
+      "source": "capital:300240",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "core_minutes:601015",
+      "source": "minutes:300240",
       "error": "scan collection budget exhausted"
     }
   ],
@@ -101,7 +101,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-09T13:30:45+08:00",
+      "source_time": "2026-11-09T14:30:48+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -168,20 +168,19 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-09T13:30:45+08:00",
+      "source_time": "2026-11-09T14:30:45+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-11-09T13:33:03+08:00",
+  "last_data_success_at": "2026-11-09T14:33:02+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-11-09T13:33:05+08:00",
-  "consecutive_failures": 200,
+  "scan_generated_at": "2026-11-09T14:33:05+08:00",
+  "consecutive_failures": 201,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
     "reader_must_recheck_age_minutes": 8,
     "empty_candidates_means_scanner_failed_not_no_opportunities": true
-  },
-  "status_publication_error": "TimeoutExpired: Command '['git', 'add', 'bridge\\\\live\\\\status.json']' timed out after 1.902107999951113 seconds"
+  }
 }
