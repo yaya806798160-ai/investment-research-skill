@@ -1,0 +1,563 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-09T14:30:44+08:00",
+  "source_time": "2026-11-09T08:00:00+08:00",
+  "expires_at": "2026-11-09T08:08:00+08:00",
+  "trade_date": "2026-11-09",
+  "market_time": "08:00:00",
+  "data_sources": [
+    {
+      "source": "index:上证",
+      "via": "Eastmoney direct",
+      "source_time": "2026-11-09T14:30:03+08:00",
+      "fallback_used": false,
+      "stale": false
+    },
+    {
+      "source": "index:创业板",
+      "via": "Eastmoney direct",
+      "source_time": "2026-11-09T14:30:03+08:00",
+      "fallback_used": false,
+      "stale": false
+    },
+    {
+      "source": "index:科创50",
+      "via": "Eastmoney direct",
+      "source_time": "2026-11-09T14:30:06+08:00",
+      "fallback_used": false,
+      "stale": false
+    },
+    {
+      "source": "clist:m:90+t:2,m:90+t:3",
+      "via": "Eastmoney direct",
+      "fallback_used": false,
+      "rows": 1027,
+      "pages": 11
+    },
+    {
+      "source": "clist:m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23",
+      "rows": 3700,
+      "pages": 37,
+      "partial": true,
+      "failed_page": 38,
+      "failure": "request failed"
+    }
+  ],
+  "source_errors": [
+    {
+      "source": "breadth",
+      "error": "page 38 failed",
+      "partial": true
+    }
+  ],
+  "source": [
+    "Investment OS local proxy",
+    "Eastmoney push2 via /emq/",
+    "Eastmoney public push2 IPv4 fallback"
+  ],
+  "stale": true,
+  "partial": true,
+  "stale_after_minutes": 8,
+  "stale_sources": [
+    "breadth"
+  ],
+  "missing": [
+    "breadth:partial"
+  ],
+  "indices": {
+    "上证": {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3665.73,
+      "pct": 0.45,
+      "turnover": 604669436195.9,
+      "volume": 375300132,
+      "source_time": "2026-11-09T14:30:03+08:00"
+    },
+    "创业板": {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 2469.67,
+      "pct": 0.18,
+      "turnover": 361447349919.71,
+      "volume": 152724154,
+      "source_time": "2026-11-09T14:30:03+08:00"
+    },
+    "科创50": {
+      "code": "000688",
+      "name": "科创50",
+      "price": 1263.87,
+      "pct": 0.85,
+      "turnover": 64286140231.7,
+      "volume": 7226824,
+      "source_time": "2026-11-09T14:30:06+08:00"
+    }
+  },
+  "breadth": {
+    "source_time": "2026-11-09T08:00:00+08:00",
+    "oldest_quote_time": "2026-11-09T08:00:00+08:00",
+    "stock_count": 3700,
+    "up": 1659,
+    "down": 1762,
+    "flat": 279,
+    "limit_up_20cm_count": 4,
+    "limit_up_10cm_count": 21,
+    "limit_up_20cm": [
+      {
+        "code": "688585",
+        "name": "上纬新材",
+        "pct": 20.0,
+        "main_flow": 109869312.0
+      },
+      {
+        "code": "301718",
+        "name": "通则康威",
+        "pct": 20.0,
+        "main_flow": 231110862.0
+      },
+      {
+        "code": "301226",
+        "name": "祥明智能",
+        "pct": 20.0,
+        "main_flow": 31087057.0
+      },
+      {
+        "code": "301010",
+        "name": "晶雪节能",
+        "pct": 20.01,
+        "main_flow": 111919799.0
+      }
+    ],
+    "limit_up_10cm": [
+      {
+        "code": "603920",
+        "name": "世运电路",
+        "pct": 9.99,
+        "main_flow": 210439616.0
+      },
+      {
+        "code": "603843",
+        "name": "*ST正平",
+        "pct": 10.07,
+        "main_flow": 1204937.0
+      },
+      {
+        "code": "603706",
+        "name": "东方环宇",
+        "pct": 10.03,
+        "main_flow": 36690952.0
+      },
+      {
+        "code": "603703",
+        "name": "盛洋科技",
+        "pct": 10.01,
+        "main_flow": 186271797.0
+      },
+      {
+        "code": "603683",
+        "name": "晶华新材",
+        "pct": 10.01,
+        "main_flow": 157571164.0
+      },
+      {
+        "code": "603660",
+        "name": "苏州科达",
+        "pct": 9.98,
+        "main_flow": 41531393.0
+      },
+      {
+        "code": "603389",
+        "name": "亚振家居",
+        "pct": 10.0,
+        "main_flow": 11550093.0
+      },
+      {
+        "code": "603366",
+        "name": "日出东方",
+        "pct": 10.01,
+        "main_flow": 44115334.0
+      },
+      {
+        "code": "603286",
+        "name": "日盈电子",
+        "pct": 9.99,
+        "main_flow": 54055807.0
+      },
+      {
+        "code": "603121",
+        "name": "华培动力",
+        "pct": 10.01,
+        "main_flow": 31724828.0
+      },
+      {
+        "code": "601188",
+        "name": "龙江交通",
+        "pct": 9.97,
+        "main_flow": 17078063.0
+      },
+      {
+        "code": "600853",
+        "name": "龙建股份",
+        "pct": 10.0,
+        "main_flow": 55156232.0
+      },
+      {
+        "code": "600838",
+        "name": "上海九百",
+        "pct": 10.05,
+        "main_flow": 243680376.0
+      },
+      {
+        "code": "600776",
+        "name": "东方通信",
+        "pct": 9.99,
+        "main_flow": 118848634.0
+      },
+      {
+        "code": "600715",
+        "name": "文投控股",
+        "pct": 10.21,
+        "main_flow": 456463170.0
+      },
+      {
+        "code": "600609",
+        "name": "金杯汽车",
+        "pct": 10.13,
+        "main_flow": 93752955.0
+      },
+      {
+        "code": "600540",
+        "name": "新赛股份",
+        "pct": 9.61,
+        "main_flow": 41296642.0
+      },
+      {
+        "code": "600408",
+        "name": "安泰集团",
+        "pct": 9.93,
+        "main_flow": 136054137.0
+      },
+      {
+        "code": "600327",
+        "name": "大东方",
+        "pct": 9.98,
+        "main_flow": -211769670.0
+      },
+      {
+        "code": "600278",
+        "name": "东方创业",
+        "pct": 9.97,
+        "main_flow": -79115655.0
+      },
+      {
+        "code": "600121",
+        "name": "郑州煤电",
+        "pct": 10.0,
+        "main_flow": 147490366.0
+      }
+    ]
+  },
+  "themes": {
+    "PCB": {
+      "board_code": "BK0877",
+      "board_name": "PCB",
+      "pct": 1.65,
+      "main_flow": 4371564544.0,
+      "super_large_flow": 3549936640.0,
+      "large_flow": 821627904.0,
+      "medium_flow": -1544763136.0,
+      "small_flow": -2848887040.0,
+      "main_flow_ratio": 3.71,
+      "source_time": "2026-11-09T14:30:12+08:00",
+      "limit_up_diffusion": {
+        "count": 0,
+        "stocks": [],
+        "note": "name-keyword approximation; board-level limit-up diffusion still preserved separately",
+        "board_name": "PCB"
+      }
+    },
+    "CPO/光模块": {
+      "board_code": "BK1136",
+      "board_name": "光通信模块",
+      "pct": 2.45,
+      "main_flow": 5716206336.0,
+      "super_large_flow": 4146335232.0,
+      "large_flow": 1569871104.0,
+      "medium_flow": -2241847296.0,
+      "small_flow": -3444559616.0,
+      "main_flow_ratio": 4.28,
+      "source_time": "2026-11-09T14:30:09+08:00",
+      "limit_up_diffusion": {
+        "count": 0,
+        "stocks": [],
+        "note": "name-keyword approximation; board-level limit-up diffusion still preserved separately",
+        "board_name": "光通信模块"
+      }
+    },
+    "AI算力": {
+      "board_code": "BK1134",
+      "board_name": "算力概念",
+      "pct": 0.6,
+      "main_flow": 5136405248.0,
+      "super_large_flow": 3885558016.0,
+      "large_flow": 1250847232.0,
+      "medium_flow": -2892660224.0,
+      "small_flow": -2251174656.0,
+      "main_flow_ratio": 3.66,
+      "source_time": "2026-11-09T14:30:09+08:00",
+      "limit_up_diffusion": {
+        "count": 0,
+        "stocks": [],
+        "note": "name-keyword approximation; board-level limit-up diffusion still preserved separately",
+        "board_name": "算力概念"
+      }
+    },
+    "半导体设备": {
+      "board_code": "BK1326",
+      "board_name": "半导体设备",
+      "pct": 0.1,
+      "main_flow": 638640256.0,
+      "super_large_flow": -138732928.0,
+      "large_flow": 777373184.0,
+      "medium_flow": -354134528.0,
+      "small_flow": -284733568.0,
+      "main_flow_ratio": 2.36,
+      "source_time": "2026-11-09T14:30:09+08:00",
+      "limit_up_diffusion": {
+        "count": 0,
+        "stocks": [],
+        "note": "name-keyword approximation; board-level limit-up diffusion still preserved separately",
+        "board_name": "半导体设备"
+      }
+    },
+    "国产GPU/AI芯片": {
+      "board_code": "BK1101",
+      "board_name": "先进封装",
+      "pct": 1.18,
+      "main_flow": 2469426688.0,
+      "super_large_flow": 1268917248.0,
+      "large_flow": 1200509440.0,
+      "medium_flow": -1424581632.0,
+      "small_flow": -1041598976.0,
+      "main_flow_ratio": 2.95,
+      "source_time": "2026-11-09T14:30:12+08:00",
+      "limit_up_diffusion": {
+        "count": 0,
+        "stocks": [],
+        "note": "name-keyword approximation; board-level limit-up diffusion still preserved separately",
+        "board_name": "先进封装"
+      }
+    }
+  },
+  "fund_mapping": {
+    "021528": {
+      "name": "财通成长C",
+      "themes": [
+        "CPO/光模块",
+        "PCB",
+        "AI算力"
+      ],
+      "theme_pct_avg": 1.567,
+      "theme_main_flow_sum": 15224176128.0
+    },
+    "017811": {
+      "name": "东方人工智能",
+      "themes": [
+        "半导体设备"
+      ],
+      "theme_pct_avg": 0.1,
+      "theme_main_flow_sum": 638640256.0
+    },
+    "018123": {
+      "name": "永赢数字经济智选C",
+      "themes": [
+        "国产GPU/AI芯片",
+        "AI算力"
+      ],
+      "theme_pct_avg": 0.89,
+      "theme_main_flow_sum": 7605831936.0
+    },
+    "008888": {
+      "name": "华夏国证半导体",
+      "themes": [
+        "半导体设备",
+        "国产GPU/AI芯片"
+      ],
+      "theme_pct_avg": 0.64,
+      "theme_main_flow_sum": 3108066944.0
+    }
+  },
+  "rules": {
+    "local_strength_independent_confirmation": true,
+    "note": "PCB/CPO/etc can be locally strong even when broad communication/semiconductor flow is negative; do not require whole-tech confirmation.",
+    "empty_themes_breadth_means_source_failure_not_no_activity": true,
+    "reader_must_recheck_age_minutes": 8
+  },
+  "short_scan": {
+    "generated_at": "2026-11-09T14:33:05+08:00",
+    "market_time": "2026-11-09T14:30:48+08:00",
+    "stale": true,
+    "partial": true,
+    "coverage": {
+      "industry_boards": 496,
+      "concept_boards": 531,
+      "pagination": {
+        "industry": {
+          "fs": "m:90+t:2",
+          "fid": "f12",
+          "pz": 100,
+          "fields": "f2,f3,f5,f6,f8,f10,f12,f13,f14,f15,f16,f17,f18,f62,f66,f124",
+          "expected_rows": 496,
+          "collected_rows": 496,
+          "succeeded_pages": [
+            {
+              "page": 1,
+              "route": "live"
+            },
+            {
+              "page": 2,
+              "route": "live"
+            },
+            {
+              "page": 3,
+              "route": "live"
+            },
+            {
+              "page": 4,
+              "route": "live"
+            },
+            {
+              "page": 5,
+              "route": "live"
+            }
+          ],
+          "pages_succeeded": [
+            {
+              "page": 1,
+              "route": "live"
+            },
+            {
+              "page": 2,
+              "route": "live"
+            },
+            {
+              "page": 3,
+              "route": "live"
+            },
+            {
+              "page": 4,
+              "route": "live"
+            },
+            {
+              "page": 5,
+              "route": "live"
+            }
+          ],
+          "failed_pages": [],
+          "partial": false,
+          "cache_used": false,
+          "route": "Eastmoney",
+          "source_time": "2026-11-09T14:30:48+08:00",
+          "stale": false,
+          "source_errors": []
+        },
+        "concept": {
+          "fs": "m:90+t:3",
+          "fid": "f12",
+          "pz": 100,
+          "fields": "f2,f3,f5,f6,f8,f10,f12,f13,f14,f15,f16,f17,f18,f62,f66,f124",
+          "expected_rows": 531,
+          "collected_rows": 531,
+          "succeeded_pages": [
+            {
+              "page": 1,
+              "route": "live"
+            },
+            {
+              "page": 2,
+              "route": "live"
+            },
+            {
+              "page": 3,
+              "route": "live"
+            },
+            {
+              "page": 4,
+              "route": "live"
+            },
+            {
+              "page": 5,
+              "route": "live"
+            },
+            {
+              "page": 6,
+              "route": "live"
+            }
+          ],
+          "pages_succeeded": [
+            {
+              "page": 1,
+              "route": "live"
+            },
+            {
+              "page": 2,
+              "route": "live"
+            },
+            {
+              "page": 3,
+              "route": "live"
+            },
+            {
+              "page": 4,
+              "route": "live"
+            },
+            {
+              "page": 5,
+              "route": "live"
+            },
+            {
+              "page": 6,
+              "route": "live"
+            }
+          ],
+          "failed_pages": [],
+          "partial": false,
+          "cache_used": false,
+          "route": "Eastmoney",
+          "source_time": "2026-11-09T14:30:45+08:00",
+          "stale": false,
+          "source_errors": []
+        }
+      },
+      "partial": true,
+      "positive_price_and_flow_boards": 440,
+      "selected_boards": 8,
+      "unique_constituents": 64,
+      "fully_assessed": 31,
+      "assessed_records": 64,
+      "daily_histories": 64,
+      "board_limit": 8,
+      "stock_limit": 100,
+      "collection_budget_seconds": 137.64365549996728,
+      "preselection": "price <=30 preferred, positive main flow and flow/turnover; overlapping boards deduplicated"
+    },
+    "strong_boards": 8,
+    "candidates": [
+      "300213",
+      "000530",
+      "603551",
+      "002639",
+      "002652",
+      "002035",
+      "603187",
+      "300353",
+      "688283",
+      "600202"
+    ],
+    "top3": [
+      "300213",
+      "000530",
+      "603551"
+    ]
+  }
+}
