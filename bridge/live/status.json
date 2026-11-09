@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-11-06T14:45:48+08:00",
-  "last_collection_at": "2026-11-06T14:45:48+08:00",
+  "generated_at": "2026-11-09T11:00:48+08:00",
+  "last_collection_at": "2026-11-09T11:00:48+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-11-06T14:45:48+08:00",
-  "current_commit": "cd36cb503a3d3901b7ae4352ede9879aa125df0d",
-  "snapshot_commit": "cd36cb503a3d3901b7ae4352ede9879aa125df0d",
+  "last_push_at": "2026-11-09T11:00:48+08:00",
+  "current_commit": "02cb7f8dbc4fde109debec0e996848ba38e0be4c",
+  "snapshot_commit": "02cb7f8dbc4fde109debec0e996848ba38e0be4c",
   "current_commit_scope": "snapshot commit preceding status publication",
   "market_source_status": {
     "investment_os_proxy": "failed",
@@ -19,23 +19,23 @@
   "short_scan_status": "ok",
   "short_scan_errors": [
     {
-      "source": "capital:601518",
+      "source": "capital:300057",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "minutes:601518",
+      "source": "minutes:300057",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "capital:000828",
+      "source": "capital:002149",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "minutes:000828",
+      "source": "minutes:002149",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "capital:600012",
+      "source": "capital:600118",
       "error": "scan collection budget exhausted"
     }
   ],
@@ -101,7 +101,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-06T14:45:51+08:00",
+      "source_time": "2026-11-09T11:00:51+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -168,15 +168,15 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-06T14:45:51+08:00",
+      "source_time": "2026-11-09T11:00:48+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-11-06T14:48:07+08:00",
+  "last_data_success_at": "2026-11-09T11:03:07+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-11-06T14:48:09+08:00",
-  "consecutive_failures": 198,
+  "scan_generated_at": "2026-11-09T11:03:09+08:00",
+  "consecutive_failures": 199,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
