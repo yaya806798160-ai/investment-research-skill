@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-11-10T14:45:44+08:00",
-  "last_collection_at": "2026-11-10T14:45:44+08:00",
+  "generated_at": "2026-11-11T11:00:44+08:00",
+  "last_collection_at": "2026-11-11T11:00:44+08:00",
   "last_success_at": null,
   "last_push_at": "2026-11-10T14:45:44+08:00",
   "current_commit": "961dce6bdb87d929b6e56055f30df9fd69224a69",
@@ -80,7 +80,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-10T14:45:45+08:00",
+      "source_time": "2026-11-11T11:00:42+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -147,15 +147,15 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-10T14:45:45+08:00",
+      "source_time": "2026-11-11T11:00:42+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-11-10T14:47:19+08:00",
+  "last_data_success_at": "2026-11-11T11:01:57+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-11-10T14:47:19+08:00",
-  "consecutive_failures": 206,
+  "scan_generated_at": "2026-11-11T11:01:58+08:00",
+  "consecutive_failures": 207,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
