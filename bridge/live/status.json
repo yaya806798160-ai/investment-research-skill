@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "worker_alive": true,
-  "generated_at": "2026-11-11T14:30:43+08:00",
-  "last_collection_at": "2026-11-11T14:30:43+08:00",
+  "generated_at": "2026-11-11T14:45:40+08:00",
+  "last_collection_at": "2026-11-11T14:45:40+08:00",
   "last_success_at": null,
-  "last_push_at": "2026-11-11T13:30:36+08:00",
-  "current_commit": "75337cd9adffe0d3ea666647023c6b4aabf595bf",
-  "snapshot_commit": "75337cd9adffe0d3ea666647023c6b4aabf595bf",
+  "last_push_at": "2026-11-11T14:45:40+08:00",
+  "current_commit": "17d641e11b60e1f4becca258de2de73443e7e34c",
+  "snapshot_commit": "17d641e11b60e1f4becca258de2de73443e7e34c",
   "current_commit_scope": "snapshot commit preceding status publication",
   "market_source_status": {
     "investment_os_proxy": "failed",
@@ -19,23 +19,23 @@
   "short_scan_status": "ok",
   "short_scan_errors": [
     {
-      "source": "minutes:000818",
+      "source": "capital:002916",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "capital:300698",
+      "source": "minutes:002916",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "minutes:300698",
+      "source": "capital:000988",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "capital:300303",
+      "source": "minutes:000988",
       "error": "scan collection budget exhausted"
     },
     {
-      "source": "minutes:300303",
+      "source": "minutes:300548",
       "error": "scan collection budget exhausted"
     }
   ],
@@ -101,7 +101,7 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-11T14:30:45+08:00",
+      "source_time": "2026-11-11T14:45:39+08:00",
       "stale": false,
       "source_errors": []
     },
@@ -168,20 +168,19 @@
       "partial": false,
       "cache_used": false,
       "route": "Eastmoney",
-      "source_time": "2026-11-11T14:30:42+08:00",
+      "source_time": "2026-11-11T14:45:39+08:00",
       "stale": false,
       "source_errors": []
     }
   },
-  "last_data_success_at": "2026-11-11T14:33:02+08:00",
+  "last_data_success_at": "2026-11-11T14:48:02+08:00",
   "consecutive_data_failures": 0,
-  "scan_generated_at": "2026-11-11T14:33:03+08:00",
-  "consecutive_failures": 209,
+  "scan_generated_at": "2026-11-11T14:48:04+08:00",
+  "consecutive_failures": 210,
   "stale_after_minutes": 8,
   "market_window": true,
   "rules": {
     "reader_must_recheck_age_minutes": 8,
     "empty_candidates_means_scanner_failed_not_no_opportunities": true
-  },
-  "status_publication_error": "CalledProcessError: Command '['git', 'push']' returned non-zero exit status 128."
+  }
 }
