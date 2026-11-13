@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-13T14:30:42+08:00",
-  "source_time": "2026-11-13T08:00:00+08:00",
-  "expires_at": "2026-11-13T08:08:00+08:00",
+  "generated_at": "2026-11-13T14:45:42+08:00",
+  "source_time": "2026-11-13T14:45:12+08:00",
+  "expires_at": "2026-11-13T14:53:12+08:00",
   "trade_date": "2026-11-13",
-  "market_time": "08:00:00",
+  "market_time": "14:45:12",
   "data_sources": [
     {
       "source": "index:上证",
       "via": "Tencent direct",
-      "source_time": "2026-11-13T14:30:12+08:00",
+      "source_time": "2026-11-13T14:45:12+08:00",
       "fallback_used": true,
       "stale": false,
       "missing_fields": [
@@ -18,38 +18,44 @@
     },
     {
       "source": "index:创业板",
-      "via": "Eastmoney direct",
-      "source_time": "2026-11-13T14:30:12+08:00",
-      "fallback_used": false,
-      "stale": false
+      "via": "Tencent direct",
+      "source_time": "2026-11-13T14:45:21+08:00",
+      "fallback_used": true,
+      "stale": false,
+      "missing_fields": [
+        "turnover"
+      ]
     },
     {
       "source": "index:科创50",
-      "via": "Investment OS /emq/",
-      "source_time": "2026-11-13T14:30:18+08:00",
+      "via": "Tencent direct",
+      "source_time": "2026-11-13T14:45:30+08:00",
       "fallback_used": true,
-      "stale": false
+      "stale": false,
+      "missing_fields": [
+        "turnover"
+      ]
     },
     {
       "source": "clist:m:90+t:2,m:90+t:3",
-      "rows": 100,
-      "pages": 1,
-      "partial": true,
-      "failed_page": 2,
+      "rows": 0,
+      "pages": 0,
+      "partial": false,
+      "failed_page": 1,
       "failure": "request failed"
     },
     {
       "source": "clist:m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23",
-      "rows": 100,
-      "pages": 1,
-      "partial": true,
-      "failed_page": 2,
+      "rows": 0,
+      "pages": 0,
+      "partial": false,
+      "failed_page": 1,
       "failure": "request failed"
     }
   ],
   "source_errors": [
     {
-      "tested_at": "2026-11-13T14:30:03+08:00",
+      "tested_at": "2026-11-13T14:45:03+08:00",
       "source": "Eastmoney direct",
       "route": "Eastmoney direct",
       "url": "https://push2.eastmoney.com/api/qt/stock/get?secid=1.000001&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
@@ -58,11 +64,11 @@
       "exception_type": "RemoteDisconnected",
       "success": false,
       "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.887,
+      "elapsed_seconds": 1.011,
       "round": 1
     },
     {
-      "tested_at": "2026-11-13T14:30:04+08:00",
+      "tested_at": "2026-11-13T14:45:04+08:00",
       "source": "Investment OS /emq/",
       "route": "Investment OS /emq/",
       "url": "http://127.0.0.1:8080/emq/api/qt/stock/get?secid=1.000001&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
@@ -71,11 +77,11 @@
       "exception_type": "HTTPError",
       "success": false,
       "error": "HTTP Error 502: Bad Gateway",
-      "elapsed_seconds": 2.34,
+      "elapsed_seconds": 1.772,
       "round": 1
     },
     {
-      "tested_at": "2026-11-13T14:30:11+08:00",
+      "tested_at": "2026-11-13T14:45:11+08:00",
       "source": "Eastmoney direct",
       "route": "Eastmoney direct",
       "url": "https://push2.eastmoney.com/api/qt/stock/get?secid=1.000001&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
@@ -84,24 +90,76 @@
       "exception_type": "RemoteDisconnected",
       "success": false,
       "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.606,
+      "elapsed_seconds": 0.5,
       "round": 2
     },
     {
-      "tested_at": "2026-11-13T14:30:12+08:00",
+      "tested_at": "2026-11-13T14:45:11+08:00",
       "source": "Investment OS /emq/",
       "route": "Investment OS /emq/",
       "url": "http://127.0.0.1:8080/emq/api/qt/stock/get?secid=1.000001&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
-      "http_status": null,
-      "first_200_bytes": null,
-      "exception_type": "TimeoutError",
+      "http_status": 502,
+      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
+      "exception_type": "HTTPError",
       "success": false,
-      "error": "timed out",
-      "elapsed_seconds": 1.987,
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 1.72,
       "round": 2
     },
     {
-      "tested_at": "2026-11-13T14:30:15+08:00",
+      "tested_at": "2026-11-13T14:45:13+08:00",
+      "source": "Eastmoney direct",
+      "route": "Eastmoney direct",
+      "url": "https://push2.eastmoney.com/api/qt/stock/get?secid=0.399006&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
+      "http_status": null,
+      "first_200_bytes": null,
+      "exception_type": "RemoteDisconnected",
+      "success": false,
+      "error": "Remote end closed connection without response",
+      "elapsed_seconds": 0.813,
+      "round": 1
+    },
+    {
+      "tested_at": "2026-11-13T14:45:14+08:00",
+      "source": "Investment OS /emq/",
+      "route": "Investment OS /emq/",
+      "url": "http://127.0.0.1:8080/emq/api/qt/stock/get?secid=0.399006&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
+      "http_status": 502,
+      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
+      "exception_type": "HTTPError",
+      "success": false,
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 2.137,
+      "round": 1
+    },
+    {
+      "tested_at": "2026-11-13T14:45:21+08:00",
+      "source": "Eastmoney direct",
+      "route": "Eastmoney direct",
+      "url": "https://push2.eastmoney.com/api/qt/stock/get?secid=0.399006&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
+      "http_status": null,
+      "first_200_bytes": null,
+      "exception_type": "RemoteDisconnected",
+      "success": false,
+      "error": "Remote end closed connection without response",
+      "elapsed_seconds": 0.466,
+      "round": 2
+    },
+    {
+      "tested_at": "2026-11-13T14:45:21+08:00",
+      "source": "Investment OS /emq/",
+      "route": "Investment OS /emq/",
+      "url": "http://127.0.0.1:8080/emq/api/qt/stock/get?secid=0.399006&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
+      "http_status": 502,
+      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
+      "exception_type": "HTTPError",
+      "success": false,
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 1.55,
+      "round": 2
+    },
+    {
+      "tested_at": "2026-11-13T14:45:23+08:00",
       "source": "Eastmoney direct",
       "route": "Eastmoney direct",
       "url": "https://push2.eastmoney.com/api/qt/stock/get?secid=1.000688&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
@@ -110,11 +168,50 @@
       "exception_type": "RemoteDisconnected",
       "success": false,
       "error": "Remote end closed connection without response",
-      "elapsed_seconds": 1.07,
+      "elapsed_seconds": 0.467,
       "round": 1
     },
     {
-      "tested_at": "2026-11-13T14:30:18+08:00",
+      "tested_at": "2026-11-13T14:45:24+08:00",
+      "source": "Investment OS /emq/",
+      "route": "Investment OS /emq/",
+      "url": "http://127.0.0.1:8080/emq/api/qt/stock/get?secid=1.000688&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
+      "http_status": 502,
+      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
+      "exception_type": "HTTPError",
+      "success": false,
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 1.514,
+      "round": 1
+    },
+    {
+      "tested_at": "2026-11-13T14:45:30+08:00",
+      "source": "Eastmoney direct",
+      "route": "Eastmoney direct",
+      "url": "https://push2.eastmoney.com/api/qt/stock/get?secid=1.000688&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
+      "http_status": null,
+      "first_200_bytes": null,
+      "exception_type": "RemoteDisconnected",
+      "success": false,
+      "error": "Remote end closed connection without response",
+      "elapsed_seconds": 0.469,
+      "round": 2
+    },
+    {
+      "tested_at": "2026-11-13T14:45:30+08:00",
+      "source": "Investment OS /emq/",
+      "route": "Investment OS /emq/",
+      "url": "http://127.0.0.1:8080/emq/api/qt/stock/get?secid=1.000688&fields=f43%2Cf44%2Cf45%2Cf46%2Cf47%2Cf48%2Cf57%2Cf58%2Cf60%2Cf86%2Cf169%2Cf170&fltt=2&invt=2",
+      "http_status": 502,
+      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
+      "exception_type": "HTTPError",
+      "success": false,
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 1.466,
+      "round": 2
+    },
+    {
+      "tested_at": "2026-11-13T14:45:32+08:00",
       "source": "Eastmoney direct",
       "route": "Eastmoney direct",
       "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=1&pz=100&fid=f12",
@@ -123,68 +220,54 @@
       "exception_type": "RemoteDisconnected",
       "success": false,
       "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.695,
+      "elapsed_seconds": 0.551,
       "round": 1
     },
     {
-      "tested_at": "2026-11-13T14:30:20+08:00",
-      "source": "Eastmoney direct",
-      "route": "Eastmoney direct",
-      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=2&pz=100&fid=f12",
-      "http_status": null,
-      "first_200_bytes": null,
-      "exception_type": "RemoteDisconnected",
-      "success": false,
-      "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.61,
-      "round": 1
-    },
-    {
-      "tested_at": "2026-11-13T14:30:20+08:00",
+      "tested_at": "2026-11-13T14:45:32+08:00",
       "source": "Investment OS /emq/",
       "route": "Investment OS /emq/",
-      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=2&pz=100&fid=f12",
+      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=1&pz=100&fid=f12",
       "http_status": 502,
       "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
       "exception_type": "HTTPError",
       "success": false,
       "error": "HTTP Error 502: Bad Gateway",
-      "elapsed_seconds": 1.72,
+      "elapsed_seconds": 1.357,
       "round": 1
     },
     {
-      "tested_at": "2026-11-13T14:30:26+08:00",
+      "tested_at": "2026-11-13T14:45:38+08:00",
       "source": "Eastmoney direct",
       "route": "Eastmoney direct",
-      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=2&pz=100&fid=f12",
+      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=1&pz=100&fid=f12",
       "http_status": null,
       "first_200_bytes": null,
       "exception_type": "RemoteDisconnected",
       "success": false,
       "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.635,
+      "elapsed_seconds": 0.616,
       "round": 2
     },
     {
-      "tested_at": "2026-11-13T14:30:27+08:00",
+      "tested_at": "2026-11-13T14:45:39+08:00",
       "source": "Investment OS /emq/",
       "route": "Investment OS /emq/",
-      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=2&pz=100&fid=f12",
+      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fs=m%3A90%2Bt%3A2%2Cm%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124%2Cf184&pn=1&pz=100&fid=f12",
       "http_status": 502,
       "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
       "exception_type": "HTTPError",
       "success": false,
       "error": "HTTP Error 502: Bad Gateway",
-      "elapsed_seconds": 2.215,
+      "elapsed_seconds": 1.436,
       "round": 2
     },
     {
       "source": "boards",
-      "error": "page 2 failed",
-      "partial": true
+      "error": "ValueError: page 1 failed: ['Remote end closed connection without response', 'HTTP Error 502: Bad Gateway', 'Remote end closed connection without response', 'HTTP Error 502: Bad Gateway']"
     },
     {
-      "tested_at": "2026-11-13T14:30:29+08:00",
+      "tested_at": "2026-11-13T14:45:40+08:00",
       "source": "Eastmoney direct",
       "route": "Eastmoney direct",
       "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
@@ -193,11 +276,11 @@
       "exception_type": "RemoteDisconnected",
       "success": false,
       "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.578,
+      "elapsed_seconds": 0.443,
       "round": 1
     },
     {
-      "tested_at": "2026-11-13T14:30:30+08:00",
+      "tested_at": "2026-11-13T14:45:41+08:00",
       "source": "Investment OS /emq/",
       "route": "Investment OS /emq/",
       "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
@@ -206,52 +289,12 @@
       "exception_type": "HTTPError",
       "success": false,
       "error": "HTTP Error 502: Bad Gateway",
-      "elapsed_seconds": 1.713,
-      "round": 1
-    },
-    {
-      "tested_at": "2026-11-13T14:30:36+08:00",
-      "source": "Eastmoney direct",
-      "route": "Eastmoney direct",
-      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=1&pz=100",
-      "http_status": null,
-      "first_200_bytes": null,
-      "exception_type": "RemoteDisconnected",
-      "success": false,
-      "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.639,
-      "round": 2
-    },
-    {
-      "tested_at": "2026-11-13T14:30:38+08:00",
-      "source": "Eastmoney direct",
-      "route": "Eastmoney direct",
-      "url": "https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=2&pz=100",
-      "http_status": null,
-      "first_200_bytes": null,
-      "exception_type": "RemoteDisconnected",
-      "success": false,
-      "error": "Remote end closed connection without response",
-      "elapsed_seconds": 0.993,
-      "round": 1
-    },
-    {
-      "tested_at": "2026-11-13T14:30:39+08:00",
-      "source": "Investment OS /emq/",
-      "route": "Investment OS /emq/",
-      "url": "http://127.0.0.1:8080/emq/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf124&pn=2&pz=100",
-      "http_status": 502,
-      "first_200_bytes": "{\"code\":502,\"message\":\"proxy error: Remote end closed connection without response\",\"data\":null}",
-      "exception_type": "HTTPError",
-      "success": false,
-      "error": "HTTP Error 502: Bad Gateway",
-      "elapsed_seconds": 2.67,
+      "elapsed_seconds": 1.471,
       "round": 1
     },
     {
       "source": "breadth",
-      "error": "page 2 failed",
-      "partial": true
+      "error": "ValueError: page 1 failed: ['Remote end closed connection without response', 'HTTP Error 502: Bad Gateway']"
     }
   ],
   "source": [
@@ -266,8 +309,9 @@
     "breadth"
   ],
   "missing": [
-    "boards:partial",
-    "breadth:partial",
+    "boards",
+    "breadth",
+    "theme:AI算力",
     "theme:CPO/光模块",
     "theme:PCB",
     "theme:半导体设备",
@@ -277,63 +321,33 @@
     "上证": {
       "code": "000001",
       "name": "上证指数",
-      "price": 3636.43,
-      "pct": -0.53,
+      "price": 3632.03,
+      "pct": -0.65,
       "turnover": null,
-      "volume": 412654473.0,
-      "source_time": "2026-11-13T14:30:12+08:00"
+      "volume": 436148665.0,
+      "source_time": "2026-11-13T14:45:12+08:00"
     },
     "创业板": {
       "code": "399006",
       "name": "创业板指",
-      "price": 2426.75,
-      "pct": -3.29,
-      "turnover": 390468672612.2,
-      "volume": 155822694,
-      "source_time": "2026-11-13T14:30:12+08:00"
+      "price": 2425.7,
+      "pct": -3.34,
+      "turnover": null,
+      "volume": 158134220.0,
+      "source_time": "2026-11-13T14:45:21+08:00"
     },
     "科创50": {
       "code": "000688",
       "name": "科创50",
-      "price": 1277.72,
-      "pct": -2.45,
-      "turnover": 90552810368.0,
-      "volume": 8513247,
-      "source_time": "2026-11-13T14:30:18+08:00"
+      "price": 1277.36,
+      "pct": -2.48,
+      "turnover": null,
+      "volume": 9014480.0,
+      "source_time": "2026-11-13T14:45:30+08:00"
     }
   },
-  "breadth": {
-    "source_time": "2026-11-13T08:00:00+08:00",
-    "oldest_quote_time": "2026-11-13T08:00:00+08:00",
-    "stock_count": 100,
-    "up": 12,
-    "down": 86,
-    "flat": 2,
-    "limit_up_20cm_count": 0,
-    "limit_up_10cm_count": 0,
-    "limit_up_20cm": [],
-    "limit_up_10cm": []
-  },
-  "themes": {
-    "AI算力": {
-      "board_code": "BK1792",
-      "board_name": "算力租赁",
-      "pct": -1.24,
-      "main_flow": -1610296320.0,
-      "super_large_flow": -992094464.0,
-      "large_flow": -618201856.0,
-      "medium_flow": 222800384.0,
-      "small_flow": 1388184064.0,
-      "main_flow_ratio": -2.84,
-      "source_time": "2026-11-13T14:30:18+08:00",
-      "limit_up_diffusion": {
-        "count": 0,
-        "stocks": [],
-        "note": "name-keyword approximation; board-level limit-up diffusion still preserved separately",
-        "board_name": "算力租赁"
-      }
-    }
-  },
+  "breadth": {},
+  "themes": {},
   "fund_mapping": {
     "021528": {
       "name": "财通成长C",
@@ -342,8 +356,8 @@
         "PCB",
         "AI算力"
       ],
-      "theme_pct_avg": -1.24,
-      "theme_main_flow_sum": -1610296320.0
+      "theme_pct_avg": null,
+      "theme_main_flow_sum": null
     },
     "017811": {
       "name": "东方人工智能",
@@ -359,8 +373,8 @@
         "国产GPU/AI芯片",
         "AI算力"
       ],
-      "theme_pct_avg": -1.24,
-      "theme_main_flow_sum": -1610296320.0
+      "theme_pct_avg": null,
+      "theme_main_flow_sum": null
     },
     "008888": {
       "name": "华夏国证半导体",
@@ -379,8 +393,8 @@
     "reader_must_recheck_age_minutes": 8
   },
   "short_scan": {
-    "generated_at": "2026-11-13T14:33:06+08:00",
-    "market_time": "2026-11-13T14:30:57+08:00",
+    "generated_at": "2026-11-13T14:48:04+08:00",
+    "market_time": "2026-11-13T14:45:57+08:00",
     "stale": true,
     "partial": true,
     "coverage": {
@@ -413,7 +427,7 @@
             },
             {
               "page": 5,
-              "route": "cache"
+              "route": "live"
             }
           ],
           "pages_succeeded": [
@@ -435,7 +449,7 @@
             },
             {
               "page": 5,
-              "route": "cache"
+              "route": "live"
             }
           ],
           "failed_pages": [
@@ -454,19 +468,13 @@
             {
               "fs": "m:90+t:2",
               "page": 3,
-              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
               "cache_used": true
             },
             {
               "fs": "m:90+t:2",
               "page": 4,
-              "error": "scan collection budget exhausted",
-              "cache_used": true
-            },
-            {
-              "fs": "m:90+t:2",
-              "page": 5,
-              "error": "scan collection budget exhausted",
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
               "cache_used": true
             }
           ],
@@ -491,19 +499,13 @@
             {
               "fs": "m:90+t:2",
               "page": 3,
-              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
               "cache_used": true
             },
             {
               "fs": "m:90+t:2",
               "page": 4,
-              "error": "scan collection budget exhausted",
-              "cache_used": true
-            },
-            {
-              "fs": "m:90+t:2",
-              "page": 5,
-              "error": "scan collection budget exhausted",
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
               "cache_used": true
             }
           ]
@@ -518,7 +520,7 @@
           "succeeded_pages": [
             {
               "page": 1,
-              "route": "live"
+              "route": "cache"
             },
             {
               "page": 2,
@@ -538,13 +540,13 @@
             },
             {
               "page": 6,
-              "route": "live"
+              "route": "cache"
             }
           ],
           "pages_succeeded": [
             {
               "page": 1,
-              "route": "live"
+              "route": "cache"
             },
             {
               "page": 2,
@@ -564,10 +566,16 @@
             },
             {
               "page": 6,
-              "route": "live"
+              "route": "cache"
             }
           ],
           "failed_pages": [
+            {
+              "fs": "m:90+t:3",
+              "page": 1,
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "cache_used": true
+            },
             {
               "fs": "m:90+t:3",
               "page": 3,
@@ -577,13 +585,19 @@
             {
               "fs": "m:90+t:3",
               "page": 4,
-              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response",
               "cache_used": true
             },
             {
               "fs": "m:90+t:3",
               "page": 5,
-              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "error": "scan collection budget exhausted",
+              "cache_used": true
+            },
+            {
+              "fs": "m:90+t:3",
+              "page": 6,
+              "error": "scan collection budget exhausted",
               "cache_used": true
             }
           ],
@@ -595,6 +609,12 @@
           "source_errors": [
             {
               "fs": "m:90+t:3",
+              "page": 1,
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "cache_used": true
+            },
+            {
+              "fs": "m:90+t:3",
               "page": 3,
               "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
               "cache_used": true
@@ -602,47 +622,53 @@
             {
               "fs": "m:90+t:3",
               "page": 4,
-              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway, RemoteDisconnected: Remote end closed connection without response",
               "cache_used": true
             },
             {
               "fs": "m:90+t:3",
               "page": 5,
-              "error": "https://push2.eastmoney.com/api/qt/clist/get: RemoteDisconnected: Remote end closed connection without response, HTTPError: HTTP Error 502: Bad Gateway",
+              "error": "scan collection budget exhausted",
+              "cache_used": true
+            },
+            {
+              "fs": "m:90+t:3",
+              "page": 6,
+              "error": "scan collection budget exhausted",
               "cache_used": true
             }
           ]
         }
       },
       "partial": true,
-      "positive_price_and_flow_boards": 252,
+      "positive_price_and_flow_boards": 218,
       "selected_boards": 8,
-      "unique_constituents": 113,
+      "unique_constituents": 131,
       "fully_assessed": 0,
       "assessed_records": 100,
-      "daily_histories": 23,
+      "daily_histories": 29,
       "board_limit": 8,
       "stock_limit": 100,
-      "collection_budget_seconds": 140.99277689999872,
+      "collection_budget_seconds": 139.70905549999588,
       "preselection": "price <=30 preferred, positive main flow and flow/turnover; overlapping boards deduplicated"
     },
     "strong_boards": 8,
     "candidates": [
-      "600076",
-      "300565",
-      "300098",
-      "002792",
-      "002296",
-      "002583",
-      "002194",
+      "603466",
+      "688182",
+      "002396",
+      "603936",
       "603022",
-      "001267",
-      "300710"
+      "002110",
+      "300501",
+      "300565",
+      "000631",
+      "000063"
     ],
     "top3": [
-      "600076",
-      "300565",
-      "300098"
+      "603466",
+      "688182",
+      "002396"
     ]
   }
 }
